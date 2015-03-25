@@ -1,0 +1,47 @@
+This program allows you to keep information about holidays of different countries.
+
+1) ADDING NEW TRADITION. To add new tradition, choose 1 in MAIN MENU.
+
+Tradition may be related with existed country or holiday.
+If you need to choose country or holiday from existing, ENTER THE ID from the shown table.
+
+TO CREATE NEW HOLIDAY:
+	1. Enter the holiday name + ENTER
+	2. Choose the type from typelist by its number + ENTER
+	3. Choose its date - today or other (have to enter day and month)
+	4. If this holiday duration more than a day, choose the point 2 in next menu and 	enter one more date (day and month)
+
+TO CREATE NEW COUNTRY just enter its name + ENTER
+Tradition is created! You're wonderful!
+
+2) SEARCHING TRADITIONS. To search, choose 2 in MAIN MENU.
+	1. SUBSTRING SEARCH. Enter substring you're looking for + ENTER. The result will be 	shown on your screen.
+	2. MASK SEARCH Enter the needed country name and holiday name + ENTER. Searching 	results will appeare in table.
+	3. REGULAR SEARCH. For regular searching enter the searching mask:
+	"." - means any symbol
+	"*" - means set of any symbols
+	"[a-z]" - lower symbols from a to z
+	"[A-Z]" - upper symbols from A to Z
+	"[1-9]" - numbers from 1 to 9
+	"[Tt]" - choose letters - T or t
+	"[^A]" - not A, any symbol but A
+
+3) TRADITION LOOKING. Point 3 in MAIN MENU.
+
+Choose the criterion to print and looking. Result will be in a table.
+	1. HOLIDAY WORKING. To work with existing holidays choose criterion 5 (show all)
+	User can view which countries celebrate this holiday by choose 1 - look its 	traditions.
+	You can change or delete holiday with all its traditions (2 - change or 3 - remove).
+	To choose a holiday enter its ID from the table.
+
+	2. COUNTRY WORKING. To work with countries choose criterion 6 (show countries)
+	View this country traditions by choose 1
+	Change or delete it (2 - change or 3 - remove)
+	To choose a country enter its ID from the table.
+	
+	3. TRADITION WORKING. After display the tradition table there are possible some 		actions.
+	Read the description by choose "1 - read description"
+	Change or remove the tradition by choose "2 - change tradition" or "3 - remove 	tradition"
+	To choose a tradition enter its ID from the table.
+
+Good luck!

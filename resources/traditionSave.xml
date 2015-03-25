@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<traditionSave>
+    <tradition description="">
+        <holiday>
+            <holidayName>Новый год</holidayName>
+            <holidayStartDate>10.03</holidayStartDate>
+            <holidayType>OTHER</holidayType>
+        </holiday>
+        <country>
+            <countryName>Россия</countryName>
+        </country>
+    </tradition>
+</traditionSave>
