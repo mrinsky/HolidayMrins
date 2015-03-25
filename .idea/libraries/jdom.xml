@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="jdom">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/jdom-2.0.6 (1)/lib/jaxen-1.1.6.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jdom-2.0.6 (1)/lib/xercesImpl.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jdom-2.0.6 (1)/lib/xml-apis.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jdom-2.0.6 (1)/lib/xalan/serializer-2.7.2.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/jdom-2.0.6 (1)/lib/xalan/xalan-2.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
