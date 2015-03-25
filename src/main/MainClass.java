@@ -1,17 +1,25 @@
 package main;
 
+import languages.Language;
+import languages.Strings_EN;
 import model.Country;
 import model.Holiday;
 import model.Tradition;
+import model.User;
 import modules.gui_interface.LoginWindow;
 import modules.gui_interface.MainWindow;
 import modules.user_interface.MainMenu;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class MainClass {
+
+
     public static void main(String[] args) {
         start();
     }

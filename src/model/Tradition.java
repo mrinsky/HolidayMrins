@@ -35,6 +35,28 @@ public class Tradition implements Serializable {
         return this.holiday;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Tradition tradition = (Tradition) o;
+
+        if (!country.equals(tradition.country)) return false;
+        if (!description.equals(tradition.description)) return false;
+        if (!holiday.equals(tradition.holiday)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = holiday.hashCode();
+        result = 31 * result + country.hashCode();
+        result = 31 * result + description.hashCode();
+        return result;
+    }
+
     public Country getCountry() { return this.country;}
 
     public String toString() {

@@ -6,19 +6,17 @@ import model.Tradition;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class MainWindow extends JFrame {
     //region MENU
     private JMenuBar mainMenu;
 
     private JMenu editMenu;
-    private JMenu addMenu;
-    private JMenuItem countryItem;
-    private JMenuItem holidayItem;
-    private JMenuItem traditionItem;
-    private JMenu changeMenu;
-    private JMenu searchMenu;
+    private JMenuItem addMenu;
     private JMenuItem substringSearch;
     private JMenuItem maskSearch;
     private JMenuItem regularSearch;
@@ -37,17 +35,7 @@ public class MainWindow extends JFrame {
     private String[] columnNamesRU = {"ПРАЗДНИК","СТРАНА","ДАТА","ТИП","ВЫБРАТЬ"};
 
     public MainWindow() {
-        //this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                addWindowListener(new WindowAdapter() {
-                        LoginWindow loginWindow = new LoginWindow();
-//                        loginWindow.setVisible(true);
-//                        dispose();
-                });
-            }
-        });
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(200, 200, 600, 400);
         this.setResizable(false);
         initComponents();
@@ -92,52 +80,35 @@ public class MainWindow extends JFrame {
     private void initEditMenu() {
         editMenu = new JMenu(Resources.language.getEDIT_MENU());
         initAddMenu();
-        initChangeMenu();
-        initSearchMenu();
+        //initSearchMenu();
         initRemoveMenu();
         mainMenu.add(editMenu);
     }
 
     private void initAddMenu() {
-        addMenu = new JMenu(Resources.language.getADD());
-        countryItem = new JMenuItem(Resources.language.getCOUNTRY_ITEM());
-        holidayItem = new JMenuItem(Resources.language.getHOLIDAY_ITEM());
-        traditionItem = new JMenuItem(Resources.language.getTRADITION_ITEM());
-        addMenu.add(countryItem);
-        addMenu.add(holidayItem);
-        addMenu.add(traditionItem);
+        addMenu = new JMenuItem(Resources.language.getADD());
+
+        addMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                AddWindow.main();
+            }
+        });
+
         editMenu.add(addMenu);
     }
 
-    private void initChangeMenu() {
-        changeMenu = new JMenu(Resources.language.getCHANGE());
-
-        changeMenu.add(new JMenuItem(Resources.language.getCOUNTRY_ITEM()));
-        changeMenu.add(new JMenuItem(Resources.language.getHOLIDAY_ITEM()));
-        changeMenu.add(new JMenuItem(Resources.language.getTRADITION_ITEM()));
-
-        editMenu.add(changeMenu);
-    }
-
     private void initSearchMenu() {
-        searchMenu = new JMenu(Resources.language.getSEARCH());
         ButtonGroup buttons = new ButtonGroup();
 
         substringSearch = new JRadioButtonMenuItem(Resources.language.getSUBSTRING());
         maskSearch = new JRadioButtonMenuItem(Resources.language.getMASK());
         regularSearch = new JRadioButtonMenuItem(Resources.language.getREGULAR());
 
-        searchMenu.add(substringSearch);
-        searchMenu.add(maskSearch);
-        searchMenu.add(regularSearch);
-
         buttons.add(substringSearch);
         buttons.add(maskSearch);
         buttons.add(regularSearch);
-
-        searchMenu.getItem(0).setSelected(true);
-        editMenu.add(searchMenu);
-
     }
 
     private void initRemoveMenu() {
@@ -145,6 +116,13 @@ public class MainWindow extends JFrame {
         removeAllMarked = new JMenuItem(Resources.language.getREMOVE_MARKED());
         editMenu.add(removeThis);
         editMenu.add(removeAllMarked);
+
+        removeAllMarked.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                initTable();
+            }
+        });
     }
 
     private void initSearchField() {
@@ -196,7 +174,7 @@ public class MainWindow extends JFrame {
         mainMenu.add(helpMenu);
     }
 
-    private void initTable() {
+    public void initTable() {
         if (Resources.language.getClass() == Strings_EN.class) traditionTable = new JTable(initData(columnNamesEN),columnNamesEN);
         else traditionTable = new JTable(initData(columnNamesRU),columnNamesRU);
         traditionTable.add(new JScrollPane());
@@ -237,7 +215,6 @@ public class MainWindow extends JFrame {
 
     private String[][] initData(String[] columnNames) {
         String[][] data = new String[Resources.traditions.size()][columnNames.length];
-
         for (int j = 0; j < Resources.traditions.size(); j++) {
             Tradition tr = Resources.traditions.get(j);
 
@@ -249,10 +226,4 @@ public class MainWindow extends JFrame {
         }
         return data;
     }
-
-    private void setCheckboxes() {
-
-    }
-
-
 }

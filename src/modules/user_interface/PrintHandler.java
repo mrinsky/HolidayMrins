@@ -1,11 +1,13 @@
 package modules.user_interface;
 
+import main.MainClass;
 import main.Resources;
 import model.Country;
 import model.Holiday;
 import model.HolidayType;
 import model.Tradition;
 import modules.functional.Search;
+import sun.awt.image.ImageWatched;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -17,33 +19,46 @@ public class PrintHandler {
 
     //region Completed
     protected static void showMenu() {
-        MainMenu.out.println(Resources.language.getSHOW_MENU());
-        int choice = 0;
+        if (UserHandler.currentUser != null && !UserHandler.currentUser.isAdmin()) {
+            MainMenu.out.println(Resources.language.getSHOW_USER_MENU());
+        }
+        else {
+            MainMenu.out.println(Resources.language.getSHOW_MENU());
+        }
+        int choice;
         try {
             choice = Integer.parseInt(MainMenu.reader.readLine());
 
             switch (choice) {
                 case 1:
-                    printByToday();
+                    printByToday(UserHandler.currentUser != null);
                     break;
                 case 2:
-                    printByDate();
+                    printByDate(UserHandler.currentUser != null);
                     break;
                 case 3:
-                    printByType();
+                    printByType(UserHandler.currentUser != null);
                     break;
                 case 4:
                     printByCountry();
                     break;
                 case 5:
-                    printAll();
+                    printAll(UserHandler.currentUser != null);
                     break;
                 case 6:
                     printArrayCountries(Resources.countries);
                     printCountryMenu();
+                    break;
                 case 7:
+                    if (UserHandler.currentUser != null && !UserHandler.currentUser.isAdmin()){
+                        printOwnHolidays();
+                        break;
+                    }
+                case 8:
+                    //if (UserHandler.currentUser != null && !UserHandler.currentUser.isAdmin()) {
                     MainMenu.mainMenu();
                     break;
+                //}
                 default:
                     MainMenu.out.println(Resources.language.getWRONG_CHOICE());
                     showMenu();
@@ -58,9 +73,14 @@ public class PrintHandler {
         }
     }
 
-    private static void printHolidayMenu() {
-        MainMenu.out.println(Resources.language.getPRINT_MENU());
-        int choice = 0;
+    private static void printHolidayMenu(boolean validate) {
+        if (!validate) {
+            MainMenu.out.println(Resources.language.getPRINT_SHORT_MENU());
+        }
+        else {
+            MainMenu.out.println(Resources.language.getPRINT_MENU());
+        }
+        int choice;
         try {
             choice = Integer.parseInt(MainMenu.reader.readLine());
             switch (choice) {
@@ -68,10 +88,15 @@ public class PrintHandler {
                     chooseHoliday();
                     break;
                 case 2:
-                    ChangeHandler.holidayChanger(UserHandler.currentUser.isAdmin());
-                    break;
+                    if (validate) {
+                        ChangeHandler.holidayChanger(UserHandler.currentUser.isAdmin());
+                        break;
+                    }
                 case 3:
-                    RemoveHandler.holidayRemover();
+                    if (validate) {
+                        RemoveHandler.holidayRemover();
+                        break;
+                    }
                 case 4:
                     showMenu();
                     break;
@@ -89,8 +114,13 @@ public class PrintHandler {
 
 
     private static void printCountryMenu() {
-        MainMenu.out.println(Resources.language.getPRINT_MENU());
-        int choice = 0;
+        if (UserHandler.currentUser != null) {
+            MainMenu.out.println(Resources.language.getPRINT_MENU());
+        }
+        else{
+            MainMenu.out.println(Resources.language.getPRINT_SHORT_MENU());
+        }
+        int choice;
         try {
             choice = Integer.parseInt(MainMenu.reader.readLine());
             switch (choice) {
@@ -98,10 +128,13 @@ public class PrintHandler {
                     chooseCountry();
                     break;
                 case 2:
-                    ChangeHandler.countryChanger(UserHandler.currentUser.isAdmin());
+                    if (UserHandler.currentUser == null) throw new NumberFormatException();
+                    else {
+                        ChangeHandler.countryChanger(UserHandler.currentUser.isAdmin());
+                    }
                     break;
                 case 3:
-                    //RemoveHandler.countryRemover(boolean isAdmin);
+                    RemoveHandler.countryRemover();
                     break;
                 case 4:
                     showMenu();
@@ -157,13 +190,26 @@ public class PrintHandler {
         }
     }
 
-    private static void printAll() {
-        if (Resources.holidays.size() != 0) {
-            printArrayHolidays(Resources.holidays);
-            printHolidayMenu();
+    private static void printAll(boolean validate) {
+        if (!Resources.holidays.isEmpty()) {
+            printArrayHolidays(Resources.holidays, 0);
+            printHolidayMenu(validate);
         } else {
             MainMenu.out.println(Resources.language.getNOT_FOUND());
             MainMenu.mainMenu();
+        }
+    }
+
+    private static void printOwnHolidays(){
+        if (UserHandler.currentUser != null && !UserHandler.currentUser.isAdmin()){
+            if (!UserHandler.currentUser.getHolidayList().isEmpty()){
+                printArrayHolidays(UserHandler.currentUser.getHolidayList(), 0);
+                printHolidayMenu(true);
+            }
+            else {
+                MainMenu.out.println(Resources.language.getNOT_FOUND());
+                MainMenu.mainMenu();
+            }
         }
     }
 
@@ -186,15 +232,15 @@ public class PrintHandler {
         showMenu();
     }
 
-    private static void printByType() {
+    private static void printByType(boolean validate) {
         MainMenu.out.println(Resources.language.getTYPE_CHOICE());
         printAllTypes();
         while (true) {
             try {
                 int choice = Integer.parseInt(MainMenu.reader.readLine());
                 if (Search.getTypeHolidays(choice).size() != 0) {
-                    printArrayHolidays(Search.getTypeHolidays(choice));
-                    printHolidayMenu();
+                    printArrayHolidays(Search.getTypeHolidays(choice), 0);
+                    printHolidayMenu(validate);
                 } else {
                     MainMenu.out.println(Resources.language.getNOT_FOUND());
                     showMenu();
@@ -207,19 +253,19 @@ public class PrintHandler {
         }
     }
 
-    private static void printByToday() {
+    private static void printByToday(boolean validate) {
         Date date = new Date();
 
         if (Search.getDateHolidays(date).size() != 0) {
-            printArrayHolidays(Search.getDateHolidays(date));
-            printHolidayMenu();
+            printArrayHolidays(Search.getDateHolidays(date), 0);
+            printHolidayMenu(validate);
         } else {
             MainMenu.out.println(Resources.language.getNOT_FOUND());
             showMenu();
         }
     }
 
-    private static void printByDate() {
+    private static void printByDate(boolean validate) {
         int day, month;
         try {
             MainMenu.out.println(Resources.language.getDAY());
@@ -229,8 +275,8 @@ public class PrintHandler {
             Date date = Holiday.dateFormat.parse(day + "." + month);
 
             if (Search.getDateHolidays(date).size() != 0) {
-                printArrayHolidays(Search.getDateHolidays(date));
-                printHolidayMenu();
+                printArrayHolidays(Search.getDateHolidays(date), 0);
+                printHolidayMenu(validate);
             } else {
                 MainMenu.out.println(Resources.language.getNOT_FOUND());
                 showMenu();
@@ -249,8 +295,7 @@ public class PrintHandler {
     }
 
     protected static void printTraditionTable() {
-        MainMenu.out.printf("%5s%30s%20s\n", Resources.language.getTABLE_ID(), Resources.language.getTABLE_HOLIDAY(),
-                Resources.language.getTABLE_COUNTRY());
+        MainMenu.out.printf("%5s%30s%20s\n", Resources.language.getTABLE_ID(), Resources.language.getTABLE_HOLIDAY(), Resources.language.getTABLE_COUNTRY());
     }
 
     protected static void printHolidayTable() {
@@ -280,10 +325,10 @@ public class PrintHandler {
         }
     }
 
-    public static void printArrayHolidays(LinkedList<Holiday> holidays) {
+    public static void printArrayHolidays(LinkedList<Holiday> holidays, int start) {
         printHolidayTable();
-        int count = 0;
-        for (Holiday holiday : Resources.holidays) {
+        int count = start;
+        for (Holiday holiday : holidays) {
             for (int i = 0; i < holidays.size(); i++) {
                 if (holiday.equals(holidays.get(i)))
                     MainMenu.out.printf("%5d%30s\n", count, holidays.get(i));
@@ -291,6 +336,6 @@ public class PrintHandler {
             count++;
         }
     }
-    //endregion
-    //endregion
+
+
 }

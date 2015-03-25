@@ -17,10 +17,11 @@ public class ChangeHandler {
         try {
             MainMenu.out.println(Resources.language.getID_REQUEST());
             if (isAdmin) {
-                PrintHandler.printArrayHolidays(Resources.holidays);
+                PrintHandler.printArrayHolidays(Resources.holidays, 0);
             }
             else{
-                PrintHandler.printArrayHolidays(UserHandler.currentUser.getHolidayList());
+                PrintHandler.printArrayHolidays(UserHandler.currentUser.getHolidayList(),
+                        UserHandler.holidayCount);
             }
             int choice = Integer.parseInt(MainMenu.reader.readLine());
             if (choice >= UserHandler.holidayCount && choice < Resources.holidays.size()) {
@@ -110,10 +111,11 @@ public class ChangeHandler {
 
             MainMenu.out.println(Resources.language.getHOLIDAY_REQUEST());
             if (isAdmin) {
-                PrintHandler.printArrayHolidays(Resources.holidays);
+                PrintHandler.printArrayHolidays(Resources.holidays, 0);
             }
             else{
-                PrintHandler.printArrayHolidays(UserHandler.currentUser.getHolidayList());
+                PrintHandler.printArrayHolidays(UserHandler.currentUser.getHolidayList(),
+                        UserHandler.holidayCount);
             }
             int description = Integer.parseInt(MainMenu.reader.readLine());
             if (choice >= UserHandler.holidayCount && choice < Resources.holidays.size()) {
@@ -126,8 +128,8 @@ public class ChangeHandler {
             MainMenu.out.println(Resources.language.getIO_ERROR());
         } catch (IndexOutOfBoundsException e){
             Resources.language.getWRONG_CHOICE();
-        changeDescription();
-    }
+            changeDescription();
+        }
     }
 
     protected static void changeCountryTradition(boolean isAdmin) {

@@ -236,9 +236,8 @@ public class XmlFileWorking implements DataSaveLoad {
         Iterator userIterator = userElem.iterator();
         while (userIterator.hasNext()) {
             Element userElement = (Element) userIterator.next();
-            User user = new User();
-            user.setLogin(userElement.getChild("userName").getText());
-            user.setPass(userElement.getChild("userPass").getText());
+            User user = new User(userElement.getChild("userName").getText(),
+                    userElement.getChild("userPass").getText());
 
             users.add(user);
         }
@@ -260,6 +259,7 @@ public class XmlFileWorking implements DataSaveLoad {
         Resources.holidays = xmlSaveLoad.loadHoliday(XML_HOLIDAY_PATCH_EN);
         Resources.countries = xmlSaveLoad.loadCountry(XML_COUNTRY_PATCH_EN);
         Resources.traditions = xmlSaveLoad.loadTradition(XML_TRADITION_PATCH_EN);
+      //  loadUsers("resources/userList/user.xml");
     }
 
     @Override
@@ -267,7 +267,7 @@ public class XmlFileWorking implements DataSaveLoad {
         Resources.holidays = xmlSaveLoad.loadHoliday(XML_HOLIDAY_PATCH_RU);
         Resources.countries = xmlSaveLoad.loadCountry(XML_COUNTRY_PATCH_RU);
         Resources.traditions = xmlSaveLoad.loadTradition(XML_TRADITION_PATCH_RU);
-        loadUsers("resources/userList/user.xml");
+        //loadUsers("resources/userList/user.xml");
     }
 
     @Override

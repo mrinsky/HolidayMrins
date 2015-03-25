@@ -83,11 +83,6 @@ public class RegistrationForm extends JFrame{
 
     }
     public void registration(){
-        try {
-            UserHandler.registration(loginTF.toString(), onePassTF.toString(), twoPassTF.toString());
-        }
-        catch(IOException e){
-            wrongPass.setVisible(true);
-        }
+        UserHandler.registration(loginTF.toString(), onePassTF.toString(), twoPassTF.toString());
     }
 }

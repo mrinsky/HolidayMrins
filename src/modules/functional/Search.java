@@ -4,6 +4,7 @@ import main.Resources;
 import model.Holiday;
 import model.HolidayType;
 import model.Tradition;
+import model.User;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,23 +27,14 @@ public class Search {
             description = traditions.get(i).getDescription();
 
             if (countryName.contains(request)) {
-              /*  System.out.print(traditions.get(i).getCountry().getName() + "   ");
-                System.out.print(traditions.get(i).getHoliday().getName() + "   ");
-                System.out.println(traditions.get(i).getDescription());*/
                 searchResult.add(traditions.get(i));
                 continue;
             }
             if (holidayName.contains(request)) {
                 searchResult.add(traditions.get(i));
-               /* System.out.print(traditions.get(i).getCountry().getName() + "   ");
-                System.out.print(traditions.get(i).getHoliday().getName() + "   ");
-                System.out.println(traditions.get(i).getDescription());*/
                 continue;
             }
             if (description.contains(request)) {
-               /* System.out.print(traditions.get(i).getCountry().getName() + "   ");
-                System.out.print(traditions.get(i).getHoliday().getName() + "   ");
-                System.out.println(traditions.get(i).getDescription());*/
                 searchResult.add(traditions.get(i));
                 continue;
             }
@@ -83,10 +75,6 @@ public class Search {
                 searchResult.add(aSelectByHoliday);
             }
         }
-        //  for (int i = 0; i < searchResult.size(); i++) {
-        //    System.out.println(searchResult.get(i).getHoliday().getName() + " " + searchResult.get(i).getCountry().getName() + " " + searchResult.get(i).getDescription());
-        //}
-        //Проверка поиска, вывод на консоль
 
 
         return searchResult;
@@ -104,7 +92,6 @@ public class Search {
             found = matcher.matches();
             if (found) {
                 searchResult.add(traditions.get(i));
-                // System.out.println("Found in holiday name");
 
                 continue;
             }
@@ -112,21 +99,16 @@ public class Search {
             found = matcher.matches();
             if (found) {
                 searchResult.add(traditions.get(i));
-                // System.out.println("Found in country name");
-                continue;
+               continue;
             }
             matcher = pattern.matcher(traditions.get(i).getDescription());
             found = matcher.matches();
             if (found) {
                 searchResult.add(traditions.get(i));
-                // System.out.println("Found in description");
+
             }
 
         }
-        for (int i = 0; i < searchResult.size(); i++) {
-            System.out.println(searchResult.get(i).getHoliday().getName() + " " + searchResult.get(i).getCountry().getName() + " " + searchResult.get(i).getDescription());
-        }
-
 
         return searchResult;
     }
@@ -162,6 +144,15 @@ public class Search {
                     (tradition.getHoliday().getStartDate().equals(holiday.getStartDate())))
                 traditions.add(tradition);}
         return traditions;
+    }
+    public static int searchIndex(ArrayList<User> users, String login){
+        int index = 0;
+        for (int i = 0; i < users.size(); i++){
+            if (users.get(i).getLogin().equals(login)){
+                index = i;
+            }
+        }
+        return index;
     }
 
 }

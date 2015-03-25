@@ -15,7 +15,7 @@ import java.util.LinkedList;
 public class AddHandler {
 
     protected static void addMenu() {
-        int choice = 0;
+        int choice;
         while (true) {
             try {
                 MainMenu.out.println(Resources.language.getADD_MENU());
@@ -42,7 +42,12 @@ public class AddHandler {
     private static void addTradition() {
         while (true) {
             try {
-                Resources.traditions = (ArrayList<Tradition>)Add.newTradition(holidayMenu(), countryMenu(), Resources.traditions);
+                if (UserHandler.currentUser.isAdmin()) {
+                    Resources.traditions = (ArrayList<Tradition>) Add.addTradition(holidayMenu(), countryMenu(), Resources.traditions);
+                }
+                else if (UserHandler.currentUser != null){
+                    UserHandler.currentUser.setTraditionList((ArrayList<Tradition>) Add.addTradition(holidayMenu(), countryMenu(), Resources.traditions));
+                }
                 MainMenu.out.println(Resources.language.getDESCRIPT_REQUEST());
                 int choice = Integer.parseInt(MainMenu.reader.readLine());
                 switch (choice) {
@@ -94,7 +99,7 @@ public class AddHandler {
                 int choice = Integer.parseInt(MainMenu.reader.readLine());
                 switch (choice) {
                     case 1:
-                        PrintHandler.printArrayHolidays(Resources.holidays);
+                        PrintHandler.printArrayHolidays(Resources.holidays, 0);
                         MainMenu.out.println(Resources.language.getID_REQUEST());
                         choice = Integer.parseInt(MainMenu.reader.readLine());
                         holiday = Resources.holidays.get(choice);
@@ -129,7 +134,7 @@ public class AddHandler {
 
                 switch (dateChoice) {
                     case 1:
-                        Resources.holidays = (LinkedList<Holiday>)Add.newHoliday(name, type, Resources.holidays);
+                        Resources.holidays = (LinkedList<Holiday>)Add.addHoliday(name, type, Resources.holidays);
                         return new Holiday(name, type);
                     case 2:
                         Date start = createDate();
@@ -138,14 +143,14 @@ public class AddHandler {
                         int endChoice = Integer.parseInt(MainMenu.reader.readLine());
                         if (endChoice == 2) {
                             end = createDate();
-                            Resources.holidays = (LinkedList<Holiday>)Add.newHoliday(name, start, end, type, Resources.holidays);
+                            Resources.holidays = (LinkedList<Holiday>)Add.addHoliday(name, start, end, type, Resources.holidays);
                             return new Holiday(name, start, end, type);
                         } else if (endChoice == 1) {
-                            Resources.holidays = (LinkedList<Holiday>)Add.newHoliday(name, start, type, Resources.holidays);
+                            Resources.holidays = (LinkedList<Holiday>)Add.addHoliday(name, start, type, Resources.holidays);
                             return new Holiday(name, start, type);
                         } else {
                             MainMenu.out.println(Resources.language.getWRONG_CHOICE());
-                            Resources.holidays = (LinkedList<Holiday>)Add.newHoliday(name, start, type, Resources.holidays);
+                            Resources.holidays = (LinkedList<Holiday>)Add.addHoliday(name, start, type, Resources.holidays);
                             return new Holiday(name, start, type);
                         }
                     default:
@@ -164,7 +169,7 @@ public class AddHandler {
         try {
             MainMenu.out.println(Resources.language.getCOUNTRY_REQUEST());
             country = new Country(MainMenu.reader.readLine());
-            Resources.countries = (LinkedList<Country>)Add.newCountry(country, Resources.countries);
+            Resources.countries = (LinkedList<Country>)Add.addCountry(country, Resources.countries);
             MainMenu.out.println(Resources.language.getREADY());
         } catch (IOException ex) {
             MainMenu.out.println(Resources.language.getIO_ERROR());

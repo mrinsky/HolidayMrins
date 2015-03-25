@@ -123,13 +123,13 @@ public class LoginWindow extends JFrame {
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(UserHandler.authorizate(getLogin(),getPassword())){ if(langComboBox.getSelectedIndex()==1)
+               /* if(UserHandler(getLogin(),getPassword())){ if(langComboBox.getSelectedIndex()==1)
                     language = new Strings_EN(); else language = new Strings_RU();
                     wrongPassLabel.setText(",fkfkf "); // Здесь открываем новую форму и язык
 
                 }
                 else {wrongPassLabel.setVisible(true);}
-
+*/
             }
         });
         guestButton.addActionListener(new ActionListener() {

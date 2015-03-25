@@ -78,4 +78,28 @@ public class Holiday implements Serializable {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Holiday holiday = (Holiday) o;
+
+        if (!endDate.equals(holiday.endDate)) return false;
+        if (!name.equals(holiday.name)) return false;
+        if (!startDate.equals(holiday.startDate)) return false;
+        if (type != holiday.type) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + startDate.hashCode();
+        result = 31 * result + endDate.hashCode();
+        result = 31 * result + type.hashCode();
+        return result;
+    }
 }

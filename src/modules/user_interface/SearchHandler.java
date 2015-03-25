@@ -28,15 +28,15 @@ public class SearchHandler {
                     break;
                 default:
                     MainMenu.out.println(Resources.language.getWRONG_CHOICE());
-                            searchMenu();
+                    searchMenu();
                     break;
             }
         } catch (NumberFormatException ex) {
             MainMenu.out.println(Resources.language.getWRONG_CHOICE());
-                    searchMenu();
+            searchMenu();
         } catch (IOException e) {
             MainMenu.out.println(Resources.language.getIO_ERROR());
-                    searchMenu();
+            searchMenu();
         }
     }
 

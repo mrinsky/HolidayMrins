@@ -12,8 +12,13 @@ import java.util.ArrayList;
 public class TraditionHandler {
 
     public static void traditionMenu() {
-        MainMenu.out.println(Resources.language.getTRADITION_MENU());
-        int choice = 0;
+        if (UserHandler.currentUser != null) {
+            MainMenu.out.println(Resources.language.getTRADITION_MENU());
+        }
+        else{
+            MainMenu.out.println(Resources.language.getGUEST_TRADITION_MENU());
+        }
+        int choice;
         try {
             choice = Integer.parseInt(MainMenu.reader.readLine());
             switch (choice) {
@@ -21,11 +26,15 @@ public class TraditionHandler {
                     printDescription();
                     break;
                 case 2:
-                    ChangeHandler.changeTradition();
-                    break;
+                    if (UserHandler.currentUser != null) {
+                        ChangeHandler.changeTradition();
+                        break;
+                    }
                 case 3:
-                    RemoveHandler.removeTradition();
-                    break;
+                    if (UserHandler.currentUser != null) {
+                        RemoveHandler.removeTradition();
+                        break;
+                    }
                 case 4:
                     PrintHandler.showMenu();
                     break;
@@ -69,10 +78,10 @@ public class TraditionHandler {
                     break;
             }
         }
-            catch (IOException e) {
-                MainMenu.out.println(Resources.language.getIO_ERROR());
-            }
+        catch (IOException e) {
+            MainMenu.out.println(Resources.language.getIO_ERROR());
         }
+    }
 
     public static void noTraditionMenu(Holiday holiday) {
         int choice = 0;
@@ -137,13 +146,13 @@ public class TraditionHandler {
             String description = "";
 
             if (choice == 1) {description = MainMenu.reader.readLine();
-                Resources.traditions = (ArrayList<Tradition>)Add.newTradition(holiday, country, description, Resources.traditions);
-            MainMenu.out.println(Resources.language.getREADY());
-            PrintHandler.showMenu();}
+                Resources.traditions = (ArrayList<Tradition>)Add.addTradition(holiday, country, description, Resources.traditions);
+                MainMenu.out.println(Resources.language.getREADY());
+                PrintHandler.showMenu();}
             else if (choice == 2) {
-                Resources.traditions = (ArrayList<Tradition>)Add.newTradition(holiday, country, Resources.traditions);
-            MainMenu.out.println(Resources.language.getREADY());
-            PrintHandler.showMenu();}
+                Resources.traditions = (ArrayList<Tradition>)Add.addTradition(holiday, country, Resources.traditions);
+                MainMenu.out.println(Resources.language.getREADY());
+                PrintHandler.showMenu();}
             else MainMenu.out.println(Resources.language.getWRONG_CHOICE());
 
         } catch (IOException e) {
@@ -153,7 +162,7 @@ public class TraditionHandler {
 
     private static void addTradition(Country country) {
         MainMenu.out.println(Resources.language.getHOLIDAY_REQUEST());
-        PrintHandler.printArrayHolidays(Resources.holidays);
+        PrintHandler.printArrayHolidays(Resources.holidays,0);
         try {
             int choice = Integer.parseInt(MainMenu.reader.readLine());
             Holiday holiday = Resources.holidays.get(choice);
@@ -162,11 +171,11 @@ public class TraditionHandler {
             String description = "";
 
             if (choice == 1) {description = MainMenu.reader.readLine();
-                Resources.traditions = (ArrayList<Tradition>)Add.newTradition(holiday, country, description, Resources.traditions);
+                Resources.traditions = (ArrayList<Tradition>)Add.addTradition(holiday, country, description, Resources.traditions);
                 MainMenu.out.println(Resources.language.getREADY());
                 PrintHandler.showMenu();}
             else if (choice == 2) {
-                Resources.traditions = (ArrayList<Tradition>)Add.newTradition(holiday, country, Resources.traditions);
+                Resources.traditions = (ArrayList<Tradition>)Add.addTradition(holiday, country, Resources.traditions);
                 MainMenu.out.println(Resources.language.getREADY());
                 PrintHandler.showMenu();}
             else MainMenu.out.println(Resources.language.getWRONG_CHOICE());

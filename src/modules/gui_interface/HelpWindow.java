@@ -14,9 +14,10 @@ public class HelpWindow extends JFrame {
     {
         this.setTitle(Resources.language.getHELP());
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.setBounds(400, 100, 400, 600);
+        this.setBounds(400, 100, 500, 600);
         this.setResizable(true);
         initComponents(path);
+        setMinimumSize(new Dimension(500,600));
     }
 
     public static void main(final String path) {

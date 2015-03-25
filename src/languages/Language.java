@@ -129,4 +129,27 @@ public interface Language {
     public String getCONSOLE_CHOICE();
 
     public String getADMIN_MAIN_MENU();
+    public String getPASS();
+    public String getPASS_EXCEPTION();
+    public String getLOGIN_EXCEPTION();
+    public String getLOGIN_OR_PASS_EXCEPTION();
+
+    public String getHELLO_USER();
+
+    public String getENTER_MESSAGE();
+    public String getFILES_BUILD_ERROR();
+
+    public String getXML_ERROR();
+
+    public String getCLASS_NOT_FOUND_ERROR();
+
+    public String getNOT_UNIQUE();
+    public String getPRINT_SHORT_MENU();
+    public String getSHOW_USER_MENU();
+    public String getGUEST_TRADITION_MENU();
+
+    public String getDATE();
+    public String getCREATE_TITLE();
+    public String getNOT_FILLED();
+
 }

@@ -1,5 +1,6 @@
 package modules.user_interface;
 
+import languages.Language;
 import languages.Strings_EN;
 import languages.Strings_RU;
 //import main.MainClass;
@@ -40,16 +41,7 @@ public class MainMenu {
         int N = 1024;
 
         UserHandler.rsa.init(N);
-        //User user = new User(login, pass1);
-        String login = "user";
-        String pass1 = "12345";
-        BigInteger pass = new BigInteger(pass1.getBytes());
-        User user = new User(login, pass, UserHandler.rsa.getPublicKey(),
-                UserHandler.rsa.getModulus());
-        //passwords.add(pass);
-        //user.setCount();
-        UserHandler.users.add(user);
-        UserHandler.logins.add(login);
+
         int choice = 0;
         while (true) {
             out.println(Resources.language.getSTART_CHOICE());
@@ -101,6 +93,9 @@ public class MainMenu {
                     else help("./resources/help_ru.txt");
                     break;
                 case 5:
+
+                    break;
+                case 6:
                     exit();
                     break;
                 default:

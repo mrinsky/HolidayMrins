@@ -22,7 +22,8 @@ public class RemoveHandler {
             MainMenu.out.println(Resources.language.getIO_ERROR());
         }
         catch (IndexOutOfBoundsException e) {
-            Resources.language.getWRONG_CHOICE();
+            MainMenu.out.println(Resources.language.getWRONG_CHOICE());
+            holidayRemover();
         }
     }
 
@@ -40,7 +41,7 @@ public class RemoveHandler {
         } catch (IOException e) {
             MainMenu.out.println(Resources.language.getIO_ERROR());
         } catch (IndexOutOfBoundsException e) {
-            Resources.language.getWRONG_CHOICE();
+            MainMenu.out.println(Resources.language.getWRONG_CHOICE());
             countryRemover();
         }
     }

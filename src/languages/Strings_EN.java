@@ -69,8 +69,27 @@ public class Strings_EN implements Language {
         private final String HELP = "Help";
         private final String READ = "Read a help file";
         private final String CHANGE = "Change";
+        private final String ENTER_PASS = "Enter pass:";
+        private final String PASS_EXCEPTION = "Passwords not match";
+        private final String LOGIN_EXCEPTION = "User with same name already exists";
+        private final String LOGIN_OR_PASS_EXCEPTION = "Incorrect username and (or) password!";
+        private final String HELLO_USER = "Welcome, ";
+        private final String ENTER_MESSAGE = "Enter:\n1 - Authorization\n2 - Registration\n3 - Guest session\n4 - Exit";
+        private final String FILES_BUILD_ERROR = "User files not build";
+        private final String XML_ERROR = "Xml file working error";
+        private final String CLASS_NOT_FOUND_ERROR = "Error of load class";
+        private final String NOT_UNIQUE = "Object already exists";
+        private final String PRINT_SHORT_MENU = "1 - look its traditions\n2 - back";
+        private final String SHOW_USER_MENU = "What to show?\n1 - holidays today\n2 - holidays by date\n3 - holidays by type\n4 - holidays by country\n5 - show all holidays\n6 - show all countries\n7 - show own holidays\n8 - back to main menu";
+        private final String GUEST_TRADITION_MENU = "1 - read the description\n2 - back";
+        private final String DATE = "Date";
+        private final String CREATE_TITLE = "Create event";
+        private final String NOT_FILLED = "Not all fields are filled!";
 
-        public String getCHANGE() {
+
+
+
+    public String getCHANGE() {
             return CHANGE;
         }
 
@@ -335,4 +354,67 @@ public class Strings_EN implements Language {
         public String getTRADITION_MENU() {
             return TRADITION_MENU;
         }
+        public String getPASS(){
+        return ENTER_PASS;
     }
+        public String getPASS_EXCEPTION(){
+        return PASS_EXCEPTION;
+    }
+    public String getLOGIN_EXCEPTION(){
+        return LOGIN_EXCEPTION;
+    }
+
+    public String getLOGIN_OR_PASS_EXCEPTION(){
+        return LOGIN_OR_PASS_EXCEPTION;
+    }
+
+    public String getHELLO_USER(){
+        return HELLO_USER;
+    }
+
+    public String getENTER_MESSAGE(){
+        return ENTER_MESSAGE;
+    }
+    public String getFILES_BUILD_ERROR(){
+        return FILES_BUILD_ERROR;
+    }
+
+    public String getXML_ERROR(){
+        return XML_ERROR;
+    }
+
+    public String getCLASS_NOT_FOUND_ERROR(){
+        return CLASS_NOT_FOUND_ERROR;
+    }
+
+    public String getNOT_UNIQUE(){
+        return NOT_UNIQUE;
+    }
+    public String getPRINT_SHORT_MENU(){
+        return PRINT_SHORT_MENU;
+    }
+    public String getSHOW_USER_MENU(){
+        return SHOW_USER_MENU;
+    }
+    public String getGUEST_TRADITION_MENU(){
+        return GUEST_TRADITION_MENU;
+    }
+
+
+    public String getNOT_FILLED() {
+        return NOT_FILLED;
+    }
+
+    public String getCREATE_TITLE() {
+        return CREATE_TITLE;
+    }
+
+    public String getDATE() {
+        return DATE;
+    }
+
+
+
+
+
+}

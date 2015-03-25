@@ -53,7 +53,7 @@ public class RSA {
         publicKey  = new BigInteger("65537");     // common value in practice = 2^16 + 1
     }
 
-    BigInteger encrypt(BigInteger message) {
+    public BigInteger encrypt(BigInteger message) {
         return message.modPow(publicKey, modulus);
     }
 
