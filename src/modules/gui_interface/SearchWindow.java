@@ -1,3 +1,4 @@
+/*
 
 package modules.gui_interface;
 
@@ -230,3 +231,4 @@ public class SearchWindow extends JFrame {
 
     }
 }
+*/
