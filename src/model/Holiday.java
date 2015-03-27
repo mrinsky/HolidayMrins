@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/*********************
+ * Holiday
+ *********************/
+
 public class Holiday implements Serializable {
     private String name;
     private Date startDate;
