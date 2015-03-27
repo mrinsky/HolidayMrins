@@ -155,22 +155,22 @@ public class XmlFileWorking implements DataSaveLoad {
             direct = XML_HOLIDAY_DEFAULT_RU;
         }
         if (validationXSD(direct, HOLIDAY_XSD) == false) {throw new SAXException();}
-            Document document = builder.build(direct);
-            Element root = document.getRootElement();
-            List holidayElem = root.getChildren();
-            Iterator holidayIterator = holidayElem.iterator();
-            while (holidayIterator.hasNext()) {
-                Element holidayElement = (Element) holidayIterator.next();
-                Holiday holiday = new Holiday();
-                holiday.setName(holidayElement.getChild("holidayName").getText());
-                holiday.setStartDate(Holiday.dateFormat.parse(holidayElement.getChild("holidayStartDate").getText()));
-                // holiday.setEndDate(Holiday.dateFormat.parse(holidayElement.getChild("holidayEndDate").getText()));
-                holiday.setType(HolidayType.valueOf(holidayElement.getChild("holidayType").getText()));
-                holidays.add(holiday);
-            }
-
-            return holidays;
+        Document document = builder.build(direct);
+        Element root = document.getRootElement();
+        List holidayElem = root.getChildren();
+        Iterator holidayIterator = holidayElem.iterator();
+        while (holidayIterator.hasNext()) {
+            Element holidayElement = (Element) holidayIterator.next();
+            Holiday holiday = new Holiday();
+            holiday.setName(holidayElement.getChild("holidayName").getText());
+            holiday.setStartDate(Holiday.dateFormat.parse(holidayElement.getChild("holidayStartDate").getText()));
+            // holiday.setEndDate(Holiday.dateFormat.parse(holidayElement.getChild("holidayEndDate").getText()));
+            holiday.setType(HolidayType.valueOf(holidayElement.getChild("holidayType").getText()));
+            holidays.add(holiday);
         }
+
+        return holidays;
+    }
 
     @Override
     public void saveCountry(LinkedList<Country> countries, String direct) throws IOException {
@@ -259,7 +259,7 @@ public class XmlFileWorking implements DataSaveLoad {
         Resources.holidays = xmlSaveLoad.loadHoliday(XML_HOLIDAY_PATCH_EN);
         Resources.countries = xmlSaveLoad.loadCountry(XML_COUNTRY_PATCH_EN);
         Resources.traditions = xmlSaveLoad.loadTradition(XML_TRADITION_PATCH_EN);
-      //  loadUsers("resources/userList/user.xml");
+        UserHandler.users = loadUsers(XML_USERS);
     }
 
     @Override
@@ -267,14 +267,14 @@ public class XmlFileWorking implements DataSaveLoad {
         Resources.holidays = xmlSaveLoad.loadHoliday(XML_HOLIDAY_PATCH_RU);
         Resources.countries = xmlSaveLoad.loadCountry(XML_COUNTRY_PATCH_RU);
         Resources.traditions = xmlSaveLoad.loadTradition(XML_TRADITION_PATCH_RU);
-        //loadUsers("resources/userList/user.xml");
+        UserHandler.users = loadUsers(XML_USERS);
     }
 
     @Override
     public void saveAllEN() throws IOException {
         xmlSaveLoad.saveHolidays(Resources.holidays, XML_HOLIDAY_PATCH_EN);
         xmlSaveLoad.saveCountry(Resources.countries, XML_COUNTRY_PATCH_EN);
-        xmlSaveLoad.saveTradition(Resources.traditions, XML_TRADITION_PATCH_EN);
+        saveUsers(UserHandler.users, XML_USERS);
     }
 
     @Override
@@ -282,21 +282,20 @@ public class XmlFileWorking implements DataSaveLoad {
         xmlSaveLoad.saveHolidays(Resources.holidays, XML_HOLIDAY_PATCH_RU);
         xmlSaveLoad.saveCountry(Resources.countries, XML_COUNTRY_PATCH_RU);
         xmlSaveLoad.saveTradition(Resources.traditions, XML_TRADITION_PATCH_RU);
-        saveUsers(UserHandler.users,"resources/userList/user.xml");
-
+        saveUsers(UserHandler.users, XML_USERS);
     }
 
     public boolean validationXSD(String directXML,String directXSD) throws SAXException, IOException {
-try {
+        try {
 
 
-    SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-    Schema schema = factory.newSchema(new StreamSource(directXSD));
-    Validator validator = schema.newValidator();
-    validator.validate(new StreamSource(directXML));
-    return true;
+            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+            Schema schema = factory.newSchema(new StreamSource(directXSD));
+            Validator validator = schema.newValidator();
+            validator.validate(new StreamSource(directXML));
+            return true;
 
-} catch (SAXException ex){return false;}
+        } catch (SAXException ex){return false;}
     }
 }
 

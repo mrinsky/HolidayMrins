@@ -1,6 +1,7 @@
 package modules.user_interface;
 
 import languages.Strings_EN;
+import main.MainClass;
 import main.Resources;
 import model.*;
 //import modules.functional.DataSaveLoad;

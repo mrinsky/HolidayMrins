@@ -10,7 +10,8 @@ public class Strings_RU implements Language {
     private final String LOGIN = "Логин:";
     private final String CONSOLE_CHOICE = "Запуск:\n1 - через консоль\n2 - в новом окне\n3 - выйти";
     public final String START_CHOICE = "Выберите язык:\n1-RU\n2-EN\n3-выход";
-    private final String MAIN_MENU = "Добро пожаловать в библиотеку праздников! Нажмите 4, чтобы вызвать справку\n1 - добавить\n2 - поиск\n3 - показать\n4 - справка\n5 - сменить язык\n6 - выход";
+    private final String MAIN_MENU = "Добро пожаловать в библиотеку праздников! Нажмите 4, чтобы вызвать справку\n1 - добавить\n2 - поиск\n3 - показать\n4 - справка\n5 - сменить язык\n6 - выйти из профиля\n7 - выход";
+    private final String GUEST_MAIN_MENU = "Добро пожаловать в библиотеку праздников! Нажмите 4, чтобы вызвать справку\n1 - поиск\n2 - показать\n3 - справка\n4 - сменить язык\n5 - выход";
     private final String WRONG_CHOICE = "Неправильный выбор";
     private final String ADD_MENU = "Что добавить?\n1 - новую традицию\n2 - в главное меню";
     private final String IO_ERROR = "Произошла ошибка чтения-записи";
@@ -482,6 +483,9 @@ public class Strings_RU implements Language {
         return DATE;
     }
 
+    public String getGUEST_MAIN_MENU(){
+        return GUEST_MAIN_MENU;
+    }
 
 
 

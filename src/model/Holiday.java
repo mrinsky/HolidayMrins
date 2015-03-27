@@ -86,7 +86,7 @@ public class Holiday implements Serializable {
 
         Holiday holiday = (Holiday) o;
 
-        if (!endDate.equals(holiday.endDate)) return false;
+        //if (!endDate.equals(holiday.endDate)) return false;
         if (!name.equals(holiday.name)) return false;
         if (!startDate.equals(holiday.startDate)) return false;
         if (type != holiday.type) return false;

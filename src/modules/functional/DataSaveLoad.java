@@ -32,6 +32,8 @@ public  interface DataSaveLoad {
     public final static String XML_HOLIDAY_PATCH_EN = "resources/holidaySave_en.xml";
     public final static String XML_COUNTRY_PATCH_EN = "resources/countrySave_en.xml";
 
+    public final static String XML_USERS = "resources/userList/user.xml";
+
     public final static String HOLIDAY_PATCH_EN = "resources/holidays_en.bin";
     public final static String COUNTRY_PATCH_EN = "resources/country_en.bin";
     public final static String TRADITION_PATCH_EN = "resources/tradition_en.bin";

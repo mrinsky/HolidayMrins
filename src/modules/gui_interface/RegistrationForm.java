@@ -154,6 +154,6 @@ public class RegistrationForm extends JFrame{
 
     }
     public void registration(){
-        UserHandler.registration(loginTF.toString(), onePassTF.getText(), twoPassTF.getText());
+        UserHandler.registration(loginTF.getText(), onePassTF.getText(), twoPassTF.getText());
     }
 }

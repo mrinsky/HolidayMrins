@@ -1,65 +1,50 @@
 package modules.user_interface;
-
-import languages.Language;
 import languages.Strings_EN;
 import languages.Strings_RU;
-//import main.MainClass;
 import main.Resources;
-import model.*;
 import modules.functional.DataSaveLoad;
-//import modules.functional.Remove;
-//import modules.functional.SerFileWorking;
 import modules.functional.XmlFileWorking;
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
-
 import java.io.*;
-import java.math.BigInteger;
 import java.text.ParseException;
-//import java.util.ArrayList;
-//import java.util.LinkedList;
-// import java.util.List;
 
 public class MainMenu {
-
     protected static PrintWriter out = new PrintWriter(System.out, true);
     protected static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     protected static DataSaveLoad xmlFiles = new XmlFileWorking();
-    //protected static DataSaveLoad serFiles = new SerFileWorking();
-    //public static int traditionCount = 0;
-    //public static int countryCount = 0;
-    //public static int holidayCount = 0;
-    //private static RSA rsa = new RSA();
-    //private static User currentUser;
 
-    //region Completed
     public static void init() {
         chooseLocale();
     }
-
     private static void chooseLocale() {
         int N = 1024;
-
         UserHandler.rsa.init(N);
-
-        int choice = 0;
+        int choice;
         while (true) {
             out.println(Resources.language.getSTART_CHOICE());
             try {
                 choice = Integer.parseInt(reader.readLine());
-
                 switch (choice) {
                     case 1:
                         Resources.language = new Strings_RU();
                         readArrays();
-                        UserHandler.logIn();
-                        //mainMenu();
+                        if (UserHandler.currentUser == null) {
+                            UserHandler.logIn();
+                        }
+                        else{
+                            mainMenu();
+                        }
                         break;
                     case 2:
                         Resources.language = new Strings_EN();
                         readArrays();
-                        UserHandler.logIn();
-                        //mainMenu();
+                        if (UserHandler.currentUser == null) {
+                            UserHandler.logIn();
+                        }
+                        else{
+                            mainMenu();
+                        }
                         break;
                     default:
                         out.println(Resources.language.getWRONG_CHOICE());
@@ -71,31 +56,63 @@ public class MainMenu {
             }
         }
     }
-
     protected static void mainMenu() {
-        out.println(Resources.language.getMAIN_MENU());
-        int choice = 0;
+        if (UserHandler.currentUser != null){
+            out.println(Resources.language.getMAIN_MENU());
+        }
+        else{
+            out.println(Resources.language.getGUEST_MAIN_MENU());
+        }
+        int choice;
+        boolean guest_flag = false;
         try {
             choice = Integer.parseInt(reader.readLine());
-
             switch (choice) {
                 case 1:
-                    AddHandler.addMenu();
-                    break;
+                    if (UserHandler.currentUser != null){
+                        AddHandler.addMenu();
+                        break;
+                    }
+                    else{
+                        guest_flag = true;
+                }
                 case 2:
-                    SearchHandler.searchMenu();
-                    break;
+                    if (UserHandler.currentUser != null || guest_flag) {
+                        SearchHandler.searchMenu();
+                        break;
+                    }
+                    else{
+                        guest_flag = true;
+                    }
                 case 3:
-                    PrintHandler.showMenu();
-                    break;
+                    if (UserHandler.currentUser != null || guest_flag) {
+                        PrintHandler.showMenu();
+                        break;
+                    }
+                    else{
+                        guest_flag = true;
+                    }
                 case 4:
-                    if (Resources.language.getClass() == Strings_EN.class) help("./resources/help_en.txt");
-                    else help("./resources/help_ru.txt");
-                    break;
+                    if (UserHandler.currentUser != null || guest_flag) {
+                        if (Resources.language.getClass() == Strings_EN.class) help("./resources/help_en.txt");
+                        else help("./resources/help_ru.txt");
+                        break;
+                    }
+                    else {
+                        guest_flag = true;
+                    }
                 case 5:
-
-                    break;
-                case 6:
+                    if (UserHandler.currentUser != null || guest_flag) {
+                        chooseLocale();
+                        break;
+                    }
+                case  6:
+                    if (UserHandler.currentUser != null){
+                        UserHandler.logOut();
+                        UserHandler.logIn();
+                        break;
+                    }
+                case 7:
                     exit();
                     break;
                 default:
@@ -111,14 +128,11 @@ public class MainMenu {
             mainMenu();
         }
     }
-
     private static void help(String path) {
-
         File helpFile = new File(path);
         try {
             BufferedReader fileReader = new BufferedReader(new FileReader(helpFile));
             while (fileReader.ready()) out.println(fileReader.readLine());
-
             out.println(Resources.language.getHELP_MENU());
             int choice = Integer.parseInt(reader.readLine());
             switch (choice) {
@@ -143,50 +157,40 @@ public class MainMenu {
             mainMenu();
         }
     }
-
     protected static void exit() { //Куча Исключений, нужны try и catch
         try {
-            //UserHandler.logOut(UserHandler.currentUser);
+            if (UserHandler.currentUser != null){
+                UserHandler.logOut();
+            }
             writeArrays();
-
             reader.close();
             out.close();
             System.exit(0);
-        } catch (IOException e) {  // прописать сюда ошибкииииииии
-
+        } catch (IOException e) { // прописать сюда ошибкииииииии
         } catch (JDOMException e) {
-
         } catch (ParseException e) {
-
         } catch (ClassNotFoundException e) {
-
         }
     }
-
     private static void readArrays() throws IOException {
         try {
             if (Resources.language.getClass() == Strings_EN.class) xmlFiles.loadAllEN();
             else xmlFiles.loadAllRU();
-
         } catch (ClassNotFoundException ex) {
             MainMenu.out.println(Resources.language.getNO_CLASS());
-        } catch (JDOMException e) {  //подписать сюда какие нибудь ошибки
-
+        } catch (JDOMException e) { //подписать сюда какие нибудь ошибки
         } catch (ParseException e) {// И СЮДААААААААА
-
         } catch (SAXException e) {
-                    }
-    }
-
-    private static void writeArrays() throws IOException, JDOMException, ParseException, ClassNotFoundException {
-
-        if (Resources.language.getClass() == Strings_EN.class) {
-            xmlFiles.saveAllEN();
-           // serFiles.saveAllEN();
-        } else {
-            xmlFiles.saveAllRU();
-         //   serFiles.saveAllRU();
         }
     }
-    //endregion
+    private static void writeArrays() throws IOException, JDOMException, ParseException, ClassNotFoundException {
+        if (Resources.language.getClass() == Strings_EN.class) {
+            xmlFiles.saveAllEN();
+// serFiles.saveAllEN();
+        } else {
+            xmlFiles.saveAllRU();
+// serFiles.saveAllRU();
+        }
+    }
+//endregion
 }
