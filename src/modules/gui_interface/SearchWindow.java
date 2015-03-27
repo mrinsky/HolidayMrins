@@ -11,8 +11,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-*
- * Created by root on 22.03.15.
+
+  Created by root on 22.03.15.
 
 
 public class SearchWindow extends JFrame {
