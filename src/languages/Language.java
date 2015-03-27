@@ -152,5 +152,11 @@ public interface Language {
     public String getCREATE_TITLE();
     public String getNOT_FILLED();
     public String getSEARCH_MENU_BAR();
+    public String getGUEST();
+    public String getLANGUAGE();
+    public String getNO_ACCOUNT();
+    public String getCREATE_ACCOUNT();
+
+    public String getENTER_PASS();
 
 }

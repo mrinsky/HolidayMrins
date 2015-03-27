@@ -17,13 +17,6 @@ public class MainWindow extends JFrame {
 
     private JMenu editMenu;
     private JMenuItem addMenu;
-    private JMenu searchMenu;
-    private JMenuItem substringSearch;
-    private JMenuItem showAll;
-    private JMenuItem allEvent;
-    private JMenuItem allHoliday;
-    private JMenuItem allCountry;
-    //private JMenuItem regularSearch;
 
     private JMenuItem removeThis;
     private JMenuItem removeAllMarked;
@@ -38,17 +31,20 @@ public class MainWindow extends JFrame {
     private String[] columnNamesEN = {"HOLIDAY", "COUNTRY", "DATE", "TYPE", "CHOOSE"};
     private String[] columnNamesRU = {"ПРАЗДНИК","СТРАНА","ДАТА","ТИП","ВЫБРАТЬ"};
 
-    public MainWindow() {
+    private boolean isGuestMode = false;
+
+    public MainWindow(boolean isGuestMode) {
+        this.isGuestMode = isGuestMode;
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setBounds(200, 200, 600, 400);
         this.setResizable(false);
         initComponents();
     }
 
-    public static void main() {
+    public static void main(final boolean check) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainWindow().setVisible(true);
+                new MainWindow(check).setVisible(true);
             }
         });
     }
@@ -59,22 +55,16 @@ public class MainWindow extends JFrame {
         initTable();
     }
 
-
     private void initMenuBar() {
         mainMenu = new JMenuBar();
         initEditMenu();
-        initSearchMenu();
         initStyleMenu();
         initHelpMenu();
 
-
         mainMenu.add(Box.createHorizontalGlue());
-       // initLabelShowAll();
         initSearchField();
-
         setJMenuBar(mainMenu);
     }
-
 
     private void initStyleMenu() {
         styleMenu = new JMenu(Resources.language.getSTYLE_MENU());
@@ -90,15 +80,9 @@ public class MainWindow extends JFrame {
     private void initEditMenu() {
         editMenu = new JMenu(Resources.language.getEDIT_MENU());
         initAddMenu();
-        initSearchMenu();
+        //initSearchMenu();
         initRemoveMenu();
         mainMenu.add(editMenu);
-    }
-
-    private void initSearchMenu() {
-        searchMenu = new JMenu(Resources.language.getSEARCH_MENU_BAR());
-        mainMenu.add(searchMenu);
-
     }
 
     private void initAddMenu() {
@@ -113,16 +97,19 @@ public class MainWindow extends JFrame {
         });
 
         editMenu.add(addMenu);
+        if (isGuestMode) addMenu.setEnabled(false);
+
     }
-
-
 
     private void initRemoveMenu() {
         removeThis = new JMenuItem(Resources.language.getREMOVE());
         removeAllMarked = new JMenuItem(Resources.language.getREMOVE_MARKED());
         editMenu.add(removeThis);
         editMenu.add(removeAllMarked);
-
+        if (isGuestMode) {
+            removeAllMarked.setEnabled(false);
+            removeThis.setEnabled(false);
+        }
         removeAllMarked.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {

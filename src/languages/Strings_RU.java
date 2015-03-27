@@ -2,8 +2,12 @@ package languages;
 
 public class Strings_RU implements Language {
 
-    private final String PASSWORD = "Введите пароль:";
-    private final String LOGIN = "Введите логин:";
+    private final String GUEST = "Гость";
+    private final String LANGUAGE = "Язык:";
+    private final String NO_ACCOUNT = "Нет учетной записи? ";
+    private final String CREATE_ACCOUNT = "Зарегистрируйся!";
+    private final String PASSWORD = "Пароль:";
+    private final String LOGIN = "Логин:";
     private final String CONSOLE_CHOICE = "Запуск:\n1 - через консоль\n2 - в новом окне\n3 - выйти";
     public final String START_CHOICE = "Выберите язык:\n1-RU\n2-EN\n3-выход";
     private final String MAIN_MENU = "Добро пожаловать в библиотеку праздников! Нажмите 4, чтобы вызвать справку\n1 - добавить\n2 - поиск\n3 - показать\n4 - справка\n5 - сменить язык\n6 - выход";
@@ -68,7 +72,7 @@ public class Strings_RU implements Language {
     private final String ENTER_PASS = "Введите пароль:";
     private final String PASS_EXCEPTION = "Пароль не совпадает";
     private final String LOGIN_EXCEPTION = "Пользователь с таким именем уже существует";
-    private final String LOGIN_OR_PASS_EXCEPTION = "Неправильные логин и(или) пароль!";
+    private final String LOGIN_OR_PASS_EXCEPTION = "Неправильный логин или пароль!";
     private final String HELLO_USER = "Приветствую вас, ";
     private final String ENTER_MESSAGE = "Вход:\n1 - Авторизация\n2 - Регистрация\n3 - Гостевой режим\n4 - Выход";
     private final String FILES_BUILD_ERROR = "Файлы пользователя не созданы!";
@@ -95,6 +99,26 @@ public class Strings_RU implements Language {
     @Override
     public String getSEARCH_MENU_BAR() {
         return SEARCH_MENU_BAR;
+    }
+
+    public String getGUEST() {
+        return GUEST;
+    }
+
+    public String getLANGUAGE() {
+        return LANGUAGE;
+    }
+
+    public String getNO_ACCOUNT() {
+        return NO_ACCOUNT;
+    }
+
+    public String getCREATE_ACCOUNT() {
+        return CREATE_ACCOUNT;
+    }
+
+    public String getENTER_PASS() {
+        return ENTER_PASS;
     }
 
     public String getSHOW_ALL() {
