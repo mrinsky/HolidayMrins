@@ -5,8 +5,8 @@ package languages;
  */
 public class Strings_EN implements Language {
 
-    private final String PASSWORD = "Enter the password:";
-    private final String LOGIN = "Enter login:";
+        private final String PASSWORD = "Enter the password:";
+        private final String LOGIN = "Enter login:";
         private final String CONSOLE_CHOICE = "How to start?\n1 - console\n2 - new form\n3 - exit";
         public final String START_CHOICE = "Choose your language:\n1 - RU\n2 - EN\n3 - exit";
         private final String MAIN_MENU = "Welcome to holiday library! Press 4 to read a HELP file\n1 - add\n2 - search\n3 - show\n4 - help\n5 - change language\n6 - exit";
@@ -85,6 +85,40 @@ public class Strings_EN implements Language {
         private final String DATE = "Date";
         private final String CREATE_TITLE = "Create event";
         private final String NOT_FILLED = "Not all fields are filled!";
+        private final String ADVANCED_SEARCH = "advanced search";
+        private final String SEARCH_MENU_BAR = "Search";
+        private final String SHOW_ALL = "Show all";
+        private final String ALL_EVENT = "all event";
+        private final String ALL_HOLIDAY = "all holiday";
+        private final String ALL_COUNTRY = "all country";
+
+    public String getALL_EVENT() {
+        return ALL_EVENT;
+    }
+
+    public String getSHOW_ALL() {
+        return SHOW_ALL;
+    }
+
+    public String getALL_HOLIDAY() {
+        return ALL_HOLIDAY;
+    }
+
+    public String getALL_COUNTRY() {
+        return ALL_COUNTRY;
+    }
+
+    public String getSEARCH_MENU_BAR() {
+        return SEARCH_MENU_BAR;
+    }
+
+
+
+    public String getADVANCED_SEARCH() {
+        return ADVANCED_SEARCH;
+    }
+
+
 
 
 

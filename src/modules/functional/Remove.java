@@ -25,7 +25,7 @@ public class Remove {
         }
     }
 
-    public static void removeListHolidy(List<Holiday> holidayList){
+    public static void removeListHoliday(List<Holiday> holidayList){
         if (holidayList != null){
             for(Holiday item : holidayList) {
                 Resources.holidays.remove(item);
@@ -48,19 +48,4 @@ public class Remove {
         removeListTradition(Search.getTraditions(h_list.get(holiday)));
         h_list.remove(holiday);
     }
-
-
-
-    // public static void remove(Tradition tradition) {
-    //int indexHoliday = Add.searchIndex(tradition.getHoliday(), MainClass.holidays);
-    //int indexCountry = Add.searchIndex(tradition.getCountry(), MainClass.countries);
-    // ArrayList<Tradition> holidayTraditions = Search.getTraditions(tradition.getHoliday());
-    //ArrayList<Tradition> countryTraditions = Search.getCountryTraditions(indexCountry);
-    // if (holidayTraditions.size() == 1) {
-    //MainClass.holidays.remove(indexHoliday);
-    //}
-    //if (countryTraditions.size() == 1) {
-    //MainClass.countries.remove(indexCountry);
-    //}
-    //}
 }
