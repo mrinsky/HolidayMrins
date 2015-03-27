@@ -151,5 +151,6 @@ public interface Language {
     public String getDATE();
     public String getCREATE_TITLE();
     public String getNOT_FILLED();
+    public String getSEARCH_MENU_BAR();
 
 }

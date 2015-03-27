@@ -1,7 +1,6 @@
 package modules.user_interface;
 
 import languages.Strings_EN;
-import main.MainClass;
 import main.Resources;
 import model.*;
 //import modules.functional.DataSaveLoad;
@@ -179,7 +178,7 @@ public class UserHandler {
             holidays.add(Resources.holidays.get(i));
         }
         currentUser.setHolidayList(holidays);
-        Remove.removeListHolidy(holidays);
+        Remove.removeListHoliday(holidays);
         if (Resources.language.getClass() == Strings_EN.class) {
             currentUser.saveAllEN();
         }

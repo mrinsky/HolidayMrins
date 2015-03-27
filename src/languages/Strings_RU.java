@@ -81,11 +81,37 @@ public class Strings_RU implements Language {
     private final String DATE = "Дата";
     private final String CREATE_TITLE = "Создать событие";
     private final String NOT_FILLED = "Заполнены не все поля!";
+    private final String ADVANCED_SEARCH = "расширенный поиск";
+    private final String SEARCH_MENU_BAR = "Поиск";
+    private final String SHOW_ALL = "Показать все";
+    private final String ALL_EVENT = "события";
+    private final String ALL_HOLIDAY = "праздники";
+    private final String ALL_COUNTRY = "страны";
 
+    public String getADVANCED_SEARCH() {
+        return ADVANCED_SEARCH;
+    }
 
+    @Override
+    public String getSEARCH_MENU_BAR() {
+        return SEARCH_MENU_BAR;
+    }
 
+    public String getSHOW_ALL() {
+        return SHOW_ALL;
+    }
 
+    public String getALL_EVENT() {
+        return ALL_EVENT;
+    }
 
+    public String getALL_HOLIDAY() {
+        return ALL_HOLIDAY;
+    }
+
+    public String getALL_COUNTRY() {
+        return ALL_COUNTRY;
+    }
 
     public String getCHANGE() {
         return CHANGE;

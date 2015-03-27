@@ -17,9 +17,13 @@ public class MainWindow extends JFrame {
 
     private JMenu editMenu;
     private JMenuItem addMenu;
+    private JMenu searchMenu;
     private JMenuItem substringSearch;
-    private JMenuItem maskSearch;
-    private JMenuItem regularSearch;
+    private JMenuItem showAll;
+    private JMenuItem allEvent;
+    private JMenuItem allHoliday;
+    private JMenuItem allCountry;
+    //private JMenuItem regularSearch;
 
     private JMenuItem removeThis;
     private JMenuItem removeAllMarked;
@@ -55,16 +59,22 @@ public class MainWindow extends JFrame {
         initTable();
     }
 
+
     private void initMenuBar() {
         mainMenu = new JMenuBar();
         initEditMenu();
+        initSearchMenu();
         initStyleMenu();
         initHelpMenu();
 
+
         mainMenu.add(Box.createHorizontalGlue());
+       // initLabelShowAll();
         initSearchField();
+
         setJMenuBar(mainMenu);
     }
+
 
     private void initStyleMenu() {
         styleMenu = new JMenu(Resources.language.getSTYLE_MENU());
@@ -80,9 +90,15 @@ public class MainWindow extends JFrame {
     private void initEditMenu() {
         editMenu = new JMenu(Resources.language.getEDIT_MENU());
         initAddMenu();
-        //initSearchMenu();
+        initSearchMenu();
         initRemoveMenu();
         mainMenu.add(editMenu);
+    }
+
+    private void initSearchMenu() {
+        searchMenu = new JMenu(Resources.language.getSEARCH_MENU_BAR());
+        mainMenu.add(searchMenu);
+
     }
 
     private void initAddMenu() {
@@ -99,17 +115,7 @@ public class MainWindow extends JFrame {
         editMenu.add(addMenu);
     }
 
-    private void initSearchMenu() {
-        ButtonGroup buttons = new ButtonGroup();
 
-        substringSearch = new JRadioButtonMenuItem(Resources.language.getSUBSTRING());
-        maskSearch = new JRadioButtonMenuItem(Resources.language.getMASK());
-        regularSearch = new JRadioButtonMenuItem(Resources.language.getREGULAR());
-
-        buttons.add(substringSearch);
-        buttons.add(maskSearch);
-        buttons.add(regularSearch);
-    }
 
     private void initRemoveMenu() {
         removeThis = new JMenuItem(Resources.language.getREMOVE());
