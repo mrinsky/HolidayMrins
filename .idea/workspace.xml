@@ -2,7 +2,149 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0ea9ddb-8a5d-46e1-ac76-8c0e87aded6f" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\NewProject.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\holiday.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\holiday_llibrary.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\holidays-mrinsky-patch.iml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdatepicker-1.3.4.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\README.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\jdom-2.0.6-contrib.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\jdom-2.0.6-javadoc.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\jdom-2.0.6-junit.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\jdom-2.0.6-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\jdom-2.0.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\jaxen-1.1.6.LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\jaxen-1.1.6.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\xalan\serializer-2.7.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\xalan\xalan-2.7.2.LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\xalan\xalan-2.7.2.NOTICE" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\xalan\xalan-2.7.2.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\xerces.2.11.LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\xerces.2.11.NOTICE" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\xercesImpl.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\jdom-2.0.6\lib\xml-apis.jar" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\META-INF\Manifest.mf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\languages\Language.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\languages\Strings_EN.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\languages\Strings_RU.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\main\MainClass.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\main\Resources.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\model\Country.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\model\Holiday.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\model\HolidayType.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\model\RSA.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\model\Tradition.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\model\User.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\functional\Add.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\functional\Change.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\functional\DataSaveLoad.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\functional\DateLabelFormatter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\functional\Remove.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\functional\Search.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\functional\SerFileWorking.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\functional\XmlFileWorking.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\AddWindow$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\AddWindow$ButtonListener.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\AddWindow$CountryListener.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\AddWindow$HolidayListener.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\AddWindow.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\HelpWindow$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\HelpWindow.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\LoginWindow$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\LoginWindow$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\LoginWindow$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\LoginWindow$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\LoginWindow$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\LoginWindow$6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\LoginWindow$7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\LoginWindow.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\MainWindow$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\MainWindow$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\MainWindow$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\MainWindow$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\MainWindow$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\MainWindow$styleListener.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\MainWindow.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\RegistrationForm$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\RegistrationForm$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\RegistrationForm$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\RegistrationForm$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\gui_interface\RegistrationForm.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\user_interface\AddHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\user_interface\ChangeHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\user_interface\MainMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\user_interface\PrintHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\user_interface\RemoveHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\user_interface\SearchHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\user_interface\TraditionHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\NewProject\modules\user_interface\UserHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\META-INF\Manifest.mf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\languages\Language.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\languages\Strings_EN.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\languages\Strings_RU.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\main\MainClass.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\model\Country.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\model\Holiday.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\model\HolidayType.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\model\RSA.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\model\Tradition.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\model\User.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\functional\Add.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\functional\Change.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\functional\DataSaveLoad.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\functional\FileWorking.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\functional\Remove.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\functional\Search.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\functional\SerFileWorking.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\functional\XmlFileWorking.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\user_interface\AddHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\user_interface\ChangeHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\user_interface\MainMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\user_interface\PrintHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\user_interface\RemoveHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\user_interface\SearchHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\user_interface\TraditionHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday\modules\user_interface\UserHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\META-INF\Manifest.mf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\languages\Language.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\languages\Strings_EN.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\languages\Strings_RU.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\main\MainClass.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\model\Country.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\model\Holiday.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\model\HolidayType.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\model\RSA.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\model\Tradition.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\model\User.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\functional\Add.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\functional\Change.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\functional\DataSaveLoad.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\functional\FileWorking.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\functional\Remove.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\functional\Search.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\functional\SerFileWorking.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\functional\XmlFileWorking.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\user_interface\AddHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\user_interface\ChangeHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\user_interface\MainMenu.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\user_interface\PrintHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\user_interface\RemoveHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\user_interface\SearchHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\user_interface\TraditionHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holiday_llibrary\modules\user_interface\UserHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holidays-mrinsky-patch\META-INF\Manifest.mf" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\1\Desktop\HolidayMrins\out\production\holidays-mrinsky-patch\modules\functional\SerFileWorking.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_6.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_62.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_62.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_63.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_63.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_64.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_64.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_66.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_66.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/lib4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lib4.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/xalan4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/xalan4.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/xalan5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/xalan5.xml" />
     </list>
     <ignored path="NewProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,100 +168,7 @@
     <favorites_list name="NewProject" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Strings_RU.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/languages/Strings_RU.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.7880435" vertical-offset="0" max-vertical-offset="5542">
-              <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
-              <folding>
-                <element signature="e#6512#6513#0" expanded="true" />
-                <element signature="e#6550#6551#0" expanded="true" />
-                <element signature="e#6582#6583#0" expanded="true" />
-                <element signature="e#6610#6611#0" expanded="true" />
-                <element signature="e#6645#6646#0" expanded="true" />
-                <element signature="e#6676#6677#0" expanded="true" />
-                <element signature="e#6713#6714#0" expanded="true" />
-                <element signature="e#6746#6747#0" expanded="true" />
-                <element signature="e#6787#6788#0" expanded="true" />
-                <element signature="e#6824#6825#0" expanded="true" />
-                <element signature="e#6861#6862#0" expanded="true" />
-                <element signature="e#6894#6895#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/gui_interface/LoginWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3043">
-              <caret line="151" column="47" selection-start-line="151" selection-start-column="47" selection-end-line="151" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="n#!!doc;n#loginTextField#0;n#LoginWindow#0" expanded="false" />
-                <element signature="method#main#0;class#LoginWindow#0" expanded="false" />
-                <element signature="e#1757#1775#0" expanded="false" />
-                <element signature="e#2023#2044#0" expanded="false" />
-                <element signature="e#4010#4033#0" expanded="false" />
-                <element signature="method#initLabels#0;class#LoginWindow#0" expanded="false" />
-                <element signature="class#8518:9435" expanded="false" />
-                <element signature="class#9483:10053" expanded="false" />
-                <element signature="class#10100:10670" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modules/user_interface/UserHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1462">
-              <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
-              <folding>
-                <element signature="method#authorizate#0;class#UserHandler#0" expanded="false" />
-                <element signature="method#checkLogin#0;class#UserHandler#0" expanded="false" />
-                <element signature="method#registration#0;class#UserHandler#0" expanded="false" />
-                <element signature="method#registration#1;class#UserHandler#0" expanded="false" />
-                <element signature="method#authorization#0;class#UserHandler#0" expanded="false" />
-                <element signature="method#logOut#0;class#UserHandler#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Language.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/languages/Language.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2232" max-vertical-offset="2856">
-              <caret line="154" column="29" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Strings_EN.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/languages/Strings_EN.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="5355">
-              <caret line="78" column="73" selection-start-line="78" selection-start-column="73" selection-end-line="78" selection-end-column="73" />
-              <folding>
-                <element signature="e#10025#10026#0" expanded="true" />
-                <element signature="e#10053#10054#0" expanded="true" />
-                <element signature="e#10104#10105#0" expanded="true" />
-                <element signature="e#10137#10138#0" expanded="true" />
-                <element signature="e#10192#10193#0" expanded="true" />
-                <element signature="e#10229#10230#0" expanded="true" />
-                <element signature="e#10278#10279#0" expanded="true" />
-                <element signature="e#10309#10310#0" expanded="true" />
-                <element signature="e#10360#10361#0" expanded="true" />
-                <element signature="e#10393#10394#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -189,7 +238,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -344,6 +392,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -602,7 +651,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37269938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37116563" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2193646" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -689,7 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +815,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.69451696" vertical-offset="402" max-vertical-offset="986">
           <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.2715405" vertical-offset="674" max-vertical-offset="1258">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36756757" vertical-offset="1071" max-vertical-offset="2601">
           <caret line="82" column="43" selection-start-line="82" selection-start-column="43" selection-end-line="82" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,10 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="697">
           <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding>
-            <element signature="e#531#532#0" expanded="false" />
-            <element signature="e#569#570#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="841" max-vertical-offset="1615">
           <caret line="82" column="37" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
           <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,10 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="387" max-vertical-offset="1156">
           <caret line="38" column="37" selection-start-line="38" selection-start-column="37" selection-end-line="38" selection-end-column="37" />
-          <folding>
-            <element signature="e#768#769#0" expanded="false" />
-            <element signature="e#803#804#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,7 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="836" max-vertical-offset="1258">
           <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1091" max-vertical-offset="1513">
           <caret line="87" column="1" selection-start-line="87" selection-start-column="1" selection-end-line="87" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2673" max-vertical-offset="3043">
           <caret line="177" column="27" selection-start-line="177" selection-start-column="27" selection-end-line="177" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,7 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
           <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -887,7 +918,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2214" max-vertical-offset="3145">
           <caret line="144" column="47" selection-start-line="144" selection-start-column="47" selection-end-line="144" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -895,7 +925,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1105">
           <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3162">
           <caret line="18" column="61" selection-start-line="18" selection-start-column="61" selection-end-line="18" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -911,7 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -919,9 +946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2814" max-vertical-offset="4675">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -929,7 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1819">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="404" max-vertical-offset="782">
           <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -993,7 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="247" max-vertical-offset="3264">
           <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1009,7 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7112971" vertical-offset="0" max-vertical-offset="5678">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,9 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#846#847#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1027,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="833">
           <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="4080">
           <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1043,18 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="549" max-vertical-offset="1241">
           <caret line="222" column="0" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
-          <folding>
-            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initStyleMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initEditMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initAddMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initRemoveMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initSearchField#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initHelpMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initTable#0;class#MainWindow#0" expanded="false" />
-            <element signature="class#styleListener#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#initData#0;class#MainWindow#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,18 +1064,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc;n#loginTF#0;n#RegistrationForm#0" expanded="false" />
-            <element signature="method#RegistrationForm#0;class#RegistrationForm#0" expanded="false" />
-            <element signature="class#1436:2050" expanded="false" />
-            <element signature="class#2402:3016" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/user_interface/UserHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1462">
+        <state vertical-scroll-proportion="0.40052357" vertical-offset="68" max-vertical-offset="1462">
           <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
           <folding>
             <element signature="method#authorizate#0;class#UserHandler#0" expanded="false" />
@@ -1088,7 +1084,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/languages/Language.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2232" max-vertical-offset="2856">
+        <state vertical-scroll-proportion="0.37696335" vertical-offset="2474" max-vertical-offset="2856">
           <caret line="154" column="29" selection-start-line="154" selection-start-column="29" selection-end-line="154" selection-end-column="29" />
           <folding />
         </state>
@@ -1115,7 +1111,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/languages/Strings_EN.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="5355">
+        <state vertical-scroll-proportion="0.6910569" vertical-offset="1071" max-vertical-offset="5355">
           <caret line="78" column="73" selection-start-line="78" selection-start-column="73" selection-end-line="78" selection-end-column="73" />
           <folding>
             <element signature="e#10025#10026#0" expanded="true" />
@@ -1134,22 +1130,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/languages/Strings_RU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.7880435" vertical-offset="0" max-vertical-offset="5542">
-          <caret line="82" column="18" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
-          <folding>
-            <element signature="e#6512#6513#0" expanded="true" />
-            <element signature="e#6550#6551#0" expanded="true" />
-            <element signature="e#6582#6583#0" expanded="true" />
-            <element signature="e#6610#6611#0" expanded="true" />
-            <element signature="e#6645#6646#0" expanded="true" />
-            <element signature="e#6676#6677#0" expanded="true" />
-            <element signature="e#6713#6714#0" expanded="true" />
-            <element signature="e#6746#6747#0" expanded="true" />
-            <element signature="e#6787#6788#0" expanded="true" />
-            <element signature="e#6824#6825#0" expanded="true" />
-            <element signature="e#6861#6862#0" expanded="true" />
-            <element signature="e#6894#6895#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="4.5609756" vertical-offset="0" max-vertical-offset="5338">
+          <caret line="105" column="5" selection-start-line="105" selection-start-column="5" selection-end-line="105" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
