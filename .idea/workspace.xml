@@ -2,58 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0ea9ddb-8a5d-46e1-ac76-8c0e87aded6f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/functional/Add.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/functional/Add.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/user_interface/AddHandler.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/user_interface/AddHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/functional/DataSaveLoad.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/functional/DataSaveLoad.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/model/Holiday.class" afterPath="$PROJECT_DIR$/out/production/NewProject/model/Holiday.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/languages/Language.class" afterPath="$PROJECT_DIR$/out/production/NewProject/languages/Language.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/user_interface/MainMenu.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/user_interface/MainMenu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/user_interface/PrintHandler.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/user_interface/PrintHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/languages/Strings_EN.class" afterPath="$PROJECT_DIR$/out/production/NewProject/languages/Strings_EN.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/languages/Strings_RU.class" afterPath="$PROJECT_DIR$/out/production/NewProject/languages/Strings_RU.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/user_interface/UserHandler.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/user_interface/UserHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/functional/XmlFileWorking.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/functional/XmlFileWorking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/functional/Add.java" afterPath="$PROJECT_DIR$/src/modules/functional/Add.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/user_interface/AddHandler.java" afterPath="$PROJECT_DIR$/src/modules/user_interface/AddHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/functional/DataSaveLoad.java" afterPath="$PROJECT_DIR$/src/modules/functional/DataSaveLoad.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/model/Holiday.java" afterPath="$PROJECT_DIR$/src/model/Holiday.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/languages/Language.java" afterPath="$PROJECT_DIR$/src/languages/Language.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/user_interface/MainMenu.java" afterPath="$PROJECT_DIR$/src/modules/user_interface/MainMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/user_interface/PrintHandler.java" afterPath="$PROJECT_DIR$/src/modules/user_interface/PrintHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/gui_interface/RegistrationForm.java" afterPath="$PROJECT_DIR$/src/modules/gui_interface/RegistrationForm.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/languages/Strings_EN.java" afterPath="$PROJECT_DIR$/src/languages/Strings_EN.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/languages/Strings_RU.java" afterPath="$PROJECT_DIR$/src/languages/Strings_RU.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/user_interface/UserHandler.java" afterPath="$PROJECT_DIR$/src/modules/user_interface/UserHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/functional/XmlFileWorking.java" afterPath="$PROJECT_DIR$/src/modules/functional/XmlFileWorking.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/countrySave_en.xml" afterPath="$PROJECT_DIR$/resources/countrySave_en.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/countrySave_ru.xml" afterPath="$PROJECT_DIR$/resources/countrySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/12345/countrySave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/12345/countrySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/iocz/countrySave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/iocz/countrySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/qwerty/countrySave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/qwerty/countrySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/user/countrySave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/user/countrySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/holidaySave_en.xml" afterPath="$PROJECT_DIR$/resources/holidaySave_en.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/holidaySave_ru.xml" afterPath="$PROJECT_DIR$/resources/holidaySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/12345/holidaySave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/12345/holidaySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/iocz/holidaySave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/iocz/holidaySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/qwerty/holidaySave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/qwerty/holidaySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/user/holidaySave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/user/holidaySave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_63.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_63.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_64.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_64.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_65.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_65.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_66.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_66.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/lib3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lib3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/lib4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lib4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/traditionSave_en.xml" afterPath="$PROJECT_DIR$/resources/traditionSave_en.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/traditionSave_ru.xml" afterPath="$PROJECT_DIR$/resources/traditionSave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/12345/traditionSave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/12345/traditionSave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/iocz/traditionSave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/iocz/traditionSave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/qwerty/traditionSave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/qwerty/traditionSave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/users/user/traditionSave_ru.xml" afterPath="$PROJECT_DIR$/resources/users/user/traditionSave_ru.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/userList/user.xml" afterPath="$PROJECT_DIR$/resources/userList/user.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/xalan3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/xalan3.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/xalan4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/xalan4.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/xalan5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/xalan5.xml" />
     </list>
     <ignored path="NewProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,7 +30,7 @@
       <file leaf-file-name="UserHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/user_interface/UserHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.7586207" vertical-offset="316" max-vertical-offset="2533">
+            <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2682">
               <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
               <folding>
                 <element signature="method#authorizate#0;class#UserHandler#0" expanded="false" />
@@ -95,7 +44,7 @@
       <file leaf-file-name="RSA.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/RSA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1037">
+            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1098">
               <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
               <folding>
                 <element signature="e#1160#1161#0" expanded="true" />
@@ -108,7 +57,7 @@
       <file leaf-file-name="Strings_RU.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/languages/Strings_RU.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5440">
+            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="5760">
               <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding>
                 <element signature="e#6792#6793#0" expanded="true" />
@@ -123,8 +72,8 @@
       <file leaf-file-name="Holiday.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/Holiday.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24315068" vertical-offset="1031" max-vertical-offset="1615">
-              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.46712804" vertical-offset="0" max-vertical-offset="1782">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -133,7 +82,7 @@
       <file leaf-file-name="LoginWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/gui_interface/LoginWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1730" max-vertical-offset="3043">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1998" max-vertical-offset="3438">
               <caret line="165" column="40" selection-start-line="165" selection-start-column="40" selection-end-line="165" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -154,18 +103,8 @@
       <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/User.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="481" max-vertical-offset="2754">
+            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2916">
               <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicButtonListener.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_11/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3468" max-vertical-offset="4879">
-              <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -174,7 +113,7 @@
       <file leaf-file-name="Strings_EN.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/languages/Strings_EN.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4900" max-vertical-offset="5287">
+            <state vertical-scroll-proportion="0.0" vertical-offset="5310" max-vertical-offset="5598">
               <caret line="479" column="4" selection-start-line="479" selection-start-column="4" selection-end-line="482" selection-end-column="0" />
               <folding>
                 <element signature="e#14631#14632#0" expanded="true" />
@@ -187,7 +126,7 @@
       <file leaf-file-name="RegistrationForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/modules/gui_interface/RegistrationForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.034483" vertical-offset="2069" max-vertical-offset="2397">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2484" max-vertical-offset="2646">
               <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
               <folding />
             </state>
@@ -200,6 +139,8 @@
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
         <option value="MIhail Mrinsky &lt;mister.ms@mail.ru&gt;" />
+        <option value="czcziocz@gmail.com" />
+        <option value="iocz" />
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -236,16 +177,16 @@
         <option value="$PROJECT_DIR$/src/languages/Language.java" />
         <option value="$PROJECT_DIR$/src/languages/Strings_EN.java" />
         <option value="$PROJECT_DIR$/src/languages/Strings_RU.java" />
-        <option value="$PROJECT_DIR$/src/model/Holiday.java" />
         <option value="$PROJECT_DIR$/src/modules/gui_interface/RegistrationForm.java" />
+        <option value="$PROJECT_DIR$/src/model/Holiday.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="765" />
+    <option name="y" value="52" />
+    <option name="width" value="601" />
+    <option name="height" value="686" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -270,122 +211,14 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="NewProject" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HolidayMrins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HolidayMrins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user_interface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HolidayMrins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gui_interface" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HolidayMrins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functional" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HolidayMrins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NewProject" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HolidayMrins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="languages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -650,36 +483,43 @@
       <option name="number" value="Default" />
       <updated>1426848296252</updated>
     </task>
+    <task id="LOCAL-00001" summary="test - commit">
+      <created>1427487003342</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1427487003342</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="765" y="52" width="601" height="686" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32686085" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33655706" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37091503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28214827" sideWeight="0.8186275" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.074875206" sideWeight="0.8171521" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28214827" sideWeight="0.18137255" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.074875206" sideWeight="0.1828479" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37091503" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32688588" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -723,7 +563,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="test - commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="test - commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -750,6 +591,25 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/languages/Strings_EN.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5310" max-vertical-offset="5598">
+          <caret line="479" column="4" selection-start-line="479" selection-start-column="4" selection-end-line="482" selection-end-column="0" />
+          <folding>
+            <element signature="e#14631#14632#0" expanded="true" />
+            <element signature="e#14669#14670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/gui_interface/RegistrationForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2484" max-vertical-offset="2646">
+          <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/countrySave.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="383">
@@ -971,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="357">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,7 +838,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3434">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1000,7 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1008,7 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="123" max-vertical-offset="1020">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,7 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="161" max-vertical-offset="833">
           <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2070" max-vertical-offset="3655">
           <caret line="139" column="30" selection-start-line="139" selection-start-column="30" selection-end-line="139" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1032,9 +886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1938">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1050,7 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2473" max-vertical-offset="2907">
           <caret line="161" column="31" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1099,7 +949,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/gui_interface/RegistrationForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.034483" vertical-offset="2069" max-vertical-offset="2397">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2484" max-vertical-offset="2646">
           <caret line="156" column="63" selection-start-line="156" selection-start-column="63" selection-end-line="156" selection-end-column="63" />
           <folding />
         </state>
@@ -1107,7 +957,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modules/user_interface/UserHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7586207" vertical-offset="316" max-vertical-offset="2533">
+        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="2682">
           <caret line="60" column="28" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
           <folding>
             <element signature="method#authorizate#0;class#UserHandler#0" expanded="false" />
@@ -1136,26 +986,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_11/src.zip!/javax/swing/plaf/basic/BasicButtonListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3468" max-vertical-offset="4879">
-          <caret line="251" column="0" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_11/src.zip!/java/math/BigInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.6190476" vertical-offset="38624" max-vertical-offset="74205">
-          <caret line="2424" column="0" selection-start-line="2424" selection-start-column="0" selection-end-line="2424" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/model/Holiday.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24315068" vertical-offset="1031" max-vertical-offset="1615">
-          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.46712804" vertical-offset="0" max-vertical-offset="1782">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
           <folding />
         </state>
       </provider>
