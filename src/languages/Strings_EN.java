@@ -5,8 +5,12 @@ package languages;
  */
 public class Strings_EN implements Language {
 
-        private final String PASSWORD = "Enter the password:";
-        private final String LOGIN = "Enter login:";
+    private final String GUEST = "Guest mode";
+    private final String NO_ACCOUNT = "No account? ";
+    private final String CREATE_ACCOUNT = "Create it!";
+    private final String LANGUAGE = "Language:";
+    private final String PASSWORD = "Password:";
+        private final String LOGIN = "Login:";
         private final String CONSOLE_CHOICE = "How to start?\n1 - console\n2 - new form\n3 - exit";
         public final String START_CHOICE = "Choose your language:\n1 - RU\n2 - EN\n3 - exit";
         private final String MAIN_MENU = "Welcome to holiday library! Press 4 to read a HELP file\n1 - add\n2 - search\n3 - show\n4 - help\n5 - change language\n6 - exit";
@@ -72,7 +76,7 @@ public class Strings_EN implements Language {
         private final String ENTER_PASS = "Enter pass:";
         private final String PASS_EXCEPTION = "Passwords not match";
         private final String LOGIN_EXCEPTION = "User with same name already exists";
-        private final String LOGIN_OR_PASS_EXCEPTION = "Incorrect username and (or) password!";
+        private final String LOGIN_OR_PASS_EXCEPTION = "Wrong username or password!";
         private final String HELLO_USER = "Welcome, ";
         private final String ENTER_MESSAGE = "Enter:\n1 - Authorization\n2 - Registration\n3 - Guest session\n4 - Exit";
         private final String FILES_BUILD_ERROR = "User files not build";
@@ -256,7 +260,32 @@ public class Strings_EN implements Language {
             return NO_TRADITION;
         }
 
-        public String getEND_DATE_REQUEST() {
+    @Override
+    public String getGUEST() {
+        return GUEST;
+    }
+
+    @Override
+    public String getNO_ACCOUNT() {
+        return NO_ACCOUNT;
+    }
+
+    @Override
+    public String getCREATE_ACCOUNT() {
+        return CREATE_ACCOUNT;
+    }
+
+    @Override
+    public String getLANGUAGE() {
+        return LANGUAGE;
+    }
+
+    @Override
+    public String getENTER_PASS() {
+        return ENTER_PASS;
+    }
+
+    public String getEND_DATE_REQUEST() {
             return END_DATE_REQUEST;
         }
 

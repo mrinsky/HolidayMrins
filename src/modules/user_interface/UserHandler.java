@@ -109,7 +109,7 @@ public class UserHandler {
             MainMenu.mainMenu();
         }
     }
-    private static void loadUserData(String login, String pass){
+    public static void loadUserData(String login, String pass){
         if (authorizate(login, pass)){
             out.println(Resources.language.getHELLO_USER() + login + "!");
 

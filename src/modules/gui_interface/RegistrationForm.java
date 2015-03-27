@@ -1,33 +1,29 @@
 package modules.gui_interface;
 
+import main.Resources;
 import model.User;
 import modules.user_interface.MainMenu;
 import modules.user_interface.UserHandler;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.*;
+import java.awt.event.*;
 import java.io.IOException;
 import java.math.BigInteger;
 
-/**
- * Created by Михаил on 19.03.2015.
- */
 public class RegistrationForm extends JFrame{
-   JTextField loginTF;
+
+    //region Components
+    JTextField loginTF;
     JTextField onePassTF;
     JTextField twoPassTF;
-    JLabel wrongPass = new JLabel("<html><u><font  color = red >Пароли не совпадают!</font></u>");
+    JLabel wrongPass;
     JButton okButton = new JButton("ОК");
-
-
+    //endregion
 
     public RegistrationForm(){
         super("Registration");
-
         setContentPane(addComponents());
         pack();
         setLocationRelativeTo(null);
@@ -35,34 +31,102 @@ public class RegistrationForm extends JFrame{
         addListener();
     }
     public Box addComponents(){
+
         Box frameBox = Box.createVerticalBox();
         Box.createHorizontalBox();
-        JLabel loginLabel = new JLabel("Введите логин: ");
+        JLabel loginLabel = new JLabel(Resources.language.getENTER_LOGIN());
         loginLabel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         frameBox.add(loginLabel);
         loginTF = new JTextField(15);
         frameBox.add(loginTF);
+
         frameBox.add(Box.createVerticalStrut(10));
-        JLabel onePassLabel = new JLabel("Введите пароль: ");
+        JLabel onePassLabel = new JLabel(Resources.language.getENTER_PASSWORD());
         onePassLabel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         frameBox.add(onePassLabel);
         onePassTF = new JTextField(15);
+        onePassTF.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                wrongPass.setVisible(false);
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+                wrongPass.setVisible(false);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+
+            }
+        });
+
         frameBox.add(onePassTF);
         frameBox.add(Box.createVerticalStrut(10));
-        JLabel twoPassLabel = new JLabel("Повторите пароль: ");
+
+        JLabel twoPassLabel = new JLabel(Resources.language.getREPEAT_PASSWORD());
         twoPassLabel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         frameBox.add(twoPassLabel);
         twoPassTF = new JTextField(15);
-        frameBox.add(twoPassTF);
-        frameBox.add(Box.createVerticalStrut(10));
-        frameBox.add(wrongPass);
-        frameBox.add(okButton);
+        twoPassTF.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                wrongPass.setVisible(false);
+            }
 
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+                wrongPass.setVisible(false);
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
+
+            }
+        });
+        frameBox.add(twoPassTF);
+
+        frameBox.add(Box.createVerticalStrut(10));
+        initWrongPass();
+        frameBox.add(wrongPass);
+        frameBox.add(Box.createVerticalStrut(10));
+        okButton.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+        frameBox.add(okButton);
+        frameBox.add(Box.createVerticalStrut(10));
         frameBox.setBorder(new EmptyBorder(5,5,5,5));
         return frameBox;
 
 
     }
+
+    private void initWrongPass() {
+        wrongPass = new JLabel(Resources.language.getPASS_EXCEPTION());
+        wrongPass.setVisible(false);
+        wrongPass.setAlignmentX(JComponent.CENTER_ALIGNMENT);
+        wrongPass.setForeground(Color.red);
+    }
+
     public void addListener(){
         addWindowListener(new WindowAdapter() {
             @Override
@@ -77,12 +141,19 @@ public class RegistrationForm extends JFrame{
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                registration();
+                try {
+                    registration();
+                    MainWindow.main(false);
+                }
+                catch (IllegalArgumentException ex) {
+                    wrongPass.setText(ex.getMessage());
+                    wrongPass.setVisible(true);
+                }
             }
         });
 
     }
     public void registration(){
-        UserHandler.registration(loginTF.toString(), onePassTF.toString(), twoPassTF.toString());
+        UserHandler.registration(loginTF.toString(), onePassTF.getText(), twoPassTF.getText());
     }
 }
