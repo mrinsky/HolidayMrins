@@ -12,10 +12,7 @@ import org.xml.sax.SAXException;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.io.IOException;
 import java.text.ParseException;
 
@@ -39,7 +36,7 @@ public class LoginWindow extends JFrame {
 
     public LoginWindow() {
         super("Login");   // В дальнейшем сделать константой
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(addComponentsToForm());
         pack();
         setResizable(false);
@@ -163,13 +160,19 @@ public class LoginWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 try {
-                    UserHandler.loadUserData(getLogin(), getPassword());
-                    MainWindow.main(false);
+                    XmlFileWorking xml = new XmlFileWorking();
+                    if (Resources.language instanceof Strings_RU) xml.loadAllRU();
+                    else xml.loadAllEN();
+
+                    String message = UserHandler.loadData(getLogin(), getPassword());
+
+                    if (!message.isEmpty()) wrongPassLabel.setText(Resources.language.getLOGIN_OR_PASS_EXCEPTION());
+
+                    else {dispose(); MainWindow.main(false);}
                 }
                 catch (Exception ex) {
                     wrongPassLabel.setText(Resources.language.getLOGIN_OR_PASS_EXCEPTION());
                 }
-
             }
         });
 

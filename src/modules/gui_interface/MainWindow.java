@@ -3,13 +3,11 @@ package modules.gui_interface;
 import languages.Strings_EN;
 import main.Resources;
 import model.Tradition;
+import modules.user_interface.UserHandler;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 public class MainWindow extends JFrame {
     //region MENU
@@ -35,7 +33,16 @@ public class MainWindow extends JFrame {
 
     public MainWindow(boolean isGuestMode) {
         this.isGuestMode = isGuestMode;
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent windowEvent) {
+                UserHandler.logOut();
+                LoginWindow.main();
+                dispose();
+            }
+        });
+
         this.setBounds(200, 200, 600, 400);
         this.setResizable(false);
         initComponents();
@@ -158,8 +165,8 @@ public class MainWindow extends JFrame {
         readHelpItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if (Resources.language.getClass() == Strings_EN.class) HelpWindow.main("./resources/help_en.txt");
-                else HelpWindow.main("./resources/help_ru.txt");
+                if (Resources.language.getClass() == Strings_EN.class) HelpWindow.main("./resources/helps/help_en.txt");
+                else HelpWindow.main("./resources/helps/help_ru.txt");
             }
         });
 

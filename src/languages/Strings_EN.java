@@ -13,7 +13,8 @@ public class Strings_EN implements Language {
         private final String LOGIN = "Login:";
         private final String CONSOLE_CHOICE = "How to start?\n1 - console\n2 - new form\n3 - exit";
         public final String START_CHOICE = "Choose your language:\n1 - RU\n2 - EN\n3 - exit";
-        private final String MAIN_MENU = "Welcome to holiday library! Press 4 to read a HELP file\n1 - add\n2 - search\n3 - show\n4 - help\n5 - change language\n6 - exit";
+        private final String MAIN_MENU = "Welcome to holiday library! Press 4 to read a HELP file\n1 - add\n2 - search\n3 - show\n4 - help\n5 - change language\n6 - log out\n7 - exit";
+        private final String GUEST_MAIN_MENU = "Welcome to holiday library! Press 4 to read a HELP file\n1 - search\n2 - show\n3 - help\n4 - change language\n5 - exit";
         private final String WRONG_CHOICE = "Wrong choice!";
         private final String ADD_MENU = "What's to add?\n1 - new tradition\n2 - back to main menu";
         private final String IO_ERROR = "Input-output error occurred";
@@ -475,6 +476,11 @@ public class Strings_EN implements Language {
     public String getDATE() {
         return DATE;
     }
+
+    public String getGUEST_MAIN_MENU(){
+        return GUEST_MAIN_MENU;
+    }
+
 
 
 

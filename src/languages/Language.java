@@ -159,4 +159,7 @@ public interface Language {
 
     public String getENTER_PASS();
 
+    public String getGUEST_MAIN_MENU();
+
+
 }

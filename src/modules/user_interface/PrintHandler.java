@@ -192,7 +192,7 @@ public class PrintHandler {
 
     private static void printAll(boolean validate) {
         if (!Resources.holidays.isEmpty()) {
-            printArrayHolidays(Resources.holidays, 0);
+            printArrayHolidays(Resources.holidays);
             printHolidayMenu(validate);
         } else {
             MainMenu.out.println(Resources.language.getNOT_FOUND());
@@ -203,6 +203,21 @@ public class PrintHandler {
     private static void printOwnHolidays(){
         if (UserHandler.currentUser != null && !UserHandler.currentUser.isAdmin()){
             if (!UserHandler.currentUser.getHolidayList().isEmpty()){
+                ArrayList<Tradition> traditions = new ArrayList<Tradition>();
+                for (int i = UserHandler.traditionCount; i < Resources.traditions.size(); i++){
+                    traditions.add(Resources.traditions.get(i));
+                }
+                UserHandler.currentUser.setTraditionList(traditions);
+                LinkedList<Country> countries = new LinkedList<Country>();
+                for (int i = UserHandler.countryCount; i < Resources.countries.size(); i++){
+                    countries.add(Resources.countries.get(i));
+                }
+                UserHandler.currentUser.setCountryList(countries);
+                LinkedList<Holiday> holidays = new LinkedList<Holiday>();
+                for (int i = UserHandler.holidayCount; i < Resources.holidays.size(); i++){
+                    holidays.add(Resources.holidays.get(i));
+                }
+                UserHandler.currentUser.setHolidayList(holidays);
                 printArrayHolidays(UserHandler.currentUser.getHolidayList(), 0);
                 printHolidayMenu(true);
             }
@@ -239,7 +254,7 @@ public class PrintHandler {
             try {
                 int choice = Integer.parseInt(MainMenu.reader.readLine());
                 if (Search.getTypeHolidays(choice).size() != 0) {
-                    printArrayHolidays(Search.getTypeHolidays(choice), 0);
+                    printArrayHolidays(Search.getTypeHolidays(choice));
                     printHolidayMenu(validate);
                 } else {
                     MainMenu.out.println(Resources.language.getNOT_FOUND());
@@ -257,7 +272,7 @@ public class PrintHandler {
         Date date = new Date();
 
         if (Search.getDateHolidays(date).size() != 0) {
-            printArrayHolidays(Search.getDateHolidays(date), 0);
+            printArrayHolidays(Search.getDateHolidays(date));
             printHolidayMenu(validate);
         } else {
             MainMenu.out.println(Resources.language.getNOT_FOUND());
@@ -275,7 +290,7 @@ public class PrintHandler {
             Date date = Holiday.dateFormat.parse(day + "." + month);
 
             if (Search.getDateHolidays(date).size() != 0) {
-                printArrayHolidays(Search.getDateHolidays(date), 0);
+                printArrayHolidays(Search.getDateHolidays(date));
                 printHolidayMenu(validate);
             } else {
                 MainMenu.out.println(Resources.language.getNOT_FOUND());
@@ -312,14 +327,24 @@ public class PrintHandler {
     }
 
     public static void printArrayTraditions(ArrayList<Tradition> traditions) {
-
         printTraditionTable();
-
         int count = 0;
         for (Tradition tradition : Resources.traditions) {
             for (int i = 0; i < traditions.size(); i++) {
-                if (tradition.equals(traditions.get(i)))
+                if (tradition.toString().equals(traditions.get(i).toString()))
                     MainMenu.out.printf("%5d%30s\n", count, traditions.get(i));
+            }
+            count++;
+        }
+    }
+
+    public static void printArrayHolidays(LinkedList<Holiday> holidays) {
+        printHolidayTable();
+        int count = 0;
+        for (Holiday holiday : Resources.holidays) {
+            for (int i = 0; i < holidays.size(); i++) {
+                if (holiday.equals(holidays.get(i)))
+                    MainMenu.out.printf("%5d%30s\n", count, holidays.get(i));
             }
             count++;
         }
@@ -329,10 +354,11 @@ public class PrintHandler {
         printHolidayTable();
         int count = start;
         for (Holiday holiday : holidays) {
-            for (int i = 0; i < holidays.size(); i++) {
-                if (holiday.equals(holidays.get(i)))
-                    MainMenu.out.printf("%5d%30s\n", count, holidays.get(i));
-            }
+            //for (int i = 0; i < holidays.size(); i++) {
+                //if (holiday.toString().equals(holidays.get(i).toString()))
+
+                    MainMenu.out.printf("%5d%30s\n", count, holiday);
+            //}
             count++;
         }
     }

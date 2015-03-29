@@ -36,10 +36,12 @@ public class User {
     private static ArrayList<Tradition> traditions = new ArrayList<Tradition>();
     protected static DataSaveLoad xmlFiles = new XmlFileWorking();
 
-    /*************************
+    /**
+     * **********************
      * Constructor
-     *************************/
-    public User(String login, BigInteger pass, BigInteger key, BigInteger modules){
+     * ***********************
+     */
+    public User(String login, BigInteger pass, BigInteger key, BigInteger modules) {
         this.login = login;
         //rsa = new RSA();
 
@@ -50,14 +52,14 @@ public class User {
         this.pass = UserHandler.rsa.encrypt(pass);
 
         File folder = new File(ROOT + this.login);
-        if(folder.mkdir()) {
+        if (folder.mkdir()) {
 
             File tradition = new File(ROOT + this.login + TRADITION_FILE_RU);
             File country = new File(ROOT + this.login + COUNTRY_FILE_RU);
             File holiday = new File(ROOT + this.login + HOLIDAY_FILE_RU);
 
             try {
-                if (!(tradition.createNewFile() & country.createNewFile() & holiday.createNewFile())){
+                if (!(tradition.createNewFile() & country.createNewFile() & holiday.createNewFile())) {
                     throw new IOException(Resources.language.getFILES_BUILD_ERROR());
                 }
             } catch (IOException e) {
@@ -76,46 +78,61 @@ public class User {
         this.pass = pass_value;
         //this.pass = rsa.encrypt(pass);
     }
-    /*************************
+
+    /**
+     * **********************
      * Methods
-     *************************/
+     * ***********************
+     */
     public LinkedList<Country> getCountryList() {
         return countries;
     }
+
     public LinkedList<Holiday> getHolidayList() {
         return holidays;
     }
-    public static ArrayList<Tradition> getTraditionList(){
+
+    public static ArrayList<Tradition> getTraditionList() {
         return traditions;
     }
-    public static void setCountryList(LinkedList<Country> list){
+
+    public static void setCountryList(LinkedList<Country> list) {
         countries = list;
     }
-    public static void setHolidayList(LinkedList<Holiday> list){
+
+    public static void setHolidayList(LinkedList<Holiday> list) {
         holidays = list;
     }
-    public static void setTraditionList(ArrayList<Tradition> list){
+
+    public static void setTraditionList(ArrayList<Tradition> list) {
         traditions = list;
     }
-    public void setModules(String value){
+
+    public void setModules(String value) {
         UserHandler.rsa.setModulus(new BigInteger(value));
     }
-    public void setPass(String pass){
+
+    public void setPass(String pass) {
         this.pass = new BigInteger(pass);
     }
-    public BigInteger getPass(){
+
+    public BigInteger getPass() {
         return pass;
     }
-    public void setLogin(String login){
+
+    public void setLogin(String login) {
         this.login = login;
     }
-    public String getLogin(){
+
+    public String getLogin() {
         return login;
     }
-    public BigInteger getModules(){
+
+    public BigInteger getModules() {
         return this.modules;
     }
-    public void saveAllRU(){
+
+    public void saveAllRU() {
         try {
             xmlFiles.saveTradition(traditions, ROOT + login + TRADITION_FILE_RU);
             xmlFiles.saveHolidays(holidays, ROOT + this.login + HOLIDAY_FILE_RU);
@@ -124,7 +141,8 @@ public class User {
             Resources.language.getIO_ERROR();
         }
     }
-    public void loadAllRU(){
+
+    public void loadAllRU() {
         try {
             for (Tradition item : xmlFiles.loadTradition(ROOT + login + TRADITION_FILE_RU)) {
                 Resources.traditions.add(item);
@@ -138,11 +156,9 @@ public class User {
                 Resources.holidays.add(item);
                 holidays.add(item);
             }
-        }
-        catch (ParseException e) {
+        } catch (ParseException e) {
             Resources.language.getPARSE_ERROR();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             Resources.language.getIO_ERROR();
         } catch (JDOMException e) {
             Resources.language.getXML_ERROR();
@@ -152,7 +168,8 @@ public class User {
             Resources.language.getXML_ERROR();
         }
     }
-    public void saveAllEN(){
+
+    public void saveAllEN() {
         try {
             xmlFiles.saveTradition(traditions, ROOT + login + TRADITION_FILE_EN);
             xmlFiles.saveHolidays(holidays, ROOT + this.login + HOLIDAY_FILE_EN);
@@ -161,7 +178,8 @@ public class User {
             Resources.language.getIO_ERROR();
         }
     }
-    public void loadAllEN(){
+
+    public void loadAllEN() {
         try {
             for (Tradition item : xmlFiles.loadTradition(ROOT + login + TRADITION_FILE_EN)) {
                 Resources.traditions.add(item);
@@ -175,11 +193,9 @@ public class User {
                 Resources.holidays.add(item);
                 holidays.add(item);
             }
-        }
-        catch (ParseException e) {
+        } catch (ParseException e) {
             Resources.language.getPARSE_ERROR();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             Resources.language.getIO_ERROR();
         } catch (JDOMException e) {
             Resources.language.getXML_ERROR();
@@ -189,7 +205,8 @@ public class User {
             Resources.language.getXML_ERROR();
         }
     }
-    public boolean isAdmin(){
+
+    public boolean isAdmin() {
         return "admin".equals(login);
     }
 

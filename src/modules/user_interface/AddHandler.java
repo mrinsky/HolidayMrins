@@ -53,10 +53,12 @@ public class AddHandler {
                 switch (choice) {
                     case 1:
                         Resources.traditions.get(Resources.traditions.size() - 1).setDescription(MainMenu.reader.readLine());
+                        //Add.checkTraditionList(Resources.traditions.get(Resources.traditions.size() - 1));
                         MainMenu.out.println(Resources.language.getREADY());
                         addMenu();
                         break;
                     case 2:
+                        //Add.checkTraditionList(Resources.traditions.get(Resources.traditions.size() - 1));
                         MainMenu.out.println(Resources.language.getREADY());
                         addMenu();
                         break;
@@ -135,7 +137,13 @@ public class AddHandler {
                 switch (dateChoice) {
                     case 1:
                         Resources.holidays = (LinkedList<Holiday>)Add.addHoliday(name, type, Resources.holidays);
+                        if (Add.uniqueFlag) {
                         return new Holiday(name, type);
+                        }
+                        else {
+                            Resources.out.println(Resources.language.getNOT_UNIQUE());
+                            return holidayMenu();
+                        }
                     case 2:
                         Date start = createDate();
                         Date end;
@@ -144,14 +152,32 @@ public class AddHandler {
                         if (endChoice == 2) {
                             end = createDate();
                             Resources.holidays = (LinkedList<Holiday>)Add.addHoliday(name, start, end, type, Resources.holidays);
-                            return new Holiday(name, start, end, type);
+                            if (Add.uniqueFlag) {
+                                return new Holiday(name, start, end, type);
+                            }
+                            else {
+                                Resources.out.println(Resources.language.getNOT_UNIQUE());
+                                return holidayMenu();
+                            }
                         } else if (endChoice == 1) {
                             Resources.holidays = (LinkedList<Holiday>)Add.addHoliday(name, start, type, Resources.holidays);
-                            return new Holiday(name, start, type);
+                            if (Add.uniqueFlag) {
+                                return new Holiday(name, start, type);
+                            }
+                            else {
+                                Resources.out.println(Resources.language.getNOT_UNIQUE());
+                                return holidayMenu();
+                            }
                         } else {
                             MainMenu.out.println(Resources.language.getWRONG_CHOICE());
                             Resources.holidays = (LinkedList<Holiday>)Add.addHoliday(name, start, type, Resources.holidays);
-                            return new Holiday(name, start, type);
+                            if (Add.uniqueFlag) {
+                                return new Holiday(name, start, type);
+                            }
+                            else {
+                                Resources.out.println(Resources.language.getNOT_UNIQUE());
+                                return holidayMenu();
+                            }
                         }
                     default:
                         MainMenu.out.println(Resources.language.getWRONG_CHOICE());
@@ -170,6 +196,10 @@ public class AddHandler {
             MainMenu.out.println(Resources.language.getCOUNTRY_REQUEST());
             country = new Country(MainMenu.reader.readLine());
             Resources.countries = (LinkedList<Country>)Add.addCountry(country, Resources.countries);
+            if (!Add.uniqueFlag) {
+                Resources.out.println(Resources.language.getNOT_UNIQUE());
+                country = countryMenu();
+            }
             MainMenu.out.println(Resources.language.getREADY());
         } catch (IOException ex) {
             MainMenu.out.println(Resources.language.getIO_ERROR());
