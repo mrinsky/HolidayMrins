@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0ea9ddb-8a5d-46e1-ac76-8c0e87aded6f" name="Default" comment="test - commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/img/lupa-32x32.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/languages/Language.class" afterPath="$PROJECT_DIR$/out/production/NewProject/languages/Language.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/gui_interface/MainWindow$4.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/gui_interface/MainWindow$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/modules/gui_interface/RegistrationForm.class" afterPath="$PROJECT_DIR$/out/production/NewProject/modules/gui_interface/RegistrationForm.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/languages/Strings_EN.class" afterPath="$PROJECT_DIR$/out/production/NewProject/languages/Strings_EN.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/NewProject/languages/Strings_RU.class" afterPath="$PROJECT_DIR$/out/production/NewProject/languages/Strings_RU.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/gui_interface/AdditionalSearchWindow.java" afterPath="$PROJECT_DIR$/src/modules/gui_interface/AdditionalSearchWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/languages/Language.java" afterPath="$PROJECT_DIR$/src/languages/Language.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/gui_interface/MainWindow.java" afterPath="$PROJECT_DIR$/src/modules/gui_interface/MainWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/modules/gui_interface/SearchWindow.java" afterPath="$PROJECT_DIR$/src/modules/gui_interface/SearchWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/languages/Strings_EN.java" afterPath="$PROJECT_DIR$/src/languages/Strings_EN.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/languages/Strings_RU.java" afterPath="$PROJECT_DIR$/src/languages/Strings_RU.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_62.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_62.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_63.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_63.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_64.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jdom_2_0_64.xml" />
@@ -936,12 +930,18 @@
       <option name="project" value="LOCAL" />
       <updated>1427487211372</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="search">
+      <created>1427654369767</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1427654369767</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1011,7 +1011,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="test - commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="test - commit" />
+    <MESSAGE value="search" />
+    <option name="LAST_COMMIT_MESSAGE" value="search" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
