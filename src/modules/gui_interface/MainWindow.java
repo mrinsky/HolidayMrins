@@ -51,7 +51,7 @@ public class MainWindow extends JFrame {
 
         this.setBounds(200, 200, 600, 400);
         this.setResizable(false);
-        initComponents();
+        initComponents(); //
     }
 
     public static void main(final boolean check) {

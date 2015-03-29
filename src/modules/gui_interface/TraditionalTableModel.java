@@ -35,7 +35,7 @@ public class TraditionalTableModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-        return data.length;
+        return data.length; //
     }
 
     @Override
