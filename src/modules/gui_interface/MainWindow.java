@@ -23,6 +23,11 @@ public class MainWindow extends JFrame {
     private JMenu helpMenu;
     private JMenuItem readHelpItem;
     private JTextField searchField;
+
+    private  JPopupMenu popup;
+    private JMenuItem removeThisPopup;
+    private JMenuItem removeAllMarkedPopup;
+    private JMenuItem showOrEdit;
 //endregion
 
     private JTable traditionTable;
@@ -181,7 +186,25 @@ public class MainWindow extends JFrame {
         this.add(traditionTable, BorderLayout.WEST);
         this.add(new JScrollPane(traditionTable));
         traditionTable.setEnabled(false);
-    }
+        popup = new JPopupMenu();
+        showOrEdit = new JMenuItem(Resources.language.getSHOW_OR_EDIT());
+        removeThisPopup = new JMenuItem(Resources.language.getREMOVE());
+        removeAllMarkedPopup = new JMenuItem(Resources.language.getREMOVE_MARKED());
+        popup.add(showOrEdit);
+        popup.add(removeThisPopup);
+        popup.add(removeAllMarkedPopup);
+        if(isGuestMode){
+            showOrEdit.setText(Resources.language.getSHOW());
+            removeThisPopup.setEnabled(false);
+            removeAllMarkedPopup.setEnabled(false);
+        }
+        traditionTable.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if(SwingUtilities.isRightMouseButton(e))
+                    popup.show(traditionTable, e.getX(), e.getY());
+            }
+        });    }
 
     private class styleListener implements ActionListener {
         private UIManager.LookAndFeelInfo styleInfo;
