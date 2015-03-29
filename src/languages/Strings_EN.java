@@ -96,7 +96,16 @@ public class Strings_EN implements Language {
         private final String ALL_EVENT = "all event";
         private final String ALL_HOLIDAY = "all holiday";
         private final String ALL_COUNTRY = "all country";
+        private final String SHOW_OR_EDIT = "Show / Edit description";
+        private final String SHOW = "Show description";
 
+    public String getSHOW() {
+        return SHOW;
+    }
+
+    public String getSHOW_OR_EDIT() {
+        return SHOW_OR_EDIT;
+    }
     public String getALL_EVENT() {
         return ALL_EVENT;
     }

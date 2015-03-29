@@ -23,8 +23,14 @@ public class MainWindow extends JFrame {
     private JMenu helpMenu;
     private JMenuItem readHelpItem;
     private JTextField searchField;
+
+    private  JPopupMenu popup;
+    private JMenuItem removeThisPopup;
+    private JMenuItem removeAllMarkedPopup;
+    private JMenuItem showOrEdit;
 //endregion
 
+    TraditionalTableModel tableModel;
     private JTable traditionTable;
     private String[] columnNamesEN = {"HOLIDAY", "COUNTRY", "DATE", "TYPE", "CHOOSE"};
     private String[] columnNamesRU = {"ПРАЗДНИК","СТРАНА","ДАТА","ТИП","ВЫБРАТЬ"};
@@ -48,7 +54,7 @@ public class MainWindow extends JFrame {
 
         this.setBounds(200, 200, 600, 400);
         this.setResizable(false);
-        initComponents();
+        initComponents(); //
     }
 
     public static void main(final boolean check) {
@@ -178,12 +184,37 @@ public class MainWindow extends JFrame {
     }
 
     public void initTable() {
-        if (Resources.language.getClass() == Strings_EN.class) traditionTable = new JTable(initData(columnNamesEN),columnNamesEN);
-        else traditionTable = new JTable(initData(columnNamesRU),columnNamesRU);
+        //if (Resources.language.getClass() == Strings_EN.class) traditionTable = new JTable(initData(columnNamesEN),columnNamesEN);
+        //else traditionTable = new JTable(initData(columnNamesRU),columnNamesRU);
+      //TraditionalTableModel traditionalTableModel = new TraditionalTableModel();
+        if(Resources.language.getClass() == Strings_EN.class) {
+            tableModel = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
+        }else tableModel = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
+               traditionTable = new JTable(tableModel);
         traditionTable.add(new JScrollPane());
         this.add(traditionTable, BorderLayout.WEST);
         this.add(new JScrollPane(traditionTable));
-        traditionTable.setEnabled(false);
+       // traditionTable.setEnabled(false);
+        popup = new JPopupMenu();
+        showOrEdit = new JMenuItem(Resources.language.getSHOW_OR_EDIT());
+        removeThisPopup = new JMenuItem(Resources.language.getREMOVE());
+        removeAllMarkedPopup = new JMenuItem(Resources.language.getREMOVE_MARKED());
+        popup.add(showOrEdit);
+        popup.add(removeThisPopup);
+        popup.add(removeAllMarkedPopup);
+        if(isGuestMode){
+            showOrEdit.setText(Resources.language.getSHOW());
+            removeThisPopup.setEnabled(false);
+            removeAllMarkedPopup.setEnabled(false);
+        }
+        traditionTable.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if(SwingUtilities.isRightMouseButton(e))
+                    popup.show(traditionTable, e.getX(), e.getY());
+            }
+        });
+        //traditionTable.show();
     }
 
     private class styleListener implements ActionListener {
@@ -216,8 +247,8 @@ public class MainWindow extends JFrame {
         }
     }
 
-    private String[][] initData(String[] columnNames) {
-        String[][] data = new String[Resources.traditions.size()][columnNames.length];
+    private Object[][] initData(String[] columnNames) {
+        Object[][] data =  new Object[Resources.traditions.size()][columnNames.length];
         for (int j = 0; j < Resources.traditions.size(); j++) {
             Tradition tr = Resources.traditions.get(j);
 
@@ -225,7 +256,7 @@ public class MainWindow extends JFrame {
             data[j][1] = tr.getCountry().getName();
             data[j][2] = tr.getHoliday().getStartDate();
             data[j][3] = tr.getHoliday().getType().toString();
-            data[j][4] = "";
+            data[j][4] = Boolean.FALSE;
         }
         return data;
     }
