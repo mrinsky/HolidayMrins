@@ -31,15 +31,18 @@ public class MainWindow extends JFrame {
 
     private boolean isGuestMode = false;
 
-    public MainWindow(boolean isGuestMode) {
+    public MainWindow(final boolean isGuestMode) {
         this.isGuestMode = isGuestMode;
 
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent windowEvent) {
-                UserHandler.logOut();
-                LoginWindow.main();
-                dispose();
+                if (!isGuestMode) {
+                    UserHandler.logOut();
+                    LoginWindow.main();
+                    dispose();
+                }
+                else dispose();
             }
         });
 
