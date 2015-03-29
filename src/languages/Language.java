@@ -161,5 +161,8 @@ public interface Language {
 
     public String getGUEST_MAIN_MENU();
 
-
+    public String getSEARCH_BY_DATE();
+    public String getSEARCH_BY_DATE_INTERVAL();
+    public String getCHOOSE_SEARCH_PARAM();
+    public String getAND_LABEL();
 }

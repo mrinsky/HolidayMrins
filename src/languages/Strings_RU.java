@@ -92,6 +92,10 @@ public class Strings_RU implements Language {
     private final String ALL_EVENT = "события";
     private final String ALL_HOLIDAY = "праздники";
     private final String ALL_COUNTRY = "страны";
+    private final String SEARCH_BY_DATE = "Поиск по дате";
+    private final String SEARCH_BY_DATE_INTERVAL = "Поиск по интервалу дат";
+    private final String CHOOSE_SEARCH_PARAM = "Выбирите параметры поиска";
+    private final String AND_LABEL = "А также";
 
     public String getADVANCED_SEARCH() {
         return ADVANCED_SEARCH;
@@ -488,6 +492,18 @@ public class Strings_RU implements Language {
     }
 
 
+    public String getSEARCH_BY_DATE(){
+        return SEARCH_BY_DATE;
+    }
+    public String getSEARCH_BY_DATE_INTERVAL(){
+        return SEARCH_BY_DATE_INTERVAL;
+    }
+    public String getCHOOSE_SEARCH_PARAM(){
+        return CHOOSE_SEARCH_PARAM;
+    }
+    public String getAND_LABEL(){
+        return AND_LABEL;
+    }
 
 
 

@@ -1,28 +1,30 @@
-/*
+
 package modules.gui_interface;
 
-import com.toedter.calendar.JDateChooser;
 import main.Resources;
+import modules.functional.DateLabelFormatter;
+import modules.functional.Search;
+import org.jdatepicker.impl.JDatePanelImpl;
+import org.jdatepicker.impl.JDatePickerImpl;
+import org.jdatepicker.impl.UtilDateModel;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Properties;
 
-*/
+
 /**
  * Created by root on 22.03.15.
- *//*
+ */
 
 public class AdditionalSearchWindow extends JFrame {
     private JTextField holidayTextField;
     private JTextField countryTextField;
     private JTextArea descriptionTextField;
     private JTextField regTextField;
-    private JDateChooser dateChooserField;
-    private JDateChooser getDateChooserField1;
-    private JDateChooser getDateChooserField2;
     private JLabel logoLable;
     private JLabel enterHolidayLabel;
     private JLabel enterCountryLabel;
@@ -31,19 +33,36 @@ public class AdditionalSearchWindow extends JFrame {
     private JLabel lable1;
     private JLabel fromLabel;
     private JLabel toLabel;
+    private JScrollPane descriptionScroll;
+
+    private UtilDateModel model;
+    private JDatePanelImpl datePanel;
+    private JLabel addTitle;
+    private JDatePickerImpl calendar;
+
+    private JDatePanelImpl datePanelFrom;
+    private JDatePickerImpl calendarFrome;
+
+    private JDatePanelImpl datePanelTo;
+    private JDatePickerImpl calendarTo;
+
+    private JPanel date;
     //private String[] chooseItem;
     private JButton addButton;
     private JButton okButton;
     //private JulianCalendar calendar;
     private JComboBox chooseComboBox;
 
+    private static int currentParamNum = 0;
+
     public AdditionalSearchWindow(int param_num){
-        super(Resources.language.getSEARCH_TEXT());   // В дальнейшем сделать константой
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        super(Resources.language.getSEARCH_MENU_BAR());
+        currentParamNum = param_num;
         setContentPane(addComponentsToForm(param_num));
         pack();
+        //setBounds(200, 200, 200, 220);
         setResizable(false);
-        setLocationRelativeTo(null);// По центру экрана
+        setLocationRelativeTo(null);
     }
 
     public static void main(final int param_num) {
@@ -56,22 +75,34 @@ public class AdditionalSearchWindow extends JFrame {
 
     }
 
+
     private Box addComponentsToForm(int param_num){
         logoLable = new JLabel();
-        logoLable.setIcon(new ImageIcon("resources/img/lupa-32x32.png"));
-        logoLable.setText(Resources.language.getSEARCH_TEXT());
+        logoLable.setIcon(new ImageIcon(SearchWindow.IMG_SRC));
+        logoLable.setText(Resources.language.getSEARCH_MENU_BAR());
         Font font = new Font("Verdana", Font.PLAIN, 22);
         logoLable.setFont(font);
+
+        //Container logoContainer = getContentPane();
+        //logoContainer.setLayout(new BorderLayout());
+        //logoContainer.add(logoLable, BorderLayout.NORTH);
 
         Box logoBox = Box.createHorizontalBox();
         logoBox.add(logoLable);
 
-        dateChooserField = new JDateChooser();
         Box dateBox = Box.createHorizontalBox();
-        dateBox.add(dateChooserField);
+        date = new JPanel();
+        //date.setBorder(BorderFactory.createTitledBorder(Resources.language.getDATE()));
+        model = new UtilDateModel();
+        Properties pr = new Properties();
+        pr.put("text.today", "Today");
+        pr.put("text.month", "Month");
+        pr.put("text.year", "Year");
+        datePanel = new JDatePanelImpl(model, pr);
+        calendar = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+        dateBox.add(calendar);
+        dateBox.setBorder(BorderFactory.createTitledBorder(Resources.language.getDATE()));
 
-        getDateChooserField1 = new JDateChooser();
-        getDateChooserField2 = new JDateChooser();
         lable1 = new JLabel("       ");
 
         String[] chooseItem = {
@@ -83,42 +114,60 @@ public class AdditionalSearchWindow extends JFrame {
 
         fromLabel = new JLabel("From:");
         Box leftDateBox = Box.createVerticalBox();
+
+        //date.setBorder(BorderFactory.createTitledBorder(Resources.language.getDATE()));
+        //model = new UtilDateModel();
+        datePanelFrom = new JDatePanelImpl(model, pr);
+        calendarFrome = new JDatePickerImpl(datePanel, new DateLabelFormatter());
         leftDateBox.add(fromLabel);
-        leftDateBox.add(getDateChooserField1);
-        //leftDateBox.add(chooseComboBox);
+        leftDateBox.add(calendarFrome);
 
         toLabel = new JLabel("To:");
         Box rightDateBox = Box.createVerticalBox();
+
+        datePanelTo = new JDatePanelImpl(model, pr);
+        calendarTo = new JDatePickerImpl(datePanelTo, new DateLabelFormatter());
         rightDateBox.add(toLabel);
-        rightDateBox.add(getDateChooserField2);
-        //rightDateBox.add(addButton);
+        rightDateBox.add(calendar);
 
         Box bigDateBox = Box.createHorizontalBox();
         bigDateBox.add(leftDateBox);
         bigDateBox.add(lable1);
         bigDateBox.add(rightDateBox);
 
-        enterHolidayLabel = new JLabel("Enter holiday:");
-        enterCountryLabel = new JLabel("Enter country:");
-        enterDescriptionLabel = new JLabel(Resources.language.getENTER_DESCRIPTION());
-        holidayTextField = new JTextField();
-        countryTextField = new JTextField();
-        descriptionTextField = new JTextArea();
-        Box maskSearchBox = Box.createVerticalBox();
-        maskSearchBox.add(enterHolidayLabel);
-        maskSearchBox.add(holidayTextField);
-        maskSearchBox.add(enterCountryLabel);
-        maskSearchBox.add(countryTextField);
-        maskSearchBox.add(enterDescriptionLabel);
-        maskSearchBox.add(descriptionTextField);
+        Box holidayBox = Box.createHorizontalBox();
+        holidayTextField = new JTextField(20);
+        holidayBox.add(holidayTextField);
+        holidayBox.setBorder(BorderFactory.createTitledBorder("Enter holiday:"));
 
-        okButton = new JButton(Resources.language.getSEARCH_TEXT());
+        Box countryBox = Box.createHorizontalBox();
+        countryTextField = new JTextField(20);
+        //countryTextField.setBorder(BorderFactory.createTitledBorder("Enter country:"));
+        countryBox.add(countryTextField);
+        countryBox.setBorder(BorderFactory.createTitledBorder("Enter country:"));
+
+        descriptionTextField = new JTextArea();
+        descriptionTextField.setLineWrap(true);
+        descriptionTextField.setWrapStyleWord(true);
+        descriptionScroll = new JScrollPane(descriptionTextField);
+        descriptionScroll.setPreferredSize(new Dimension(225, 75));
+        descriptionScroll.setBorder(BorderFactory.createTitledBorder(Resources.language.getENTER_DESCRIPTION()));
+        Box maskSearchBox = Box.createVerticalBox();
+        maskSearchBox.add(holidayBox);
+        maskSearchBox.add(countryBox);
+        maskSearchBox.add(descriptionScroll);
+
+        Container containerOkButton = getContentPane();
+        containerOkButton.setLayout(new BorderLayout());
+        okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
+        containerOkButton.add(okButton, BorderLayout.EAST);
 
         regTextField = new JTextField();
-        enterRegEx = new JLabel("Enter regular:");
+        //enterRegEx = new JLabel(Resources.language.getREGULAR());
         Box regularSearchBox = Box.createVerticalBox();
-        regularSearchBox.add(enterRegEx);
+        //regularSearchBox.add(enterRegEx);
         regularSearchBox.add(regTextField);
+        regularSearchBox.setBorder(BorderFactory.createTitledBorder(Resources.language.getREGULAR()));
 
         Box frameBox = Box.createVerticalBox();
         frameBox.setBorder(new EmptyBorder(6, 6, 6, 6));
@@ -168,7 +217,8 @@ public class AdditionalSearchWindow extends JFrame {
                 break;
         }
         frameBox.add(Box.createVerticalStrut(7));
-        frameBox.add(okButton);
+
+        frameBox.add(containerOkButton);
         //frameBox.add(maskSearchBox);
         //frameBox.add(Box.createVerticalStrut(7));
         return frameBox;
@@ -181,6 +231,24 @@ public class AdditionalSearchWindow extends JFrame {
                 AdditionalSearchWindow.main(1);
             }
         });
+        okButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switch (currentParamNum){
+                    case 0:
+                        //Resources.traditions = Search.getDateHolidays();
+                        //break;
+                    case 1:
+                        //break;
+                    case 2:
+                        Resources.traditions = Search.maskSearch(holidayTextField.toString(), countryTextField.toString(), descriptionTextField.toString(),
+                                Resources.traditions);
+                        break;
+                    case 3:
+                        Resources.traditions = Search.regularSearch(regTextField.toString(), Resources.traditions);
+                        break;
+                }
+            }
+        });
     }
 }
-*/
