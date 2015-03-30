@@ -54,7 +54,6 @@ public class SearchWindow extends JFrame {
     }
 
     private Box addComponentsToForm(int flag_num, int prev_num){
-        //while(true){
         logoLable = new JLabel();
         logoLable.setIcon(new ImageIcon(IMG_SRC));
         logoLable.setText(Resources.language.getSEARCH_MENU_BAR());
@@ -62,7 +61,6 @@ public class SearchWindow extends JFrame {
         logoLable.setFont(font);
 
         Box logoBox = Box.createHorizontalBox();
-        //logoBox.setFont(font);
         logoBox.add(logoLable);
 
         searchComboBox = new JComboBox(searchItem);

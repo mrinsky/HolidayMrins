@@ -208,8 +208,6 @@ public class AdditionalSearchWindow extends JFrame {
         frameBox.add(Box.createVerticalStrut(7));
 
         frameBox.add(containerOkButton);
-        //frameBox.add(maskSearchBox);
-        //frameBox.add(Box.createVerticalStrut(7));
         return frameBox;
     }
 
