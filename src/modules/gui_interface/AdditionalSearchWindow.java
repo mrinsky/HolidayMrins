@@ -154,9 +154,7 @@ public class AdditionalSearchWindow extends JFrame {
         containerOkButton.add(okButton, BorderLayout.EAST);
 
         regTextField = new JTextField();
-        //enterRegEx = new JLabel(Resources.language.getREGULAR());
         Box regularSearchBox = Box.createVerticalBox();
-        //regularSearchBox.add(enterRegEx);
         regularSearchBox.add(regTextField);
         regularSearchBox.setBorder(BorderFactory.createTitledBorder(Resources.language.getREGULAR()));
 

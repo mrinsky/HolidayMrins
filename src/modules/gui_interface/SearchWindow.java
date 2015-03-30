@@ -196,25 +196,17 @@ public class SearchWindow extends JFrame {
                 switch(searchComboBox.getSelectedIndex()) {
                     case 0: {
                         SearchWindow.main(1, 0);
-                        //setVisible(false);
-                        //dispose();
                         break;
                     }
                     case 1: {
                         SearchWindow.main(1, 1);
-                        //setVisible(false);
-                        //dispose();
                         break;
                     }
                     case 2: {
-                        //setVisible(false);
-                        //dispose();
                         SearchWindow.main(2, 2);
                         break;
                     }
                     case 3: {
-                        //setVisible(false);
-                        //dispose();
                         SearchWindow.main(2, 3);
                         break;
                     }
