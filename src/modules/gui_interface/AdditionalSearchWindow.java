@@ -79,16 +79,11 @@ public class AdditionalSearchWindow extends JFrame {
         Font font = new Font("Verdana", Font.PLAIN, 22);
         logoLable.setFont(font);
 
-        //Container logoContainer = getContentPane();
-        //logoContainer.setLayout(new BorderLayout());
-        //logoContainer.add(logoLable, BorderLayout.NORTH);
-
         Box logoBox = Box.createHorizontalBox();
         logoBox.add(logoLable);
 
         Box dateBox = Box.createHorizontalBox();
         date = new JPanel();
-        //date.setBorder(BorderFactory.createTitledBorder(Resources.language.getDATE()));
         model = new UtilDateModel();
         Properties pr = new Properties();
         pr.put("text.today", "Today");

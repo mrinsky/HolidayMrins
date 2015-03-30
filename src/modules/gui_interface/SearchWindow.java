@@ -111,7 +111,6 @@ public class SearchWindow extends JFrame {
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //int num_prev = 0;
                 switch (searchComboBox.getSelectedIndex()){
                     case 0: {
                         switch (andSearchComboBox.getSelectedIndex()) {
@@ -129,7 +128,6 @@ public class SearchWindow extends JFrame {
                         }
                         setVisible(false);
                         dispose();
-                        //AdditionalSearchWindow.main(0);
                         break;
                     }
                     case 1: {
