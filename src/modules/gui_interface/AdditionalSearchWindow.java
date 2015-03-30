@@ -26,10 +26,6 @@ public class AdditionalSearchWindow extends JFrame {
     private JTextArea descriptionTextField;
     private JTextField regTextField;
     private JLabel logoLable;
-    private JLabel enterHolidayLabel;
-    private JLabel enterCountryLabel;
-    private JLabel enterDescriptionLabel;
-    private JLabel enterRegEx;
     private JLabel lable1;
     private JLabel fromLabel;
     private JLabel toLabel;
@@ -37,7 +33,7 @@ public class AdditionalSearchWindow extends JFrame {
 
     private UtilDateModel model;
     private JDatePanelImpl datePanel;
-    private JLabel addTitle;
+
     private JDatePickerImpl calendar;
 
     private JDatePanelImpl datePanelFrom;

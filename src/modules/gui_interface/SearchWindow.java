@@ -93,28 +93,25 @@ public class SearchWindow extends JFrame {
             case 1: {
                 andSearchComboBox = new JComboBox(searchStringItem);
                 frameBox.add(andSearchComboBox);
-                //andSearchComboBox.setSelectedIndex(prev_num);
                 frameBox.add(Box.createVerticalStrut(7));
                 break;
             }
             case 2: {
                 andSearchComboBox = new JComboBox(searchDateItem);
                 frameBox.add(andSearchComboBox);
-                //andSearchComboBox.setSelectedIndex(prev_num);
                 frameBox.add(Box.createVerticalStrut(7));
                 break;
             }
         }
         frameBox.add(okButton);
         return frameBox;
-        //}
     }
 
     private void addListener(){
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int num_prev = 0;
+                //int num_prev = 0;
                 switch (searchComboBox.getSelectedIndex()){
                     case 0: {
                         switch (andSearchComboBox.getSelectedIndex()) {
