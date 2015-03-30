@@ -92,6 +92,10 @@ public class Strings_RU implements Language {
     private final String ALL_EVENT = "события";
     private final String ALL_HOLIDAY = "праздники";
     private final String ALL_COUNTRY = "страны";
+    private final String SEARCH_BY_DATE = "Поиск по дате";
+    private final String SEARCH_BY_DATE_INTERVAL = "Поиск по интервалу дат";
+    private final String CHOOSE_SEARCH_PARAM = "Выбирите параметры поиска";
+    private final String AND_LABEL = "А также";
     private final String SHOW_OR_EDIT = "Показать / Изменить описание";
     private final String NOT_FOUND_DESCRIPTION = "Описание отсутвует";
 

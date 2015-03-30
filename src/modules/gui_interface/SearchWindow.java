@@ -1,24 +1,18 @@
-/*
-
 package modules.gui_interface;
 
 import main.Resources;
-import modules.functional.Search;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-  Created by root on 22.03.15.
-
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class SearchWindow extends JFrame {
-    //private JTextField holidayTextField;
-    //private JTextField countryTextField;
-    //private JTextField descriptionTextField;
+    static final String IMG_SRC = "resources/img/lupa-32x32.png";
+
     private JLabel logoLable;
     private JLabel searchParam;
     private JComboBox searchComboBox;
@@ -41,37 +35,32 @@ public class SearchWindow extends JFrame {
     };
 
     public SearchWindow(int flag_num, int prev_num){
-        super(Resources.language.getSEARCH_TEXT());   // В дальнейшем сделать константой
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        super(Resources.language.getSEARCH_MENU_BAR());
         setContentPane(addComponentsToForm(flag_num, prev_num));
         pack();
         setResizable(false);
-        setLocationRelativeTo(null);// По центру экрана
+        setLocationRelativeTo(null);
         addListener();
     }
 
-    public static void main(int flag_num, int prev_num){
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SearchWindow().setVisible(true);
-            }
-        });
-
-
+    public static void main(final int flag_num, final int prev_num){
         SearchWindow searchWindow = new SearchWindow(flag_num, prev_num);
         searchWindow.setVisible(true);
     }
 
+    public static void main() {
+        SearchWindow searchWindow = new SearchWindow(0, 0);
+        searchWindow.setVisible(true);
+    }
+
     private Box addComponentsToForm(int flag_num, int prev_num){
-        //while(true){
         logoLable = new JLabel();
-        logoLable.setIcon(new ImageIcon("resources/img/lupa-32x32.png"));
-        logoLable.setText(Resources.language.getSEARCH_TEXT());
+        logoLable.setIcon(new ImageIcon(IMG_SRC));
+        logoLable.setText(Resources.language.getSEARCH_MENU_BAR());
         Font font = new Font("Verdana", Font.PLAIN, 22);
         logoLable.setFont(font);
 
         Box logoBox = Box.createHorizontalBox();
-        //logoBox.setFont(font);
         logoBox.add(logoLable);
 
         searchComboBox = new JComboBox(searchItem);
@@ -82,9 +71,9 @@ public class SearchWindow extends JFrame {
         comboBox.add(searchParam);
         comboBox.add(searchComboBox);
 
-        andButton = new JButton(Resources.language.getEND_LABEL());
+        andButton = new JButton(Resources.language.getAND_LABEL());
 
-        okButton = new JButton(Resources.language.getSEARCH_TEXT());
+        okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
 
         Box frameBox = Box.createVerticalBox();
         frameBox.setBorder(new EmptyBorder(6, 6, 6, 6));
@@ -95,107 +84,103 @@ public class SearchWindow extends JFrame {
         frameBox.add(searchComboBox);
         searchComboBox.setSelectedIndex(prev_num);
         frameBox.add(Box.createVerticalStrut(7));
+        andButton.setEnabled(false);
         frameBox.add(andButton);
         frameBox.add(Box.createVerticalStrut(7));
         switch (flag_num){
             case 1: {
                 andSearchComboBox = new JComboBox(searchStringItem);
                 frameBox.add(andSearchComboBox);
-                //andSearchComboBox.setSelectedIndex(prev_num);
                 frameBox.add(Box.createVerticalStrut(7));
                 break;
             }
             case 2: {
                 andSearchComboBox = new JComboBox(searchDateItem);
                 frameBox.add(andSearchComboBox);
-                //andSearchComboBox.setSelectedIndex(prev_num);
                 frameBox.add(Box.createVerticalStrut(7));
                 break;
             }
         }
         frameBox.add(okButton);
         return frameBox;
-        //}
     }
 
     private void addListener(){
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-        int num_prev = 0;
                 switch (searchComboBox.getSelectedIndex()){
                     case 0: {
-                            switch (andSearchComboBox.getSelectedIndex()) {
-                                case 0: {
-                                    AdditionalSearchWindow.main(4);
-                                    break;
-                                }
-                                case 1: {
-                                    AdditionalSearchWindow.main(5);
-                                    break;
-                                }
-                                default:
-                                    AdditionalSearchWindow.main(0);
-                                    break;
+                        switch (andSearchComboBox.getSelectedIndex()) {
+                            case 0: {
+                                AdditionalSearchWindow.main(4);
+                                break;
                             }
+                            case 1: {
+                                AdditionalSearchWindow.main(5);
+                                break;
+                            }
+                            default:
+                                AdditionalSearchWindow.main(0);
+                                break;
+                        }
                         setVisible(false);
                         dispose();
-                            //AdditionalSearchWindow.main(0);
-                            break;
+                        break;
                     }
                     case 1: {
-                            switch (andSearchComboBox.getSelectedIndex()) {
-                                case 0: {
-                                    AdditionalSearchWindow.main(6);
-                                    break;
-                                }
-                                case 1: {
-                                    AdditionalSearchWindow.main(7);
-                                    break;
-                                }
-                                default:
-                                    AdditionalSearchWindow.main(1);
-                                    break;
+                        switch (andSearchComboBox.getSelectedIndex()) {
+                            case 0: {
+                                AdditionalSearchWindow.main(6);
+                                break;
                             }
+                            case 1: {
+                                AdditionalSearchWindow.main(7);
+                                break;
+                            }
+                            default:
+                                AdditionalSearchWindow.main(1);
+                                break;
+                        }
                         setVisible(false);
                         dispose();
-                            break;
+                        break;
                     }
                     case 2: {
-                            switch (andSearchComboBox.getSelectedIndex()) {
-                                case 0: {
-                                    AdditionalSearchWindow.main(4);
-                                    break;
-                                }
-                                case 1: {
-                                    AdditionalSearchWindow.main(6);
-                                    break;
-                                }
-                                default:
-                                    AdditionalSearchWindow.main(2);
-                                    break;
+                        switch (andSearchComboBox.getSelectedIndex()) {
+                            case 0: {
+                                AdditionalSearchWindow.main(4);
+                                break;
                             }
+                            case 1: {
+                                AdditionalSearchWindow.main(6);
+                                break;
+                            }
+                            default:
+                                AdditionalSearchWindow.main(2);
+                                break;
+                        }
                         setVisible(false);
                         dispose();
                         break;
                     }
                     case 3: {
-                            switch (andSearchComboBox.getSelectedIndex()) {
-                                case 0: {
-                                    AdditionalSearchWindow.main(5);
-                                    break;
-                                }
-                                case 1: {
-                                    AdditionalSearchWindow.main(7);
-                                    break;
-                                }
-                                default:
-                                    AdditionalSearchWindow.main(3);
-                                    break;
+                        switch (andSearchComboBox.getSelectedIndex()) {
+                            case 0: {
+                                AdditionalSearchWindow.main(5);
+                                break;
                             }
+                            case 1: {
+                                AdditionalSearchWindow.main(7);
+                                break;
+                            }
+                            default:
+                                AdditionalSearchWindow.main(3);
+                                break;
+                        }
                         setVisible(false);
                         dispose();
-                            break;
+                        break;
                     }
                     default: {
                         break;
@@ -226,9 +211,37 @@ public class SearchWindow extends JFrame {
                     default:
                         break;
                 }
+                setVisible(false);
+                dispose();
+            }
+        });
+
+        andButton.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                andButton.setEnabled(true);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
             }
         });
 
     }
 }
-*/
