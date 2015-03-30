@@ -16,15 +16,17 @@ public class RegistrationForm extends JFrame{
 
     //region Components
     JTextField loginTF;
-    JTextField onePassTF;
-    JTextField twoPassTF;
+    JPasswordField onePassTF;
+    JPasswordField twoPassTF;
     JLabel wrongPass;
     JButton okButton = new JButton("ОК");
     //endregion
 
     public RegistrationForm(){
         super("Registration");
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setContentPane(addComponents());
+        setPreferredSize(new Dimension(220,250));
         pack();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -44,7 +46,7 @@ public class RegistrationForm extends JFrame{
         JLabel onePassLabel = new JLabel(Resources.language.getENTER_PASSWORD());
         onePassLabel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         frameBox.add(onePassLabel);
-        onePassTF = new JTextField(15);
+        onePassTF = new JPasswordField(15);
         onePassTF.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
@@ -78,7 +80,7 @@ public class RegistrationForm extends JFrame{
         JLabel twoPassLabel = new JLabel(Resources.language.getREPEAT_PASSWORD());
         twoPassLabel.setAlignmentX(JComponent.CENTER_ALIGNMENT);
         frameBox.add(twoPassLabel);
-        twoPassTF = new JTextField(15);
+        twoPassTF = new JPasswordField(15);
         twoPassTF.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
@@ -143,6 +145,7 @@ public class RegistrationForm extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 try {
                     registration();
+                    dispose();
                     MainWindow.main(false);
                 }
                 catch (IllegalArgumentException ex) {
@@ -154,6 +157,6 @@ public class RegistrationForm extends JFrame{
 
     }
     public void registration(){
-        UserHandler.registration(loginTF.getText(), onePassTF.getText(), twoPassTF.getText());
+        UserHandler.registration(loginTF.getText(), new String(onePassTF.getPassword()), new String(twoPassTF.getPassword()));
     }
 }

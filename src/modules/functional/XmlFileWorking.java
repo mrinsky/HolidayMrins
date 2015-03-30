@@ -227,7 +227,9 @@ public class XmlFileWorking implements DataSaveLoad {
     }
 
     public ArrayList<User> loadUsers(String direct) throws IOException, JDOMException, SAXException {
+
         ArrayList<User> users = new ArrayList<User>();
+
         if (!((new File(direct)).exists())) {/*direct = XML_COUNTRY_DEFAULT_RU;*/}
         if (validationXSD(direct, USERS_XSD) == false) {throw new SAXException();}
         Document document = builder.build(direct);
@@ -285,7 +287,7 @@ public class XmlFileWorking implements DataSaveLoad {
         saveUsers(UserHandler.users, XML_USERS);
     }
 
-    public boolean validationXSD(String directXML,String directXSD) throws SAXException, IOException {
+    public boolean validationXSD(String directXML,String directXSD) throws IOException {
         try {
 
 

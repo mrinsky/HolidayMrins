@@ -32,10 +32,10 @@ public class UserHandler {
 
     public static ArrayList<User> users = new ArrayList<User>();
 
-    private static boolean authorizate(String login, String pass){
+    private static boolean authorizate(String login, String pass) {
         int index = 0;
-        for (int i = 0; i < users.size(); i++){
-            if (users.get(i).getLogin().equals(login)){
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).getLogin().equals(login)) {
                 index = i;
             }
         }
@@ -44,7 +44,8 @@ public class UserHandler {
         BigInteger encrypt = rsa.encrypt(message);
         return encrypt.equals(users.get(index).getPass());
     }
-    private static boolean checkLogin(String login){
+
+    private static boolean checkLogin(String login) {
         boolean result = false;
         for (int i = 0; i < users.size(); i++) {
             if (login.equals(users.get(i).getLogin())) {
@@ -53,6 +54,7 @@ public class UserHandler {
         }
         return result;
     }
+
     public static void registration(String login, String pass1, String pass2) {
         if (pass1.equals(pass2)) {
 
@@ -65,7 +67,8 @@ public class UserHandler {
             throw new IllegalArgumentException(Resources.language.getPASS_EXCEPTION());
         }
     }
-    private static void registration(){
+
+    private static void registration() {
         String login,
                 pass1,
                 pass2;
@@ -84,15 +87,15 @@ public class UserHandler {
                 registration(login, pass1, pass2);
                 break;
             }
-        }catch (IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             out.println(e.getMessage());
             registration();
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             out.println(Resources.language.getIO_ERROR());
             MainMenu.mainMenu();
         }
     }
+
     private static void authorization() {
         String login,
                 pass;
@@ -103,17 +106,25 @@ public class UserHandler {
                 out.println(Resources.language.getPASS());
                 pass = reader.readLine();
                 loadUserData(login, pass);
-            }
-            catch (IOException exc){
+            } catch (IOException exc) {
                 out.println(Resources.language.getIO_ERROR());
             }
             MainMenu.mainMenu();
         }
     }
-    public static void loadUserData(String login, String pass){
-        if (authorizate(login, pass)){
-            out.println(Resources.language.getHELLO_USER() + login + "!");
 
+    protected static void loadUserData(String login, String pass) {
+
+        String message = loadData(login, pass);
+        if (!message.isEmpty()) {
+            out.println(Resources.language.getLOGIN_OR_PASS_EXCEPTION());
+            authorization();
+        }
+        else out.println(Resources.language.getHELLO_USER() + login);
+    }
+
+    public static String loadData(String login, String pass) {
+        if (authorizate(login, pass)) {
             traditionCount = Resources.traditions.size();
             countryCount = Resources.countries.size();
             holidayCount = Resources.holidays.size();
@@ -122,23 +133,21 @@ public class UserHandler {
 
             if (Resources.language.getClass() == Strings_EN.class) {
                 currentUser.loadAllEN();
-            }
-            else {
+            } else {
                 currentUser.loadAllRU();
             }
+            return "";
         }
-        else {
-            out.println(Resources.language.getLOGIN_OR_PASS_EXCEPTION());
-            authorization();
-        }
+        else return Resources.language.getLOGIN_OR_PASS_EXCEPTION();
     }
-    protected static void logIn(){
+
+    protected static void logIn() {
         out.println(Resources.language.getENTER_MESSAGE());
         int choice;
-        try{
+        try {
             choice = Integer.parseInt(reader.readLine());
 
-            switch(choice){
+            switch (choice) {
                 case 1:
                     authorization();
                     MainMenu.mainMenu();
@@ -161,29 +170,29 @@ public class UserHandler {
             logIn();
         }
     }
-    protected static void logOut(){
+
+    public static void logOut() {
         ArrayList<Tradition> traditions = new ArrayList<Tradition>();
-        for (int i = traditionCount; i < Resources.traditions.size(); i++){
+        for (int i = traditionCount; i < Resources.traditions.size(); i++) {
             traditions.add(Resources.traditions.get(i));
         }
         currentUser.setTraditionList(traditions);
         Remove.removeListTradition(traditions);
         LinkedList<Country> countries = new LinkedList<Country>();
-        for (int i = countryCount; i < Resources.countries.size(); i++){
+        for (int i = countryCount; i < Resources.countries.size(); i++) {
             countries.add(Resources.countries.get(i));
         }
         currentUser.setCountryList(countries);
         Remove.removeListCountry(countries);
         LinkedList<Holiday> holidays = new LinkedList<Holiday>();
-        for (int i = holidayCount; i < Resources.holidays.size(); i++){
+        for (int i = holidayCount; i < Resources.holidays.size(); i++) {
             holidays.add(Resources.holidays.get(i));
         }
         currentUser.setHolidayList(holidays);
         Remove.removeListHoliday(holidays);
         if (Resources.language.getClass() == Strings_EN.class) {
             currentUser.saveAllEN();
-        }
-        else{
+        } else {
             currentUser.saveAllRU();
         }
     }

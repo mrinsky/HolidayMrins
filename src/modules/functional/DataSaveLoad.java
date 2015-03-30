@@ -17,29 +17,29 @@ import java.util.LinkedList;
  */
 
 public  interface DataSaveLoad {
-    public final static String XML_TRADITION_DEFAULT_RU = "resources/default_save/traditionSave_ru.xml";
-    public final static String XML_HOLIDAY_DEFAULT_RU = "resources/default_save/holidaySave_ru.xml";
-    public final static String XML_COUNTRY_DEFAULT_RU = "resources/default_save/countrySave_ru.xml";
-    public final static String XML_TRADITION_DEFAULT_EN = "resources/default_save/traditionSave_en.xml";
-    public final static String XML_HOLIDAY_DEFAULT_EN = "resources/default_save/holidaySave_en.xml";
-    public final static String XML_COUNTRY_DEFAULT_EN = "resources/default_save/countrySave_en.xml";
+    public final static String XML_TRADITION_DEFAULT_RU = "resources/xml/default_save/traditionSave_ru.xml";
+    public final static String XML_HOLIDAY_DEFAULT_RU = "resources/xml/default_save/holidaySave_ru.xml";
+    public final static String XML_COUNTRY_DEFAULT_RU = "resources/xml/default_save/countrySave_ru.xml";
+    public final static String XML_TRADITION_DEFAULT_EN = "resources/xml/default_save/traditionSave_en.xml";
+    public final static String XML_HOLIDAY_DEFAULT_EN = "resources/xml/default_save/holidaySave_en.xml";
+    public final static String XML_COUNTRY_DEFAULT_EN = "resources/xml/default_save/countrySave_en.xml";
 
 
-    public final static String XML_TRADITION_PATCH_RU = "resources/traditionSave_ru.xml";
-    public final static String XML_HOLIDAY_PATCH_RU = "resources/holidaySave_ru.xml";
-    public final static String XML_COUNTRY_PATCH_RU = "resources/countrySave_ru.xml";
-    public final static String XML_TRADITION_PATCH_EN = "resources/traditionSave_en.xml";
-    public final static String XML_HOLIDAY_PATCH_EN = "resources/holidaySave_en.xml";
-    public final static String XML_COUNTRY_PATCH_EN = "resources/countrySave_en.xml";
+    public final static String XML_TRADITION_PATCH_RU = "resources/xml/traditionSave_ru.xml";
+    public final static String XML_HOLIDAY_PATCH_RU = "resources/xml/holidaySave_ru.xml";
+    public final static String XML_COUNTRY_PATCH_RU = "resources/xml/countrySave_ru.xml";
+    public final static String XML_TRADITION_PATCH_EN = "resources/xml/traditionSave_en.xml";
+    public final static String XML_HOLIDAY_PATCH_EN = "resources/xml/holidaySave_en.xml";
+    public final static String XML_COUNTRY_PATCH_EN = "resources/xml/countrySave_en.xml";
 
     public final static String XML_USERS = "resources/userList/user.xml";
 
-    public final static String HOLIDAY_PATCH_EN = "resources/holidays_en.bin";
-    public final static String COUNTRY_PATCH_EN = "resources/country_en.bin";
-    public final static String TRADITION_PATCH_EN = "resources/tradition_en.bin";
-    public final static String HOLIDAY_PATCH_RU = "resources/holidays_ru.bin";
-    public final static String COUNTRY_PATCH_RU = "resources/country_ru.bin";
-    public final static String TRADITION_PATCH_RU = "resources/tradition_ru.bin";
+    public final static String HOLIDAY_PATCH_EN = "resources/bin/holidays_en.bin";
+    public final static String COUNTRY_PATCH_EN = "resources/bin/country_en.bin";
+    public final static String TRADITION_PATCH_EN = "resources/bin/tradition_en.bin";
+    public final static String HOLIDAY_PATCH_RU = "resources/bin/holidays_ru.bin";
+    public final static String COUNTRY_PATCH_RU = "resources/bin/country_ru.bin";
+    public final static String TRADITION_PATCH_RU = "resources/bin/tradition_ru.bin";
 
     public final static String TRADITION_XSD = "resources/XSD_Schems/TraditionXSD.xsd";
     public final static String HOLIDAY_XSD = "resources/XSD_Schems/HolidayXSD.xsd";

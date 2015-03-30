@@ -160,6 +160,8 @@ public interface Language {
     public String getENTER_PASS();
 
     public String getGUEST_MAIN_MENU();
+    public String getSHOW_OR_EDIT();
+    public String getSHOW();
 
     public String getSEARCH_BY_DATE();
     public String getSEARCH_BY_DATE_INTERVAL();
