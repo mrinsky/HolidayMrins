@@ -28,7 +28,7 @@ public class UserHandler {
     public static int countryCount = 0;
     public static int holidayCount = 0;
     public static RSA rsa = new RSA();
-    static User currentUser;
+    public static User currentUser;
 
     public static ArrayList<User> users = new ArrayList<User>();
 

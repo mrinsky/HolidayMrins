@@ -98,6 +98,12 @@ public class Strings_EN implements Language {
         private final String ALL_COUNTRY = "all country";
         private final String SHOW_OR_EDIT = "Show / Edit description";
         private final String SHOW = "Show description";
+        private final String NOT_FOUND_DESCRIPTION = "Description is empty";
+
+    @Override
+    public String getNOT_FOUND_DESCRIPTION() {
+        return NOT_FOUND_DESCRIPTION;
+    }
 
     public String getSHOW() {
         return SHOW;

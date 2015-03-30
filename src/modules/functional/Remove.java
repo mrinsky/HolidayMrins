@@ -4,7 +4,9 @@ import main.Resources;
 import model.Country;
 import model.Holiday;
 import model.Tradition;
+import modules.user_interface.UserHandler;
 
+import javax.swing.*;
 import java.util.List;
 
 public class Remove {
@@ -34,7 +36,10 @@ public class Remove {
     }
 
     public static void removeTradition(int id, List<Tradition> traditions) {
-        traditions.remove(id);
+        if (id >= UserHandler.traditionCount && id < Resources.traditions.size()) {
+            traditions.remove(id);
+        }
+        else throw new IndexOutOfBoundsException();
     }
 
     public static void removeCountry(int country, List<Country> c_list){

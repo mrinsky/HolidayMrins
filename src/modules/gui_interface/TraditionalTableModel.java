@@ -1,9 +1,11 @@
 package modules.gui_interface;
 
 import javax.swing.table.AbstractTableModel;
-
+import java.awt.event.MouseEvent;
+import java.util.EventObject;
 
 public class TraditionalTableModel extends AbstractTableModel {
+
     private String[] columnNames;
     private Object[][] data;
 
@@ -28,6 +30,11 @@ public class TraditionalTableModel extends AbstractTableModel {
         return columnIndex == columnNames.length - 1;
     }
 
+    public boolean isCellEditable(EventObject event) {
+        if (event instanceof MouseEvent) {return ((MouseEvent) event).getClickCount() >= 2;}
+        return true;
+    }
+
     @Override
     public String getColumnName(int column) {
         return columnNames[column];
@@ -35,7 +42,7 @@ public class TraditionalTableModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
-        return data.length; //
+        return data.length;
     }
 
     @Override

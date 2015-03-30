@@ -38,16 +38,6 @@ public class MainClass {
                         break;
                     case 2:
                         LoginWindow.main();
-                        /*XmlFileWorking xml = new XmlFileWorking();
-                        try {
-                        UserHandler.users = xml.loadUsers(XmlFileWorking.XML_USERS);}
-                        catch (JDOMException e) {
-                            Resources.out.println(Resources.language.getXML_ERROR());
-                            start();
-                        } catch (SAXException e) {
-                            Resources.out.println(Resources.language.getXML_ERROR());
-                            start();
-                        }*/
                         break;
                     case 3:
                         System.exit(0);

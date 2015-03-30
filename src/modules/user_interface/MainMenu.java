@@ -47,6 +47,9 @@ public class MainMenu {
                             mainMenu();
                         }
                         break;
+                    case 3:
+                        System.exit(0);
+                        break;
                     default:
                         out.println(Resources.language.getWRONG_CHOICE());
                 }

@@ -74,4 +74,11 @@ public class Change {
         }
         return list;
     }
+
+    public static List<Tradition> editTradition(int id, Holiday newHoliday, Country newCountry, List<Tradition> list) {
+        //int count = 0;
+        list.get(id).setHoliday(newHoliday);
+        list.get(id).setCountry(newCountry);
+        return list;
+    }
 }

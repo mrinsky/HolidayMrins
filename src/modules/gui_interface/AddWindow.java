@@ -1,13 +1,15 @@
 package modules.gui_interface;
 
-import languages.Strings_EN;
 import main.Resources;
 import model.Country;
 import model.Holiday;
 import model.HolidayType;
 import model.Tradition;
 import modules.functional.Add;
+import modules.functional.Change;
 import modules.functional.DateLabelFormatter;
+import modules.user_interface.ChangeHandler;
+import modules.user_interface.UserHandler;
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
@@ -15,9 +17,7 @@ import org.jdatepicker.impl.UtilDateModel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
-import java.io.IOException;
-import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Properties;
@@ -44,12 +44,34 @@ public class AddWindow extends JFrame {
         this.setBounds(200, 200, 300, 450);
         this.setResizable(false);
         initComponents();
+        saveButton.addActionListener(new AddListener());
+    }
+
+    public AddWindow(Tradition tradition, int index) {
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setBounds(200, 200, 300, 450);
+        this.setResizable(false);
+        initComponents();
+        addTitle.setText(Resources.language.getCHANGE());
+        this.holidayBox.setSelectedItem(tradition.getHoliday().getName());
+        this.countryBox.setSelectedItem(tradition.getCountry().getName());
+        this.descriptionField.setText(tradition.getDescription());
+        this.typeBox.setSelectedItem(tradition.getHoliday().getType());
+        saveButton.addActionListener(new AddListener(true,index));
     }
 
     public static void main() {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AddWindow().setVisible(true);
+            }
+        });
+    }
+
+    public static void main(final Tradition tradition, final int id) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AddWindow(tradition,id).setVisible(true);
             }
         });
     }
@@ -126,7 +148,7 @@ public class AddWindow extends JFrame {
         saveButton = new JButton("OK");
         saveButton.setPreferredSize(new Dimension(50, 50));
         saveButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-        saveButton.addActionListener(new ButtonListener());
+        //saveButton.addActionListener(new AddListener());
         this.add(saveButton);
     }
 
@@ -232,7 +254,17 @@ public class AddWindow extends JFrame {
     }
     // endregion
 
-    private class ButtonListener implements ActionListener {
+    private class AddListener implements ActionListener {
+
+        private boolean isChanging = false;
+        private int id;
+
+        public AddListener() {}
+
+        public AddListener(boolean check, int id) {
+            this.isChanging = check;
+            this.id = id;
+        }
 
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
@@ -255,7 +287,12 @@ public class AddWindow extends JFrame {
                     Add.addHoliday(holidayBox.getSelectedItem().toString(), date, typeBox.getSelectedIndex(), Resources.holidays);
                 } else holiday = Resources.holidays.get(holidayBox.getSelectedIndex());
 
-                Add.addTradition(holiday, country, descriptionField.getText(), Resources.traditions);
+                if (!isChanging) Add.addTradition(holiday, country, Resources.traditions);
+
+                else {
+                    Change.editTradition(descriptionField.getText(),id,1,Resources.traditions);
+                    Change.editTradition(id,holiday,country,Resources.traditions);
+                }
 
                 Container container = saveButton.getParent();
                 do {

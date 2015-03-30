@@ -162,6 +162,7 @@ public interface Language {
     public String getGUEST_MAIN_MENU();
     public String getSHOW_OR_EDIT();
     public String getSHOW();
+    public String getNOT_FOUND_DESCRIPTION();
 
 
 }

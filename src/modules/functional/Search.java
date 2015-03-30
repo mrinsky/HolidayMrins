@@ -155,4 +155,13 @@ public class Search {
         return index;
     }
 
+    public static int searchIndex(ArrayList<Tradition> tr, String country, String holiday) {
+        int index = -1;
+        for (int i = 0; i < tr.size(); i++){
+            if ((tr.get(i).getHoliday().getName().equals(holiday))&&(tr.get(i).getCountry().getName().equals(country)))
+                index = i;
+        }
+        return index;
+    }
+
 }

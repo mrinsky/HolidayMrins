@@ -93,6 +93,11 @@ public class Strings_RU implements Language {
     private final String ALL_HOLIDAY = "праздники";
     private final String ALL_COUNTRY = "страны";
     private final String SHOW_OR_EDIT = "Показать / Изменить описание";
+    private final String NOT_FOUND_DESCRIPTION = "Описание отсутвует";
+
+    public String getNOT_FOUND_DESCRIPTION() {
+        return NOT_FOUND_DESCRIPTION;
+    }
 
     public String getSHOW() {
         return SHOW;

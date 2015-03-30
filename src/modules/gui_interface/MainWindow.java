@@ -1,8 +1,11 @@
 package modules.gui_interface;
 
+import com.sun.deploy.panel.PathEditor;
 import languages.Strings_EN;
 import main.Resources;
 import model.Tradition;
+import modules.functional.Remove;
+import modules.functional.Search;
 import modules.user_interface.UserHandler;
 
 import javax.swing.*;
@@ -184,9 +187,7 @@ public class MainWindow extends JFrame {
     }
 
     public void initTable() {
-        //if (Resources.language.getClass() == Strings_EN.class) traditionTable = new JTable(initData(columnNamesEN),columnNamesEN);
-        //else traditionTable = new JTable(initData(columnNamesRU),columnNamesRU);
-      //TraditionalTableModel traditionalTableModel = new TraditionalTableModel();
+        
         if(Resources.language.getClass() == Strings_EN.class) {
             tableModel = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
         }else tableModel = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
@@ -194,16 +195,15 @@ public class MainWindow extends JFrame {
         traditionTable.add(new JScrollPane());
         this.add(traditionTable, BorderLayout.WEST);
         this.add(new JScrollPane(traditionTable));
-       // traditionTable.setEnabled(false);
+        traditionTable.setCellSelectionEnabled(true);
         popup = new JPopupMenu();
-        showOrEdit = new JMenuItem(Resources.language.getSHOW_OR_EDIT());
+        showOrEdit = new JMenuItem(Resources.language.getSHOW());
         removeThisPopup = new JMenuItem(Resources.language.getREMOVE());
         removeAllMarkedPopup = new JMenuItem(Resources.language.getREMOVE_MARKED());
         popup.add(showOrEdit);
         popup.add(removeThisPopup);
         popup.add(removeAllMarkedPopup);
         if(isGuestMode){
-            showOrEdit.setText(Resources.language.getSHOW());
             removeThisPopup.setEnabled(false);
             removeAllMarkedPopup.setEnabled(false);
         }
@@ -212,9 +212,13 @@ public class MainWindow extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 if(SwingUtilities.isRightMouseButton(e))
                     popup.show(traditionTable, e.getX(), e.getY());
+
+                if ((tableModel.isCellEditable(e))&&(!isGuestMode)) {
+                    AddWindow.main(Resources.traditions.get(traditionTable.getSelectedRow()), traditionTable.getSelectedRow());
+                }
             }
         });
-        //traditionTable.show();
+        showOrEdit.addActionListener(new descriptListener());
     }
 
     private class styleListener implements ActionListener {
@@ -259,5 +263,25 @@ public class MainWindow extends JFrame {
             data[j][4] = Boolean.FALSE;
         }
         return data;
+    }
+
+    private class descriptListener implements ActionListener {
+
+        private String description = "";
+
+        public descriptListener() {}
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            int index = traditionTable.getSelectedRow();
+            description = Resources.traditions.get(index).getDescription();
+            if (description.isEmpty()) description = Resources.language.getNOT_FOUND_DESCRIPTION();
+
+            JOptionPane optionPane = new JOptionPane();
+            optionPane.setMessage(description);
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+            JDialog dialog = optionPane.createDialog(null,Resources.language.getTRADITION_ITEM());
+            dialog.setVisible(true);
+        }
     }
 }

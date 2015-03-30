@@ -58,18 +58,13 @@ public class RemoveHandler {
         try {
             MainMenu.out.println(Resources.language.getID_REQUEST());
             int choice = Integer.parseInt(MainMenu.reader.readLine());
-            if (choice >= UserHandler.countryCount && choice < Resources.countries.size()) {
                 Remove.removeTradition(choice, Resources.traditions);
-            }
-            else {
-                throw new IndexOutOfBoundsException();
-            }
+
             MainMenu.out.println(Resources.language.getREADY());
         } catch (IOException e) {
             MainMenu.out.println(Resources.language.getIO_ERROR());
         }
         catch (IndexOutOfBoundsException ex) {
             MainMenu.out.println(Resources.language.getWRONG_CHOICE());}
-        removeTradition();
     }
 }
