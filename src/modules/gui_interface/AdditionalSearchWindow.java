@@ -63,6 +63,7 @@ public class AdditionalSearchWindow extends JFrame {
         //setBounds(200, 200, 200, 220);
         setResizable(false);
         setLocationRelativeTo(null);
+        addListener();
     }
 
     public static void main(final int param_num) {
@@ -236,13 +237,17 @@ public class AdditionalSearchWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 switch (currentParamNum){
                     case 0:
+                        //System.out.println("Yes");
                         //Resources.traditions = Search.getDateHolidays();
-                        //break;
+                        break;
                     case 1:
-                        //break;
+                        break;
                     case 2:
+
                         Resources.traditions = Search.maskSearch(holidayTextField.toString(), countryTextField.toString(), descriptionTextField.toString(),
                                 Resources.traditions);
+                        MainWindow.main(false);
+
                         break;
                     case 3:
                         Resources.traditions = Search.regularSearch(regTextField.toString(), Resources.traditions);
