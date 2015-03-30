@@ -223,8 +223,7 @@ public class AdditionalSearchWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 switch (currentParamNum){
                     case 0:
-                        //Resources.traditions = Search.getDateHolidays();
-                        //break;
+
                     case 1:
                         //break;
                     case 2:
