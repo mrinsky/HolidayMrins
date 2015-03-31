@@ -71,21 +71,26 @@ public class SearchWindow extends JFrame {
         comboBox.add(searchParam);
         comboBox.add(searchComboBox);
 
-        andButton = new JButton(Resources.language.getAND_LABEL());
+        //andButton = new JButton(Resources.language.getAND_LABEL());
 
-        okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
+        //okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
 
         Box frameBox = Box.createVerticalBox();
         frameBox.setBorder(new EmptyBorder(6, 6, 6, 6));
         frameBox.add(logoBox);
         frameBox.add(Box.createVerticalStrut(7));
+
         frameBox.add(comboBox);
         frameBox.add(Box.createVerticalStrut(7));
         frameBox.add(searchComboBox);
         searchComboBox.setSelectedIndex(prev_num);
         frameBox.add(Box.createVerticalStrut(7));
-        andButton.setEnabled(false);
-        frameBox.add(andButton);
+        //andButton.setEnabled(false);
+        Container containerAndButton = getContentPane();
+        containerAndButton.setLayout(new BorderLayout());
+        andButton = new JButton(Resources.language.getAND_LABEL());
+        containerAndButton.add(andButton, BorderLayout.CENTER);
+        frameBox.add(containerAndButton);
         frameBox.add(Box.createVerticalStrut(7));
         switch (flag_num){
             case 1: {
@@ -101,7 +106,11 @@ public class SearchWindow extends JFrame {
                 break;
             }
         }
-        frameBox.add(okButton);
+        Container containerOkButton = getContentPane();
+        containerOkButton.setLayout(new BorderLayout());
+        okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
+        containerOkButton.add(okButton, BorderLayout.EAST);
+        frameBox.add(containerOkButton);
         return frameBox;
     }
 

@@ -507,7 +507,18 @@ public class Strings_RU implements Language {
         return GUEST_MAIN_MENU;
     }
 
-
+    public String getSEARCH_BY_DATE(){
+        return SEARCH_BY_DATE;
+    }
+    public String getSEARCH_BY_DATE_INTERVAL(){
+        return SEARCH_BY_DATE_INTERVAL;
+    }
+    public String getCHOOSE_SEARCH_PARAM(){
+        return CHOOSE_SEARCH_PARAM;
+    }
+    public String getAND_LABEL(){
+        return AND_LABEL;
+    }
 
 
 

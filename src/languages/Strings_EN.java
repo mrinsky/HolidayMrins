@@ -99,6 +99,11 @@ public class Strings_EN implements Language {
         private final String SHOW_OR_EDIT = "Show / Edit description";
         private final String SHOW = "Show description";
 
+    private final String SEARCH_BY_DATE = "Search by date";
+    private final String SEARCH_BY_DATE_INTERVAL = "Search by date interval";
+    private final String CHOOSE_SEARCH_PARAM = "Choose search params";
+    private final String AND_LABEL = "And";
+
     public String getSHOW() {
         return SHOW;
     }
@@ -491,8 +496,21 @@ public class Strings_EN implements Language {
     }
 
 
+    public String getSEARCH_BY_DATE(){
+        return SEARCH_BY_DATE;
+    }
+    public String getSEARCH_BY_DATE_INTERVAL(){
+        return SEARCH_BY_DATE_INTERVAL;
+    }
+    public String getCHOOSE_SEARCH_PARAM(){
+        return CHOOSE_SEARCH_PARAM;
+    }
+    public String getAND_LABEL(){
+        return AND_LABEL;
+    }
 
-
-
+    public String getNOT_FOUND_DESCRIPTION() {
+        return null;
+    }
 
 }

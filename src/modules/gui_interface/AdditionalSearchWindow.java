@@ -119,7 +119,7 @@ public class AdditionalSearchWindow extends JFrame {
         datePanelTo = new JDatePanelImpl(model, pr);
         calendarTo = new JDatePickerImpl(datePanelTo, new DateLabelFormatter());
         rightDateBox.add(toLabel);
-        rightDateBox.add(calendar);
+        rightDateBox.add(calendarTo);
 
         Box bigDateBox = Box.createHorizontalBox();
         bigDateBox.add(leftDateBox);
@@ -127,12 +127,12 @@ public class AdditionalSearchWindow extends JFrame {
         bigDateBox.add(rightDateBox);
 
         Box holidayBox = Box.createHorizontalBox();
-        holidayTextField = new JTextField(20);
+        holidayTextField = new JTextField(1);
         holidayBox.add(holidayTextField);
         holidayBox.setBorder(BorderFactory.createTitledBorder("Enter holiday:"));
 
         Box countryBox = Box.createHorizontalBox();
-        countryTextField = new JTextField(20);
+        countryTextField = new JTextField(15);
         //countryTextField.setBorder(BorderFactory.createTitledBorder("Enter country:"));
         countryBox.add(countryTextField);
         countryBox.setBorder(BorderFactory.createTitledBorder("Enter country:"));
@@ -223,9 +223,10 @@ public class AdditionalSearchWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 switch (currentParamNum){
                     case 0:
-
+                        //Resources.traditions = Search.getDateHolidays();
+                        break;
                     case 1:
-                        //break;
+                        break;
                     case 2:
                         Resources.traditions = Search.maskSearch(holidayTextField.toString(), countryTextField.toString(), descriptionTextField.toString(),
                                 Resources.traditions);

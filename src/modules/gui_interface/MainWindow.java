@@ -24,6 +24,9 @@ public class MainWindow extends JFrame {
 
     private JMenu styleMenu;
     private JMenu helpMenu;
+    private JMenu searchMenu;
+    private JMenu restartMenu;
+    private JMenuItem searchItem;
     private JMenuItem readHelpItem;
     private JTextField searchField;
 
@@ -79,10 +82,26 @@ public class MainWindow extends JFrame {
         initEditMenu();
         initStyleMenu();
         initHelpMenu();
+        initSearchMenu();
 
         mainMenu.add(Box.createHorizontalGlue());
         initSearchField();
         setJMenuBar(mainMenu);
+    }
+
+    private void initSearchMenu() {
+        searchMenu = new JMenu(Resources.language.getSEARCH_MENU_BAR());
+        searchItem = new JMenuItem(Resources.language.getSEARCH_MENU_BAR() + " window");
+
+        searchItem.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                SearchWindow.main();
+            }
+        });
+
+        searchMenu.add(searchItem);
+        mainMenu.add(searchMenu);
     }
 
     private void initStyleMenu() {
@@ -110,14 +129,12 @@ public class MainWindow extends JFrame {
         addMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
                 AddWindow.main();
             }
         });
 
         editMenu.add(addMenu);
         if (isGuestMode) addMenu.setEnabled(false);
-
     }
 
     private void initRemoveMenu() {
@@ -144,6 +161,8 @@ public class MainWindow extends JFrame {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 searchField.setText("");
+                SearchWindow.main();
+
             }
 
             @Override
@@ -158,7 +177,7 @@ public class MainWindow extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent mouseEvent) {
-
+                Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
             }
 
             @Override
@@ -210,10 +229,10 @@ public class MainWindow extends JFrame {
         traditionTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if(SwingUtilities.isRightMouseButton(e))
+                if (SwingUtilities.isRightMouseButton(e))
                     popup.show(traditionTable, e.getX(), e.getY());
 
-                if ((tableModel.isCellEditable(e))&&(!isGuestMode)) {
+                if ((tableModel.isCellEditable(e)) && (!isGuestMode)) {
                     AddWindow.main(Resources.traditions.get(traditionTable.getSelectedRow()), traditionTable.getSelectedRow());
                 }
             }
@@ -283,5 +302,15 @@ public class MainWindow extends JFrame {
             JDialog dialog = optionPane.createDialog(null,Resources.language.getTRADITION_ITEM());
             dialog.setVisible(true);
         }
+    }
+
+    private void restart(){
+        if (!isGuestMode) {
+            UserHandler.logOut();
+            LoginWindow.main();
+            dispose();
+        }
+        else dispose();
+        MainWindow.main(true);
     }
 }
