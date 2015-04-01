@@ -31,6 +31,8 @@ public class MainWindow extends JFrame {
     private JMenuItem removeThisPopup;
     private JMenuItem removeAllMarkedPopup;
     private JMenuItem showOrEdit;
+
+    private JButton updateButton;
 //endregion
 
     TraditionalTableModel tableModel;
@@ -80,6 +82,12 @@ public class MainWindow extends JFrame {
         initStyleMenu();
         initHelpMenu();
 
+
+        updateButton = new JButton(new ImageIcon("resources/img/update32x32.png"));
+        updateButton.setPreferredSize(new Dimension(32, 32));
+        updateButton.addActionListener(new updateListener());
+
+        mainMenu.add(updateButton);
         mainMenu.add(Box.createHorizontalGlue());
         initSearchField();
         setJMenuBar(mainMenu);
@@ -187,7 +195,7 @@ public class MainWindow extends JFrame {
     }
 
     public void initTable() {
-        
+
         if(Resources.language.getClass() == Strings_EN.class) {
             tableModel = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
         }else tableModel = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
@@ -282,6 +290,15 @@ public class MainWindow extends JFrame {
             optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
             JDialog dialog = optionPane.createDialog(null,Resources.language.getTRADITION_ITEM());
             dialog.setVisible(true);
+        }
+    }
+
+    private class updateListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent actionEvent) {
+            if (Resources.traditions.size() > traditionTable.getRowCount())
+            initTable();
         }
     }
 }

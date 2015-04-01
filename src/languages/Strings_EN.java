@@ -103,6 +103,31 @@ public class Strings_EN implements Language {
         return SHOW;
     }
 
+    @Override
+    public String getNOT_FOUND_DESCRIPTION() {
+        return null;
+    }
+
+    @Override
+    public String getSEARCH_BY_DATE() {
+        return null;
+    }
+
+    @Override
+    public String getSEARCH_BY_DATE_INTERVAL() {
+        return null;
+    }
+
+    @Override
+    public String getCHOOSE_SEARCH_PARAM() {
+        return null;
+    }
+
+    @Override
+    public String getAND_LABEL() {
+        return null;
+    }
+
     public String getSHOW_OR_EDIT() {
         return SHOW_OR_EDIT;
     }
