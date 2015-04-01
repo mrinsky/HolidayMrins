@@ -75,10 +75,13 @@ public class Change {
         return list;
     }
 
-    public static List<Tradition> editTradition(int id, Holiday newHoliday, Country newCountry, List<Tradition> list) {
-        //int count = 0;
-        list.get(id).setHoliday(newHoliday);
-        list.get(id).setCountry(newCountry);
+    public static List<Tradition> editTradition(int id, Holiday newHoliday, Country newCountry, String description, List<Tradition> list) {
+
+        Tradition changing = list.get(id);
+        changing.setHoliday(newHoliday);
+        changing.setCountry(newCountry);
+        changing.setDescription(description);
+        list.set(id,changing);
         return list;
     }
 }

@@ -526,9 +526,4 @@ public class Strings_RU implements Language {
     public String getGUEST_MAIN_MENU(){
         return GUEST_MAIN_MENU;
     }
-
-
-
-
-
 }

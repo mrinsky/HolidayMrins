@@ -2,8 +2,10 @@ package modules.gui_interface;
 
 import com.sun.deploy.panel.PathEditor;
 import languages.Strings_EN;
+import languages.Strings_RU;
 import main.Resources;
 import model.Tradition;
+import model.User;
 import modules.functional.Remove;
 import modules.functional.Search;
 import modules.user_interface.UserHandler;
@@ -24,6 +26,9 @@ public class MainWindow extends JFrame {
 
     private JMenu styleMenu;
     private JMenu helpMenu;
+    private JMenu searchMenu;
+    private JMenu restartMenu;
+    private JMenuItem searchItem;
     private JMenuItem readHelpItem;
     private JTextField searchField;
 
@@ -31,8 +36,6 @@ public class MainWindow extends JFrame {
     private JMenuItem removeThisPopup;
     private JMenuItem removeAllMarkedPopup;
     private JMenuItem showOrEdit;
-
-    private JButton updateButton;
 //endregion
 
     TraditionalTableModel tableModel;
@@ -46,14 +49,16 @@ public class MainWindow extends JFrame {
         this.isGuestMode = isGuestMode;
 
         this.addWindowListener(new WindowAdapter() {
+
             @Override
             public void windowClosing(WindowEvent windowEvent) {
                 if (!isGuestMode) {
+                    if (Resources.language instanceof Strings_RU) UserHandler.currentUser.saveAllRU();
+                    else UserHandler.currentUser.saveAllEN();
                     UserHandler.logOut();
-                    LoginWindow.main();
-                    dispose();
                 }
-                else dispose();
+                LoginWindow.main();
+                super.windowClosing(windowEvent);
             }
         });
 
@@ -81,16 +86,29 @@ public class MainWindow extends JFrame {
         initEditMenu();
         initStyleMenu();
         initHelpMenu();
+        initSearchMenu();
+        JButton update = new JButton(new ImageIcon("resources/img/update32x32.png"));
+        update.setPreferredSize(new Dimension(32,32));
+        mainMenu.add(update);
 
-
-        updateButton = new JButton(new ImageIcon("resources/img/update32x32.png"));
-        updateButton.setPreferredSize(new Dimension(32, 32));
-        updateButton.addActionListener(new updateListener());
-
-        mainMenu.add(updateButton);
         mainMenu.add(Box.createHorizontalGlue());
         initSearchField();
         setJMenuBar(mainMenu);
+    }
+
+    private void initSearchMenu() {
+        searchMenu = new JMenu(Resources.language.getSEARCH_MENU_BAR());
+        searchItem = new JMenuItem(Resources.language.getSEARCH_MENU_BAR() + " window");
+
+        searchItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                SearchWindow.main();
+            }
+        });
+
+        searchMenu.add(searchItem);
+        mainMenu.add(searchMenu);
     }
 
     private void initStyleMenu() {
@@ -118,14 +136,12 @@ public class MainWindow extends JFrame {
         addMenu.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
                 AddWindow.main();
             }
         });
 
         editMenu.add(addMenu);
         if (isGuestMode) addMenu.setEnabled(false);
-
     }
 
     private void initRemoveMenu() {
@@ -152,6 +168,8 @@ public class MainWindow extends JFrame {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 searchField.setText("");
+                SearchWindow.main();
+
             }
 
             @Override
@@ -166,7 +184,7 @@ public class MainWindow extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent mouseEvent) {
-
+                Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
             }
 
             @Override
@@ -195,7 +213,7 @@ public class MainWindow extends JFrame {
     }
 
     public void initTable() {
-
+        
         if(Resources.language.getClass() == Strings_EN.class) {
             tableModel = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
         }else tableModel = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
@@ -218,10 +236,10 @@ public class MainWindow extends JFrame {
         traditionTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                if(SwingUtilities.isRightMouseButton(e))
+                if (SwingUtilities.isRightMouseButton(e))
                     popup.show(traditionTable, e.getX(), e.getY());
 
-                if ((tableModel.isCellEditable(e))&&(!isGuestMode)) {
+                if ((tableModel.isCellEditable(e)) && (!isGuestMode)) {
                     AddWindow.main(Resources.traditions.get(traditionTable.getSelectedRow()), traditionTable.getSelectedRow());
                 }
             }
@@ -282,7 +300,7 @@ public class MainWindow extends JFrame {
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
             int index = traditionTable.getSelectedRow();
-            description = Resources.traditions.get(index).getDescription();
+            if (index < Resources.traditions.size()) this.description = Resources.traditions.get(index).getDescription();
             if (description.isEmpty()) description = Resources.language.getNOT_FOUND_DESCRIPTION();
 
             JOptionPane optionPane = new JOptionPane();
@@ -293,12 +311,13 @@ public class MainWindow extends JFrame {
         }
     }
 
-    private class updateListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent actionEvent) {
-            if (Resources.traditions.size() > traditionTable.getRowCount())
-            initTable();
+    private void restart(){
+        if (!isGuestMode) {
+            UserHandler.logOut();
+            LoginWindow.main();
+            dispose();
         }
+        else dispose();
+        MainWindow.main(true);
     }
 }

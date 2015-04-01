@@ -96,15 +96,15 @@ public class User {
         return traditions;
     }
 
-    public static void setCountryList(LinkedList<Country> list) {
+    public void setCountryList(LinkedList<Country> list) {
         countries = list;
     }
 
-    public static void setHolidayList(LinkedList<Holiday> list) {
+    public void setHolidayList(LinkedList<Holiday> list) {
         holidays = list;
     }
 
-    public static void setTraditionList(ArrayList<Tradition> list) {
+    public void setTraditionList(ArrayList<Tradition> list) {
         traditions = list;
     }
 

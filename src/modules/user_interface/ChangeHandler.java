@@ -128,7 +128,7 @@ public class ChangeHandler {
             MainMenu.out.println(Resources.language.getIO_ERROR());
         } catch (IndexOutOfBoundsException e){
             Resources.language.getWRONG_CHOICE();
-            changeDescription();
+            //changeDescription();
         }
     }
 
@@ -155,7 +155,7 @@ public class ChangeHandler {
             MainMenu.out.println(Resources.language.getIO_ERROR());
         } catch (IndexOutOfBoundsException e){
             Resources.language.getWRONG_CHOICE();
-            changeDescription();
+            //changeDescription();
         }
     }
 

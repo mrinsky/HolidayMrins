@@ -51,7 +51,7 @@ public class TraditionHandler {
         MainMenu.out.println(Resources.language.getID_REQUEST());
         try {
             int id = Integer.parseInt(MainMenu.reader.readLine());
-            Tradition tradition = Resources.traditions.get(id);
+            Tradition tradition = UserHandler.currentUser.getTraditionList().get(id);
             if (!tradition.getDescription().equals("")) MainMenu.out.println(Resources.traditions.get(id).getDescription());
             else {
                 MainMenu.out.println(Resources.language.getNO_DESCRIPT());

@@ -287,11 +287,10 @@ public class AddWindow extends JFrame {
                     Add.addHoliday(holidayBox.getSelectedItem().toString(), date, typeBox.getSelectedIndex(), Resources.holidays);
                 } else holiday = Resources.holidays.get(holidayBox.getSelectedIndex());
 
-                if (!isChanging) Add.addTradition(holiday, country, Resources.traditions);
+                if (!isChanging) Add.addTradition(holiday, country, descriptionField.getText(), Resources.traditions);
 
                 else {
-                    Change.editTradition(descriptionField.getText(),id,1,Resources.traditions);
-                    Change.editTradition(id,holiday,country,Resources.traditions);
+                    Resources.traditions = (ArrayList<Tradition>)Change.editTradition(id, holiday, country, descriptionField.getText(), Resources.traditions);
                 }
 
                 Container container = saveButton.getParent();
