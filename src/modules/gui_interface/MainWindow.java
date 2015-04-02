@@ -4,6 +4,7 @@ import com.sun.deploy.panel.PathEditor;
 import languages.Strings_EN;
 import languages.Strings_RU;
 import main.Resources;
+import model.Holiday;
 import model.Tradition;
 import model.User;
 import modules.functional.Remove;
@@ -236,8 +237,9 @@ public class MainWindow extends JFrame {
         readHelpItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if (Resources.language.getClass() == Strings_EN.class) HelpWindow.main("./resources/helps/help_en.txt");
-                else HelpWindow.main("./resources/helps/help_ru.txt");
+                restart();
+                //if (Resources.language.getClass() == Strings_EN.class) HelpWindow.main("./resources/helps/help_en.txt");
+                //else HelpWindow.main("./resources/helps/help_ru.txt");
             }
         });
 
@@ -345,12 +347,16 @@ public class MainWindow extends JFrame {
     }
 
     private void restart(){
-        if (!isGuestMode) {
-            UserHandler.logOut();
-            LoginWindow.main();
-            dispose();
-        }
-        else dispose();
-        MainWindow.main(true);
+        //for (Tradition item : Resources.traditions) {
+            //System.out.println(item);
+        //}
+        TraditionalTableModel tableRestart;
+        if(Resources.language.getClass() == Strings_EN.class) {
+            tableRestart = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
+        }else tableRestart = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
+        traditionTable.setModel(tableRestart);
+        //for (Tradition item : Resources.traditions) {
+            //System.out.println(item);
+        //}
     }
 }
