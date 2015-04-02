@@ -90,10 +90,43 @@ public class MainWindow extends JFrame {
         JButton update = new JButton(new ImageIcon("resources/img/update32x32.png"));
         update.setPreferredSize(new Dimension(32,32));
         mainMenu.add(update);
+        update.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                refreshTable();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
 
         mainMenu.add(Box.createHorizontalGlue());
         initSearchField();
         setJMenuBar(mainMenu);
+    }
+    private void refreshTable()    {
+        TraditionalTableModel tableRestart;
+        if(Resources.language.getClass() == Strings_EN.class) {
+            tableRestart = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
+        }else tableRestart = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
+        traditionTable.setModel(tableRestart);
     }
 
     private void initSearchMenu() {

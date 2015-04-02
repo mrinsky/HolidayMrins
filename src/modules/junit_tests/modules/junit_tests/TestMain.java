@@ -1,4 +1,4 @@
-package modules.junit_tests;
+/*package modules.junit_tests;
 
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -13,4 +13,4 @@ public class TestMain extends TestCase {
         suite.addTest(new TestVally("testChangeTradition"));
         runner.doRun(suite);
     }
-}
+}*/
