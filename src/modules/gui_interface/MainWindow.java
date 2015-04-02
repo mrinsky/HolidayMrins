@@ -14,6 +14,7 @@ import modules.user_interface.UserHandler;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class MainWindow extends JFrame {
     //region MENU
@@ -40,9 +41,9 @@ public class MainWindow extends JFrame {
 //endregion
 
     TraditionalTableModel tableModel;
-    private JTable traditionTable;
-    private String[] columnNamesEN = {"HOLIDAY", "COUNTRY", "DATE", "TYPE", "CHOOSE"};
-    private String[] columnNamesRU = {"ПРАЗДНИК","СТРАНА","ДАТА","ТИП","ВЫБРАТЬ"};
+    private static JTable traditionTable;
+    private static String[] columnNamesEN = {"HOLIDAY", "COUNTRY", "DATE", "TYPE", "CHOOSE"};
+    private static String[] columnNamesRU = {"ПРАЗДНИК","СТРАНА","ДАТА","ТИП","ВЫБРАТЬ"};
 
     private boolean isGuestMode = false;
 
@@ -196,14 +197,25 @@ public class MainWindow extends JFrame {
     }
 
     private void initSearchField() {
+        final ArrayList<Tradition> defaultTradtion = Resources.traditions;
+
         searchField = new JTextField(Resources.language.getSEARCH(), 20);
         searchField.setMaximumSize(searchField.getPreferredSize());
+        searchField.addKeyListener((KeyListener) new KeyAdapter() {
+
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    //if (searchField.getText() != "")
+                    Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
+                    restart();
+                }
+            }
+        });
         searchField.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 searchField.setText("");
-                SearchWindow.main();
-
+                //Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
             }
 
             @Override
@@ -218,12 +230,13 @@ public class MainWindow extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent mouseEvent) {
-                Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
+                //Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
             }
 
             @Override
             public void mouseExited(MouseEvent mouseEvent) {
-
+                Resources.traditions = defaultTradtion;
+                restart();
             }
         });
 
@@ -237,9 +250,8 @@ public class MainWindow extends JFrame {
         readHelpItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                restart();
-                //if (Resources.language.getClass() == Strings_EN.class) HelpWindow.main("./resources/helps/help_en.txt");
-                //else HelpWindow.main("./resources/helps/help_ru.txt");
+                if (Resources.language.getClass() == Strings_EN.class) HelpWindow.main("./resources/helps/help_en.txt");
+                else HelpWindow.main("./resources/helps/help_ru.txt");
             }
         });
 
@@ -312,7 +324,7 @@ public class MainWindow extends JFrame {
         }
     }
 
-    private Object[][] initData(String[] columnNames) {
+    private static Object[][] initData(String[] columnNames) {
         Object[][] data =  new Object[Resources.traditions.size()][columnNames.length];
         for (int j = 0; j < Resources.traditions.size(); j++) {
             Tradition tr = Resources.traditions.get(j);
@@ -346,17 +358,11 @@ public class MainWindow extends JFrame {
         }
     }
 
-    private void restart(){
-        //for (Tradition item : Resources.traditions) {
-            //System.out.println(item);
-        //}
+    public static void restart(){
         TraditionalTableModel tableRestart;
         if(Resources.language.getClass() == Strings_EN.class) {
             tableRestart = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
         }else tableRestart = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
         traditionTable.setModel(tableRestart);
-        //for (Tradition item : Resources.traditions) {
-            //System.out.println(item);
-        //}
     }
 }

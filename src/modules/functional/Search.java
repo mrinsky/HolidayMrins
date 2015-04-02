@@ -140,8 +140,7 @@ public class Search {
     public static ArrayList<Tradition> getTraditions(Holiday holiday) {
         ArrayList<Tradition> traditions = new ArrayList<Tradition>();
         for (Tradition tradition : Resources.traditions) {
-            if ((tradition.getHoliday().getName().equals(holiday.getName()))&&
-                    (tradition.getHoliday().getStartDate().equals(holiday.getStartDate())))
+            if (tradition.getHoliday().equals(holiday))
                 traditions.add(tradition);}
         return traditions;
     }
