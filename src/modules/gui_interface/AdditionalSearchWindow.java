@@ -2,8 +2,12 @@
 package modules.gui_interface;
 
 import main.Resources;
+import model.Holiday;
+import model.Tradition;
 import modules.functional.DateLabelFormatter;
 import modules.functional.Search;
+import modules.user_interface.MainMenu;
+import org.jdatepicker.JDatePicker;
 import org.jdatepicker.impl.JDatePanelImpl;
 import org.jdatepicker.impl.JDatePickerImpl;
 import org.jdatepicker.impl.UtilDateModel;
@@ -13,7 +17,10 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Properties;
+import java.lang.reflect.Array;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 /**
@@ -39,6 +46,9 @@ public class AdditionalSearchWindow extends JFrame {
     private JDatePanelImpl datePanelFrom;
     private JDatePickerImpl calendarFrome;
 
+    private UtilDateModel modelFrom;
+    private UtilDateModel modelTo;
+
     private JDatePanelImpl datePanelTo;
     private JDatePickerImpl calendarTo;
 
@@ -59,6 +69,7 @@ public class AdditionalSearchWindow extends JFrame {
         //setBounds(200, 200, 200, 220);
         setResizable(false);
         setLocationRelativeTo(null);
+        addListener();
     }
 
     public static void main(final int param_num) {
@@ -71,6 +82,20 @@ public class AdditionalSearchWindow extends JFrame {
 
     }
 
+    private void initCalendar(UtilDateModel dateModel, JDatePanelImpl jDatePanel, JDatePickerImpl calendar) {
+        //Box dateBox = Box.createHorizontalBox();
+        //date = new JPanel();
+        dateModel = new UtilDateModel();
+        Properties pr = new Properties();
+        pr.put("text.today", "Today");
+        pr.put("text.month", "Month");
+        pr.put("text.year", "Year");
+        jDatePanel = new JDatePanelImpl(dateModel, pr);
+        calendar = new JDatePickerImpl(jDatePanel, new DateLabelFormatter());
+        //dateBox.add((Component) jCalendar);
+        //dateBox.setBorder(BorderFactory.createTitledBorder(Resources.language.getDATE()));
+        //return dateBox;
+    }
 
     private Box addComponentsToForm(int param_num){
         logoLable = new JLabel();
@@ -82,15 +107,8 @@ public class AdditionalSearchWindow extends JFrame {
         Box logoBox = Box.createHorizontalBox();
         logoBox.add(logoLable);
 
+        initCalendar(model, datePanel, calendar);
         Box dateBox = Box.createHorizontalBox();
-        date = new JPanel();
-        model = new UtilDateModel();
-        Properties pr = new Properties();
-        pr.put("text.today", "Today");
-        pr.put("text.month", "Month");
-        pr.put("text.year", "Year");
-        datePanel = new JDatePanelImpl(model, pr);
-        calendar = new JDatePickerImpl(datePanel, new DateLabelFormatter());
         dateBox.add(calendar);
         dateBox.setBorder(BorderFactory.createTitledBorder(Resources.language.getDATE()));
 
@@ -108,16 +126,15 @@ public class AdditionalSearchWindow extends JFrame {
 
         //date.setBorder(BorderFactory.createTitledBorder(Resources.language.getDATE()));
         //model = new UtilDateModel();
-        datePanelFrom = new JDatePanelImpl(model, pr);
-        calendarFrome = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+
+        initCalendar(modelFrom, datePanelFrom, calendarFrome);
         leftDateBox.add(fromLabel);
         leftDateBox.add(calendarFrome);
 
         toLabel = new JLabel("To:");
         Box rightDateBox = Box.createVerticalBox();
 
-        datePanelTo = new JDatePanelImpl(model, pr);
-        calendarTo = new JDatePickerImpl(datePanelTo, new DateLabelFormatter());
+        initCalendar(modelTo, datePanelTo, calendarTo);
         rightDateBox.add(toLabel);
         rightDateBox.add(calendarTo);
 
@@ -148,11 +165,6 @@ public class AdditionalSearchWindow extends JFrame {
         maskSearchBox.add(countryBox);
         maskSearchBox.add(descriptionScroll);
 
-        Container containerOkButton = getContentPane();
-        containerOkButton.setLayout(new BorderLayout());
-        okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
-        containerOkButton.add(okButton, BorderLayout.EAST);
-
         regTextField = new JTextField();
         Box regularSearchBox = Box.createVerticalBox();
         regularSearchBox.add(regTextField);
@@ -179,25 +191,25 @@ public class AdditionalSearchWindow extends JFrame {
                 break;
             }
             case 4: {
-                frameBox.add(dateBox);
+                //frameBox.add(dateBox);
                 frameBox.add(Box.createVerticalStrut(7));
                 frameBox.add(maskSearchBox);
                 break;
             }
             case 5: {
-                frameBox.add(dateBox);
+                //frameBox.add(dateBox);
                 frameBox.add(Box.createVerticalStrut(7));
                 frameBox.add(regularSearchBox);
                 break;
             }
             case 6: {
-                frameBox.add(bigDateBox);
+                //frameBox.add(bigDateBox);
                 frameBox.add(Box.createVerticalStrut(7));
                 frameBox.add(maskSearchBox);
                 break;
             }
             case 7: {
-                frameBox.add(bigDateBox);
+                //frameBox.add(bigDateBox);
                 frameBox.add(Box.createVerticalStrut(7));
                 frameBox.add(regularSearchBox);
                 break;
@@ -207,8 +219,59 @@ public class AdditionalSearchWindow extends JFrame {
         }
         frameBox.add(Box.createVerticalStrut(7));
 
+        Container containerOkButton = getContentPane();
+        containerOkButton.setLayout(new BorderLayout());
+        okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
+        containerOkButton.add(okButton, BorderLayout.EAST);
+
         frameBox.add(containerOkButton);
         return frameBox;
+    }
+
+    private Date initDate(){
+        GregorianCalendar calendarValue = (GregorianCalendar) calendar.getJFormattedTextField().getValue();
+
+        Date result = calendarValue.getTime();
+
+        try {
+            Integer month = calendarValue.get(calendarValue.MONTH) + 1;
+            result = Holiday.dateFormat.parse(calendarValue.get(calendarValue.DAY_OF_MONTH) + "." + month);
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
+        System.out.println(result);
+        return result;
+    }
+
+    private static void searchDate(Date dateValue) {
+        if (Search.getDateHolidays(dateValue).size() != 0) {
+            LinkedList<Holiday> holidays = Search.getDateHolidays(dateValue);
+
+            ArrayList<Tradition> traditions = new ArrayList<Tradition>();
+            for (Holiday item : holidays) {
+                for (Tradition tradition : Search.getTraditions(item)) {
+                    traditions.add(tradition);
+                }
+            }
+
+            Resources.traditions = traditions;
+        } else {
+            Resources.out.println(Resources.language.getNOT_FOUND());
+        }
+    }
+
+    private ArrayList<Date> getDaysBetweenDates(Date startdate, Date enddate) {
+        ArrayList<Date> dates = new ArrayList<Date>();
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(startdate);
+
+        while (calendar.getTime().before(enddate))
+        {
+            Date result = calendar.getTime();
+            dates.add(result);
+            calendar.add(Calendar.DATE, 1);
+        }
+        return dates;
     }
 
     private void addListener() {
@@ -223,12 +286,29 @@ public class AdditionalSearchWindow extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 switch (currentParamNum){
                     case 0:
-                        //Resources.traditions = Search.getDateHolidays();
+                        Date dateValue = initDate();
+                        searchDate(dateValue);
+
+                            for (Tradition item : Resources.traditions) {
+                                System.out.println(item);
+                            }
+
                         break;
                     case 1:
+                        Date dateFrom = initDate();
+                        Date dateTo = initDate();
+                        ArrayList<Date> interval = getDaysBetweenDates(dateFrom, dateTo);
+                        for (Date item : interval) {
+                            searchDate(item);
+                        }
+
+                        for (Tradition item : Resources.traditions) {
+                            System.out.println(item);
+                        }
                         break;
                     case 2:
-                        Resources.traditions = Search.maskSearch(holidayTextField.toString(), countryTextField.toString(), descriptionTextField.toString(),
+                        System.out.println(holidayTextField.getText() + " " + countryTextField.getText() + " " + descriptionTextField.getText());
+                        Resources.traditions = Search.maskSearch(holidayTextField.getText(), countryTextField.getText(), descriptionTextField.getText(),
                                 Resources.traditions);
                         break;
                     case 3:
