@@ -389,7 +389,7 @@ public class AdditionalSearchWindow extends JFrame {
 
             @Override
             public void windowClosed(WindowEvent e) {
-                //Resources.traditions = defaultTradtion;
+
             }
 
             @Override

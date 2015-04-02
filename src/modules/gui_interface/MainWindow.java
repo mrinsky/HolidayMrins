@@ -230,7 +230,7 @@ public class MainWindow extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent mouseEvent) {
-                //Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
+
             }
 
             @Override
