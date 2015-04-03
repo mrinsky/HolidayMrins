@@ -391,7 +391,7 @@ public class AdditionalSearchWindow extends JFrame {
             public void windowClosed(WindowEvent e) {
 
             }
-
+//
             @Override
             public void windowIconified(WindowEvent e) {
 
