@@ -168,7 +168,9 @@ public class LoginWindow extends JFrame {
 
                     if (!message.isEmpty()) wrongPassLabel.setText(Resources.language.getLOGIN_OR_PASS_EXCEPTION());
 
-                    else {dispose(); MainWindow.main(false);}
+                    else {
+                        dispose(); MainWindow.main(false);
+                    }
                 }
                 catch (Exception ex) {
                     wrongPassLabel.setText(Resources.language.getLOGIN_OR_PASS_EXCEPTION());

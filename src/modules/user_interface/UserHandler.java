@@ -195,6 +195,9 @@ public class UserHandler {
         } else {
             currentUser.saveAllRU();
         }
+        traditionCount = 0;
+        countryCount = 0;
+        holidayCount = 0;
     }
 
 }

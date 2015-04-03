@@ -1,4 +1,4 @@
-package modules.junit_tests;
+/*package modules.junit_tests;
 
 import junit.framework.TestCase;
 import main.Resources;
@@ -9,9 +9,6 @@ import modules.functional.Change;
 import modules.functional.Search;
 import org.junit.Test;
 
-/**
- * Created by 1 on 02.04.2015.
- */
 public class TestVally extends TestCase {
 
     public TestVally(String testName) {
@@ -35,3 +32,4 @@ public class TestVally extends TestCase {
         assertSame(expected,actual);
     }
 }
+*/

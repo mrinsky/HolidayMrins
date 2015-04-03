@@ -213,11 +213,11 @@ public class MainWindow extends JFrame {
     }
 
     public void initTable() {
-        
+
         if(Resources.language.getClass() == Strings_EN.class) {
             tableModel = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
         }else tableModel = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
-               traditionTable = new JTable(tableModel);
+        traditionTable = new JTable(tableModel);
         traditionTable.add(new JScrollPane());
         this.add(traditionTable, BorderLayout.WEST);
         this.add(new JScrollPane(traditionTable));

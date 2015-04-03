@@ -238,10 +238,10 @@ public class AddWindow extends JFrame {
                 if (isItNew) lastHoliday = comboBox.getSelectedItem().toString();
                 isItNew = false;
                 if (isItem(lastHoliday,comboBox)) {lastHoliday = "";
-                comboBox.setEditable(false);
-                typeBox.setEnabled(false);
-                date.setEnabled(false);
-                if (date.getComponentCount() != 0) date.remove(0);}
+                    comboBox.setEditable(false);
+                    typeBox.setEnabled(false);
+                    date.setEnabled(false);
+                    if (date.getComponentCount() != 0) date.remove(0);}
             }
         }
     }
