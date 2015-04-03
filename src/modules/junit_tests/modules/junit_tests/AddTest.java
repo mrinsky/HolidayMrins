@@ -1,3 +1,4 @@
+/*
 package modules.junit_tests;
 
 import junit.framework.TestCase;
@@ -62,3 +63,4 @@ public class AddTest extends TestCase {
         runner.doRun(suite);
     }
 }
+*/
