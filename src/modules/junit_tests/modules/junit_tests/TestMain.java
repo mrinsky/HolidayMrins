@@ -13,5 +13,4 @@ public class TestMain extends TestCase {
         suite.addTest(new TestVally("testChangeTradition"));
         runner.doRun(suite);
     }
-}
-*/
+}*/

@@ -1,12 +1,10 @@
 /*
-package modules.junit_tests;
-
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
-        import model.Country;
-        import model.Holiday;
-        import model.Tradition;
-import modules.functional.Add;
+package modules.functional;
+//import junit.framework.TestCase;
+//import junit.framework.TestSuite;
+import model.Country;
+import model.Holiday;
+import model.Tradition;
 
 import java.util.ArrayList;
 
@@ -35,7 +33,7 @@ public class AddTest extends TestCase {
         assertTrue(lastCountry.equals(countryList.get(countryList.size() - 1)));
 
         Holiday lastHoliday = holidayList.get(holidayList.size() - 1);
-        holidayList = (ArrayList<Holiday>) Add.addHoliday("Адын", holidayList);
+        holidayList = (ArrayList<Holiday>)Add.addHoliday("Адын", holidayList);
         assertTrue(lastHoliday.equals(holidayList.get(holidayList.size() - 1)));
 
         Tradition lastTradition = traditionList.get(traditionList.size() - 1);

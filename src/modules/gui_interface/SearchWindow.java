@@ -12,7 +12,7 @@ import java.awt.event.MouseListener;
 
 public class SearchWindow extends JFrame {
     static final String IMG_SRC = "resources/img/lupa-32x32.png";
-
+//
     private JLabel logoLable;
     private JLabel searchParam;
     private JComboBox searchComboBox;

@@ -4,6 +4,7 @@ import com.sun.deploy.panel.PathEditor;
 import languages.Strings_EN;
 import languages.Strings_RU;
 import main.Resources;
+import model.Holiday;
 import model.Tradition;
 import model.User;
 import modules.functional.Remove;
@@ -13,6 +14,7 @@ import modules.user_interface.UserHandler;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class MainWindow extends JFrame {
     //region MENU
@@ -39,9 +41,9 @@ public class MainWindow extends JFrame {
 //endregion
 
     TraditionalTableModel tableModel;
-    private JTable traditionTable;
-    private String[] columnNamesEN = {"HOLIDAY", "COUNTRY", "DATE", "TYPE", "CHOOSE"};
-    private String[] columnNamesRU = {"ПРАЗДНИК","СТРАНА","ДАТА","ТИП","ВЫБРАТЬ"};
+    private static JTable traditionTable;
+    private static String[] columnNamesEN = {"HOLIDAY", "COUNTRY", "DATE", "TYPE", "CHOOSE"};
+    private static String[] columnNamesRU = {"ПРАЗДНИК","СТРАНА","ДАТА","ТИП","ВЫБРАТЬ"};
 
     private boolean isGuestMode = false;
 
@@ -90,10 +92,43 @@ public class MainWindow extends JFrame {
         JButton update = new JButton(new ImageIcon("resources/img/update32x32.png"));
         update.setPreferredSize(new Dimension(32,32));
         mainMenu.add(update);
+        update.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                refreshTable();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+//
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
 
         mainMenu.add(Box.createHorizontalGlue());
         initSearchField();
         setJMenuBar(mainMenu);
+    }
+    private void refreshTable()    {
+        TraditionalTableModel tableRestart;
+        if(Resources.language.getClass() == Strings_EN.class) {
+            tableRestart = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
+        }else tableRestart = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
+        traditionTable.setModel(tableRestart);
     }
 
     private void initSearchMenu() {
@@ -162,14 +197,25 @@ public class MainWindow extends JFrame {
     }
 
     private void initSearchField() {
+        final ArrayList<Tradition> defaultTradtion = Resources.traditions;
+
         searchField = new JTextField(Resources.language.getSEARCH(), 20);
         searchField.setMaximumSize(searchField.getPreferredSize());
+        searchField.addKeyListener((KeyListener) new KeyAdapter() {
+
+            public void keyReleased(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    //if (searchField.getText() != "")
+                    Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
+                    restart();
+                }
+            }
+        });
         searchField.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent mouseEvent) {
                 searchField.setText("");
-                SearchWindow.main();
-
+                //Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
             }
 
             @Override
@@ -184,12 +230,13 @@ public class MainWindow extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent mouseEvent) {
-                Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
+
             }
 
             @Override
             public void mouseExited(MouseEvent mouseEvent) {
-
+                Resources.traditions = defaultTradtion;
+                restart();
             }
         });
 
@@ -277,7 +324,7 @@ public class MainWindow extends JFrame {
         }
     }
 
-    private Object[][] initData(String[] columnNames) {
+    private static Object[][] initData(String[] columnNames) {
         Object[][] data =  new Object[Resources.traditions.size()][columnNames.length];
         for (int j = 0; j < Resources.traditions.size(); j++) {
             Tradition tr = Resources.traditions.get(j);
@@ -311,13 +358,11 @@ public class MainWindow extends JFrame {
         }
     }
 
-    private void restart(){
-        if (!isGuestMode) {
-            UserHandler.logOut();
-            LoginWindow.main();
-            dispose();
-        }
-        else dispose();
-        MainWindow.main(true);
+    public static void restart(){
+        TraditionalTableModel tableRestart;
+        if(Resources.language.getClass() == Strings_EN.class) {
+            tableRestart = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
+        }else tableRestart = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
+        traditionTable.setModel(tableRestart);
     }
 }
