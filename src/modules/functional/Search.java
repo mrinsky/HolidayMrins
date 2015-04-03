@@ -155,12 +155,16 @@ public class Search {
     }
 
     public static int searchIndex(ArrayList<Tradition> tr, String country, String holiday) {
-        int index = -1;
-        for (int i = 0; i < tr.size(); i++){
-            if ((tr.get(i).getHoliday().getName().equals(holiday))&&(tr.get(i).getCountry().getName().equals(country)))
-                index = i;
+        int count = -1;
+        for (Tradition tradition : tr){
+
+            count++;
+            if ((tradition.getHoliday().getName().equals(holiday))&&(tradition.getCountry().getName().equals(country)))
+            {
+                return count;
+            }
         }
-        return index;
+        return -1;
     }
 
 }
