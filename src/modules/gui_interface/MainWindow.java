@@ -1,12 +1,9 @@
 package modules.gui_interface;
 
-import com.sun.deploy.panel.PathEditor;
 import languages.Strings_EN;
 import languages.Strings_RU;
 import main.Resources;
-import model.Holiday;
 import model.Tradition;
-import model.User;
 import modules.functional.Remove;
 import modules.functional.Search;
 import modules.user_interface.UserHandler;
@@ -194,6 +191,8 @@ public class MainWindow extends JFrame {
                 initTable();
             }
         });
+        removeThis.addActionListener(new removeListener());
+
     }
 
     private void initSearchField() {
@@ -292,6 +291,7 @@ public class MainWindow extends JFrame {
             }
         });
         showOrEdit.addActionListener(new descriptListener());
+        removeThisPopup.addActionListener(new removeListener());
     }
 
     private class styleListener implements ActionListener {
@@ -321,6 +321,27 @@ public class MainWindow extends JFrame {
                 ;
             }
             if (!(message.isEmpty())) JOptionPane.showMessageDialog(null, message);
+        }
+    }
+
+    private class removeListener implements ActionListener {
+
+        public void actionPerformed(ActionEvent event) {
+            int i = 0;
+            int count = traditionTable.getRowCount();
+            int index = traditionTable.getSelectedRow();
+           Remove.removeTraditionGui(index,Resources.traditions);
+            /*for (i =0; i < count; ) {
+              // boolean tr = Boolean.parseBoolean(traditionTable.getValueAt(i,4));
+                if(traditionTable.getValueAt(i,4)==Boolean.TRUE){Remove.removeTraditionGui(i,Resources.traditions);
+                    i--;
+                    count--;
+                }else  i++;
+
+            }
+
+*/
+            restart();
         }
     }
 

@@ -14,13 +14,13 @@ import java.util.ArrayList;
 
 public class TestVally extends TestCase {
 
-    private ArrayList<Tradition> traditions = new ArrayList<Tradition>();
 
     public TestVally(String testName) {
         super(testName);
     }
     @Test
     public void testSearchIndex() {
+        ArrayList<Tradition> traditions = new ArrayList<Tradition>();
         int expected = 0;
         Holiday holiday = new Holiday("День Ибна Нехура", 0);
         Country country = new Country("Египет");
@@ -31,6 +31,7 @@ public class TestVally extends TestCase {
     @Test
     public void testChangeTradition() {
 
+        ArrayList<Tradition> traditions = new ArrayList<Tradition>();
         Holiday holiday = new Holiday("День Ибна Нехура", 0);
         Country country = new Country("Египет");
         Add.addTradition(holiday, country, traditions);
@@ -41,7 +42,6 @@ public class TestVally extends TestCase {
         expected.setDescription(description);
 
         Change.editTradition(0,expected.getHoliday(),expected.getCountry(),description, traditions);
-        Tradition actual = traditions.get(0);
-        assertSame(expected,actual);
+        assertSame(expected,traditions.get(0));
     }
 }

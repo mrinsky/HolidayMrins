@@ -62,7 +62,7 @@ public class UserHandler {
             User user = new User(login, pass, rsa.getPublicKey(),
                     rsa.getModulus());
             users.add(user);
-            loadUserData(login, pass1);
+            loadData(login, pass1);
         } else {
             throw new IllegalArgumentException(Resources.language.getPASS_EXCEPTION());
         }

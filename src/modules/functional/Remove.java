@@ -41,6 +41,12 @@ public class Remove {
         }
         else throw new IndexOutOfBoundsException();
     }
+    public static void removeTraditionGui(int id, List<Tradition> traditions) {
+        if (id < Resources.traditions.size()) {
+            traditions.remove(id);
+        }
+        else throw new IndexOutOfBoundsException();
+    }
 
     public static void removeCountry(int country, List<Country> c_list){
         //поиск традиций с этой страной
