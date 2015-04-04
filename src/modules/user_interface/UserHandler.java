@@ -33,7 +33,7 @@ public class UserHandler {
     public static ArrayList<User> users = new ArrayList<User>();
 
     private static boolean authorizate(String login, String pass) {
-        int index = 0;
+        int index = -1;
         for (int i = 0; i < users.size(); i++) {
             if (users.get(i).getLogin().equals(login)) {
                 index = i;
@@ -42,7 +42,12 @@ public class UserHandler {
 
         BigInteger message = new BigInteger(pass.getBytes());
         BigInteger encrypt = rsa.encrypt(message);
-        return encrypt.equals(users.get(index).getPass());
+        if (index > -1) {
+            return encrypt.equals(users.get(index).getPass());
+        }
+        else {
+            return false;
+        }
     }
 
     private static boolean checkLogin(String login) {
