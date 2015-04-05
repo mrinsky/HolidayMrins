@@ -4,6 +4,7 @@ import languages.Strings_EN;
 import languages.Strings_RU;
 import main.Resources;
 import modules.functional.DataSaveLoad;
+import modules.functional.UserData;
 import modules.functional.XmlFileWorking;
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
@@ -22,7 +23,7 @@ public class MainMenu {
 
     private static void chooseLocale() {
         int N = 1024;
-        UserHandler.rsa.init(N);
+        UserData.rsa.init(N);
         int choice;
         while (true) {
             out.println(Resources.language.getSTART_CHOICE());
@@ -32,7 +33,7 @@ public class MainMenu {
                     case 1:
                         Resources.language = new Strings_RU();
                         readArrays();
-                        if (UserHandler.currentUser == null) {
+                        if (UserData.currentUser == null) {
                             UserHandler.logIn();
                         } else {
                             mainMenu();
@@ -41,7 +42,7 @@ public class MainMenu {
                     case 2:
                         Resources.language = new Strings_EN();
                         readArrays();
-                        if (UserHandler.currentUser == null) {
+                        if (UserData.currentUser == null) {
                             UserHandler.logIn();
                         } else {
                             mainMenu();
@@ -62,7 +63,7 @@ public class MainMenu {
     }
 
     protected static void mainMenu() {
-        if (UserHandler.currentUser != null) {
+        if (UserData.currentUser != null) {
             out.println(Resources.language.getMAIN_MENU());
         } else {
             out.println(Resources.language.getGUEST_MAIN_MENU());
@@ -73,28 +74,28 @@ public class MainMenu {
             choice = Integer.parseInt(reader.readLine());
             switch (choice) {
                 case 1:
-                    if (UserHandler.currentUser != null) {
+                    if (UserData.currentUser != null) {
                         AddHandler.addMenu();
                         break;
                     } else {
                         guest_flag = true;
                     }
                 case 2:
-                    if (UserHandler.currentUser != null || guest_flag) {
+                    if (UserData.currentUser != null || guest_flag) {
                         SearchHandler.searchMenu();
                         break;
                     } else {
                         guest_flag = true;
                     }
                 case 3:
-                    if (UserHandler.currentUser != null || guest_flag) {
+                    if (UserData.currentUser != null || guest_flag) {
                         PrintHandler.showMenu();
                         break;
                     } else {
                         guest_flag = true;
                     }
                 case 4:
-                    if (UserHandler.currentUser != null || guest_flag) {
+                    if (UserData.currentUser != null || guest_flag) {
                         if (Resources.language.getClass() == Strings_EN.class) help("./resources/helps/help_en.txt");
                         else help("./resources/helps/help_ru.txt");
                         break;
@@ -102,13 +103,13 @@ public class MainMenu {
                         guest_flag = true;
                     }
                 case 5:
-                    if (UserHandler.currentUser != null || guest_flag) {
+                    if (UserData.currentUser != null || guest_flag) {
                         chooseLocale();
                         break;
                     }
                 case 6:
-                    if (UserHandler.currentUser != null) {
-                        UserHandler.logOut();
+                    if (UserData.currentUser != null) {
+                        UserData.saveData();
                         UserHandler.logIn();
                         break;
                     }
@@ -161,8 +162,8 @@ public class MainMenu {
 
     protected static void exit() { //Куча Исключений, нужны try и catch
         try {
-            if (UserHandler.currentUser != null) {
-                UserHandler.logOut();
+            if (UserData.currentUser != null) {
+                UserData.saveData();
             }
             writeArrays();
             reader.close();

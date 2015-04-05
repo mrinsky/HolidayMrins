@@ -36,7 +36,7 @@ public class Remove {
     }
 
     public static void removeTradition(int id, List<Tradition> traditions) {
-        if (id >= UserHandler.traditionCount && id < Resources.traditions.size()) {
+        if (id >= UserData.traditionCount && id < Resources.traditions.size()) {
             traditions.remove(id);
         }
         else throw new IndexOutOfBoundsException();

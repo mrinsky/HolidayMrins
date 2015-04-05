@@ -2,6 +2,7 @@ package modules.gui_interface;
 
 import main.Resources;
 import model.User;
+import modules.functional.Registration;
 import modules.user_interface.MainMenu;
 import modules.user_interface.UserHandler;
 
@@ -157,6 +158,6 @@ public class RegistrationForm extends JFrame{
 
     }
     public void registration(){
-        UserHandler.registration(loginTF.getText(), new String(onePassTF.getPassword()), new String(twoPassTF.getPassword()));
+        Registration.registration(loginTF.getText(), new String(onePassTF.getPassword()), new String(twoPassTF.getPassword()));
     }
 }

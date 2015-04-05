@@ -7,6 +7,7 @@ import model.Holiday;
 import model.HolidayType;
 import model.Tradition;
 import modules.functional.Search;
+import modules.functional.UserData;
 import sun.awt.image.ImageWatched;
 
 import java.io.IOException;
@@ -19,7 +20,7 @@ public class PrintHandler {
 
     //region Completed
     protected static void showMenu() {
-        if (UserHandler.currentUser != null && !UserHandler.currentUser.isAdmin()) {
+        if (UserData.currentUser != null && !UserData.currentUser.isAdmin()) {
             MainMenu.out.println(Resources.language.getSHOW_USER_MENU());
         }
         else {
@@ -31,26 +32,26 @@ public class PrintHandler {
 
             switch (choice) {
                 case 1:
-                    printByToday(UserHandler.currentUser != null);
+                    printByToday(UserData.currentUser != null);
                     break;
                 case 2:
-                    printByDate(UserHandler.currentUser != null);
+                    printByDate(UserData.currentUser != null);
                     break;
                 case 3:
-                    printByType(UserHandler.currentUser != null);
+                    printByType(UserData.currentUser != null);
                     break;
                 case 4:
                     printByCountry();
                     break;
                 case 5:
-                    printAll(UserHandler.currentUser != null);
+                    printAll(UserData.currentUser != null);
                     break;
                 case 6:
                     printArrayCountries(Resources.countries);
                     printCountryMenu();
                     break;
                 case 7:
-                    if (UserHandler.currentUser != null && !UserHandler.currentUser.isAdmin()){
+                    if (UserData.currentUser != null && !UserData.currentUser.isAdmin()){
                         printOwnHolidays();
                         break;
                     }
@@ -89,7 +90,7 @@ public class PrintHandler {
                     break;
                 case 2:
                     if (validate) {
-                        ChangeHandler.holidayChanger(UserHandler.currentUser.isAdmin());
+                        ChangeHandler.holidayChanger(UserData.currentUser.isAdmin());
                         break;
                     }
                 case 3:
@@ -114,7 +115,7 @@ public class PrintHandler {
 
 
     private static void printCountryMenu() {
-        if (UserHandler.currentUser != null) {
+        if (UserData.currentUser != null) {
             MainMenu.out.println(Resources.language.getPRINT_MENU());
         }
         else{
@@ -128,9 +129,9 @@ public class PrintHandler {
                     chooseCountry();
                     break;
                 case 2:
-                    if (UserHandler.currentUser == null) throw new NumberFormatException();
+                    if (UserData.currentUser == null) throw new NumberFormatException();
                     else {
-                        ChangeHandler.countryChanger(UserHandler.currentUser.isAdmin());
+                        ChangeHandler.countryChanger(UserData.currentUser.isAdmin());
                     }
                     break;
                 case 3:
@@ -201,24 +202,24 @@ public class PrintHandler {
     }
 
     private static void printOwnHolidays(){
-        if (UserHandler.currentUser != null && !UserHandler.currentUser.isAdmin()){
-            if (!UserHandler.currentUser.getHolidayList().isEmpty()){
+        if (UserData.currentUser != null && !UserData.currentUser.isAdmin()){
+            if (!UserData.currentUser.getHolidayList().isEmpty()){
                 ArrayList<Tradition> traditions = new ArrayList<Tradition>();
-                for (int i = UserHandler.traditionCount; i < Resources.traditions.size(); i++){
+                for (int i = UserData.traditionCount; i < Resources.traditions.size(); i++){
                     traditions.add(Resources.traditions.get(i));
                 }
-                UserHandler.currentUser.setTraditionList(traditions);
+                UserData.currentUser.setTraditionList(traditions);
                 LinkedList<Country> countries = new LinkedList<Country>();
-                for (int i = UserHandler.countryCount; i < Resources.countries.size(); i++){
+                for (int i = UserData.countryCount; i < Resources.countries.size(); i++){
                     countries.add(Resources.countries.get(i));
                 }
-                UserHandler.currentUser.setCountryList(countries);
+                UserData.currentUser.setCountryList(countries);
                 LinkedList<Holiday> holidays = new LinkedList<Holiday>();
-                for (int i = UserHandler.holidayCount; i < Resources.holidays.size(); i++){
+                for (int i = UserData.holidayCount; i < Resources.holidays.size(); i++){
                     holidays.add(Resources.holidays.get(i));
                 }
-                UserHandler.currentUser.setHolidayList(holidays);
-                printArrayHolidays(UserHandler.currentUser.getHolidayList(), 0);
+                UserData.currentUser.setHolidayList(holidays);
+                printArrayHolidays(UserData.currentUser.getHolidayList(), 0);
                 printHolidayMenu(true);
             }
             else {

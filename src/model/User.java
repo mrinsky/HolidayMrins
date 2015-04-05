@@ -3,6 +3,7 @@ package model;
 import main.MainClass;
 import main.Resources;
 import modules.functional.DataSaveLoad;
+import modules.functional.UserData;
 import modules.functional.XmlFileWorking;
 import modules.user_interface.MainMenu;
 import modules.user_interface.UserHandler;
@@ -46,10 +47,10 @@ public class User {
         //rsa = new RSA();
 
         this.modules = modules;
-        UserHandler.rsa.setModulus(modules);
-        UserHandler.rsa.setPublicKey(key);
+        UserData.rsa.setModulus(modules);
+        UserData.rsa.setPublicKey(key);
 
-        this.pass = UserHandler.rsa.encrypt(pass);
+        this.pass = UserData.rsa.encrypt(pass);
 
         File folder = new File(ROOT + this.login);
         if (folder.mkdir()) {
@@ -72,8 +73,8 @@ public class User {
         this.login = login;
 
         this.modules = new BigInteger("114300212443049308755638385038607092399228059171843074638659728066396329731870812301666900170326603999649607364454783561463395729169397992550553334308251756497995161575531048559625701582012129417669546314420880750128408561569822198960212709010390091463374475374736305384151906473683969549684741213893356703077");
-        UserHandler.rsa.setModulus(this.modules);
-        UserHandler.rsa.setPublicKey(UserHandler.rsa.getPublicKey());
+        UserData.rsa.setModulus(this.modules);
+        UserData.rsa.setPublicKey(UserData.rsa.getPublicKey());
         BigInteger pass_value = new BigInteger(pass);
         this.pass = pass_value;
         //this.pass = rsa.encrypt(pass);
@@ -109,7 +110,7 @@ public class User {
     }
 
     public void setModules(String value) {
-        UserHandler.rsa.setModulus(new BigInteger(value));
+        UserData.rsa.setModulus(new BigInteger(value));
     }
 
     public void setPass(String pass) {

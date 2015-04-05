@@ -2,6 +2,7 @@ package modules.user_interface;
 
 import main.Resources;
 import modules.functional.Remove;
+import modules.functional.UserData;
 
 import java.io.IOException;
 
@@ -11,7 +12,7 @@ public class RemoveHandler {
         try {
             MainMenu.out.println(Resources.language.getID_REQUEST());
             int id = Integer.parseInt(MainMenu.reader.readLine());
-            if (id >= UserHandler.holidayCount && id < Resources.holidays.size()) {
+            if (id >= UserData.holidayCount && id < Resources.holidays.size()) {
                 removeHoliday(id);
             }
             else {
@@ -31,7 +32,7 @@ public class RemoveHandler {
         try {
             MainMenu.out.println(Resources.language.getID_REQUEST());
             int id = Integer.parseInt(MainMenu.reader.readLine());
-            if (id >= UserHandler.countryCount && id < Resources.countries.size()) {
+            if (id >= UserData.countryCount && id < Resources.countries.size()) {
                 removeCountry(id);
             }
             else {

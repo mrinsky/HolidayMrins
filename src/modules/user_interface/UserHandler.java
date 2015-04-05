@@ -5,8 +5,10 @@ import main.MainClass;
 import main.Resources;
 import model.*;
 //import modules.functional.DataSaveLoad;
+import modules.functional.Registration;
 import modules.functional.Remove;
 import modules.functional.Search;
+import modules.functional.UserData;
 //import modules.functional.SerFileWorking;
 //import modules.functional.XmlFileWorking;
 
@@ -24,50 +26,15 @@ import java.util.LinkedList;
 public class UserHandler {
     protected static PrintWriter out = new PrintWriter(System.out, true);
     protected static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-    public static int traditionCount = 0;
-    public static int countryCount = 0;
-    public static int holidayCount = 0;
-    public static RSA rsa = new RSA();
-    public static User currentUser;
 
-    public static ArrayList<User> users = new ArrayList<User>();
+    /*******************
+     * Constructors
+     *******************/
+    private UserHandler() {}
 
-    private static boolean authorizate(String login, String pass) {
-        int index = -1;
-        for (int i = 0; i < users.size(); i++) {
-            if (users.get(i).getLogin().equals(login)) {
-                index = i;
-            }
-        }
-
-        BigInteger message = new BigInteger(pass.getBytes());
-        BigInteger encrypt = rsa.encrypt(message);
-        return (index > -1) ? encrypt.equals(users.get(index).getPass()) : false;
-    }
-
-    private static boolean checkLogin(String login) {
-        boolean result = false;
-        for (int i = 0; i < users.size(); i++) {
-            if (login.equals(users.get(i).getLogin())) {
-                result = true;
-            }
-        }
-        return result;
-    }
-
-    public static void registration(String login, String pass1, String pass2) {
-        if (pass1.equals(pass2)) {
-
-            BigInteger pass = new BigInteger(pass1.getBytes());
-            User user = new User(login, pass, rsa.getPublicKey(),
-                    rsa.getModulus());
-            users.add(user);
-            loadData(login, pass1);
-        } else {
-            throw new IllegalArgumentException(Resources.language.getPASS_EXCEPTION());
-        }
-    }
-
+    /******************
+     * Methods
+     ******************/
     private static void registration() {
         String login,
                 pass1,
@@ -77,14 +44,12 @@ public class UserHandler {
             while (true) {
                 out.println(Resources.language.getLOGIN());
                 login = reader.readLine();
-                if (checkLogin(login)) {
-                    throw new IllegalArgumentException(Resources.language.getLOGIN_EXCEPTION());
-                }
+                Registration.readLogin(login);
                 out.println(Resources.language.getPASS());
                 pass1 = reader.readLine();
                 out.println(Resources.language.getPASS());
                 pass2 = reader.readLine();
-                registration(login, pass1, pass2);
+                Registration.registration(login, pass1, pass2);
                 break;
             }
         } catch (IllegalArgumentException e) {
@@ -115,30 +80,12 @@ public class UserHandler {
 
     protected static void loadUserData(String login, String pass) {
 
-        String message = loadData(login, pass);
+        String message = UserData.loadData(login, pass);
         if (!message.isEmpty()) {
             out.println(Resources.language.getLOGIN_OR_PASS_EXCEPTION());
             authorization();
         }
         else out.println(Resources.language.getHELLO_USER() + login);
-    }
-
-    public static String loadData(String login, String pass) {
-        if (authorizate(login, pass)) {
-            traditionCount = Resources.traditions.size();
-            countryCount = Resources.countries.size();
-            holidayCount = Resources.holidays.size();
-
-            currentUser = users.get(Search.searchIndex(users, login));
-
-            if (Resources.language.getClass() == Strings_EN.class) {
-                currentUser.loadAllEN();
-            } else {
-                currentUser.loadAllRU();
-            }
-            return "";
-        }
-        else return Resources.language.getLOGIN_OR_PASS_EXCEPTION();
     }
 
     protected static void logIn() {
@@ -170,36 +117,6 @@ public class UserHandler {
             logIn();
         }
     }
-
-    public static void logOut() {
-        ArrayList<Tradition> traditions = new ArrayList<Tradition>();
-        for (int i = traditionCount; i < Resources.traditions.size(); i++) {
-            traditions.add(Resources.traditions.get(i));
-        }
-        currentUser.setTraditionList(traditions);
-        Remove.removeListTradition(traditions);
-        LinkedList<Country> countries = new LinkedList<Country>();
-        for (int i = countryCount; i < Resources.countries.size(); i++) {
-            countries.add(Resources.countries.get(i));
-        }
-        currentUser.setCountryList(countries);
-        Remove.removeListCountry(countries);
-        LinkedList<Holiday> holidays = new LinkedList<Holiday>();
-        for (int i = holidayCount; i < Resources.holidays.size(); i++) {
-            holidays.add(Resources.holidays.get(i));
-        }
-        currentUser.setHolidayList(holidays);
-        Remove.removeListHoliday(holidays);
-        if (Resources.language.getClass() == Strings_EN.class) {
-            currentUser.saveAllEN();
-        } else {
-            currentUser.saveAllRU();
-        }
-        traditionCount = 0;
-        countryCount = 0;
-        holidayCount = 0;
-    }
-
 }
 
 

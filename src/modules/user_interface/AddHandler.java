@@ -5,6 +5,7 @@ import model.Country;
 import model.Holiday;
 import model.Tradition;
 import modules.functional.Add;
+import modules.functional.UserData;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -42,11 +43,11 @@ public class AddHandler {
     private static void addTradition() {
         while (true) {
             try {
-                if (UserHandler.currentUser.isAdmin()) {
+                if (UserData.currentUser.isAdmin()) {
                     Resources.traditions = (ArrayList<Tradition>) Add.addTradition(holidayMenu(), countryMenu(), Resources.traditions);
                 }
-                else if (UserHandler.currentUser != null){
-                    UserHandler.currentUser.setTraditionList((ArrayList<Tradition>) Add.addTradition(holidayMenu(), countryMenu(), Resources.traditions));
+                else if (UserData.currentUser != null){
+                    UserData.currentUser.setTraditionList((ArrayList<Tradition>) Add.addTradition(holidayMenu(), countryMenu(), Resources.traditions));
                 }
                 MainMenu.out.println(Resources.language.getDESCRIPT_REQUEST());
                 int choice = Integer.parseInt(MainMenu.reader.readLine());

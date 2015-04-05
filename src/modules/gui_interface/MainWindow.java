@@ -6,6 +6,7 @@ import main.Resources;
 import model.Tradition;
 import modules.functional.Remove;
 import modules.functional.Search;
+import modules.functional.UserData;
 import modules.user_interface.UserHandler;
 
 import javax.swing.*;
@@ -52,9 +53,9 @@ public class MainWindow extends JFrame {
             @Override
             public void windowClosing(WindowEvent windowEvent) {
                 if (!isGuestMode) {
-                    if (Resources.language instanceof Strings_RU) UserHandler.currentUser.saveAllRU();
-                    else UserHandler.currentUser.saveAllEN();
-                    UserHandler.logOut();
+                    if (Resources.language instanceof Strings_RU) UserData.currentUser.saveAllRU();
+                    else UserData.currentUser.saveAllEN();
+                    UserData.saveData();
                 }
                 LoginWindow.main();
                 super.windowClosing(windowEvent);

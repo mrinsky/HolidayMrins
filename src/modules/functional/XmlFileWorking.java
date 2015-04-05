@@ -261,7 +261,7 @@ public class XmlFileWorking implements DataSaveLoad {
         Resources.holidays = xmlSaveLoad.loadHoliday(XML_HOLIDAY_PATCH_EN);
         Resources.countries = xmlSaveLoad.loadCountry(XML_COUNTRY_PATCH_EN);
         Resources.traditions = xmlSaveLoad.loadTradition(XML_TRADITION_PATCH_EN);
-        UserHandler.users = loadUsers(XML_USERS);
+        UserData.users = loadUsers(XML_USERS);
     }
 
     @Override
@@ -269,14 +269,14 @@ public class XmlFileWorking implements DataSaveLoad {
         Resources.holidays = xmlSaveLoad.loadHoliday(XML_HOLIDAY_PATCH_RU);
         Resources.countries = xmlSaveLoad.loadCountry(XML_COUNTRY_PATCH_RU);
         Resources.traditions = xmlSaveLoad.loadTradition(XML_TRADITION_PATCH_RU);
-        UserHandler.users = loadUsers(XML_USERS);
+        UserData.users = loadUsers(XML_USERS);
     }
 
     @Override
     public void saveAllEN() throws IOException {
         xmlSaveLoad.saveHolidays(Resources.holidays, XML_HOLIDAY_PATCH_EN);
         xmlSaveLoad.saveCountry(Resources.countries, XML_COUNTRY_PATCH_EN);
-        saveUsers(UserHandler.users, XML_USERS);
+        saveUsers(UserData.users, XML_USERS);
     }
 
     @Override
@@ -284,7 +284,7 @@ public class XmlFileWorking implements DataSaveLoad {
         xmlSaveLoad.saveHolidays(Resources.holidays, XML_HOLIDAY_PATCH_RU);
         xmlSaveLoad.saveCountry(Resources.countries, XML_COUNTRY_PATCH_RU);
         xmlSaveLoad.saveTradition(Resources.traditions, XML_TRADITION_PATCH_RU);
-        saveUsers(UserHandler.users, XML_USERS);
+        saveUsers(UserData.users, XML_USERS);
     }
 
     public boolean validationXSD(String directXML,String directXSD) throws IOException {

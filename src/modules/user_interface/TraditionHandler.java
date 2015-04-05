@@ -5,6 +5,7 @@ import model.Country;
 import model.Holiday;
 import model.Tradition;
 import modules.functional.Add;
+import modules.functional.UserData;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 public class TraditionHandler {
 
     public static void traditionMenu() {
-        if (UserHandler.currentUser != null) {
+        if (UserData.currentUser != null) {
             MainMenu.out.println(Resources.language.getTRADITION_MENU());
         }
         else{
@@ -26,12 +27,12 @@ public class TraditionHandler {
                     printDescription();
                     break;
                 case 2:
-                    if (UserHandler.currentUser != null) {
+                    if (UserData.currentUser != null) {
                         ChangeHandler.changeTradition();
                         break;
                     }
                 case 3:
-                    if (UserHandler.currentUser != null) {
+                    if (UserData.currentUser != null) {
                         RemoveHandler.removeTradition();
                         break;
                     }
@@ -51,7 +52,7 @@ public class TraditionHandler {
         MainMenu.out.println(Resources.language.getID_REQUEST());
         try {
             int id = Integer.parseInt(MainMenu.reader.readLine());
-            Tradition tradition = UserHandler.currentUser.getTraditionList().get(id);
+            Tradition tradition = UserData.currentUser.getTraditionList().get(id);
             if (!tradition.getDescription().equals("")) MainMenu.out.println(Resources.traditions.get(id).getDescription());
             else {
                 MainMenu.out.println(Resources.language.getNO_DESCRIPT());
