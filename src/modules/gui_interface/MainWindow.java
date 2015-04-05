@@ -204,11 +204,24 @@ public class MainWindow extends JFrame {
         searchField.addKeyListener((KeyListener) new KeyAdapter() {
 
             public void keyReleased(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    //if (searchField.getText() != "")
+                if ("".equals(searchField.getText())) {
+                    Resources.traditions = defaultTradtion;
+                }
+                else {
                     Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
+                }
+                restart();
+                /*
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    if (!"".equals(searchField.getText())) {
+                        Resources.traditions = Search.search(searchField.getText(), Resources.traditions);
+                    }
+                    else {
+                        Resources.traditions = defaultTradtion;
+                    }
                     restart();
                 }
+                */
             }
         });
         searchField.addMouseListener(new MouseListener() {
@@ -235,8 +248,11 @@ public class MainWindow extends JFrame {
 
             @Override
             public void mouseExited(MouseEvent mouseEvent) {
-                Resources.traditions = defaultTradtion;
-                restart();
+                /*
+                if ("".equals(searchField.getText())) {
+                    initSearchMenu();
+                }
+                */
             }
         });
 
