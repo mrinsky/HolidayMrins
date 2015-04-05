@@ -42,12 +42,7 @@ public class UserHandler {
 
         BigInteger message = new BigInteger(pass.getBytes());
         BigInteger encrypt = rsa.encrypt(message);
-        if (index > -1) {
-            return encrypt.equals(users.get(index).getPass());
-        }
-        else {
-            return false;
-        }
+        return (index > -1) ? encrypt.equals(users.get(index).getPass()) : false;
     }
 
     private static boolean checkLogin(String login) {
