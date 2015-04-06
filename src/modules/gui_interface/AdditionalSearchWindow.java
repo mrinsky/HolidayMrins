@@ -26,6 +26,7 @@ import java.util.*;
  */
 
 public class AdditionalSearchWindow extends JFrame {
+    static final String IMG_SRC = "resources/img/lupa-32x32.png";
     private ArrayList<Tradition> defaultTradtion = Resources.traditions;
 
     private JTextField holidayTextField;
@@ -50,6 +51,9 @@ public class AdditionalSearchWindow extends JFrame {
     private JDatePanelImpl datePanelTo;
     private JDatePickerImpl calendarTo;
 
+    private final int PARAM_NUM = 1;
+    private final int FROM_PARAM_NUM = 2;
+    private final int TO_PARAM_NUM = 3;
     //private JButton addButton;
     private JButton okButton;
     //private JComboBox chooseComboBox;
@@ -100,7 +104,7 @@ public class AdditionalSearchWindow extends JFrame {
 
     private Box initLogo() {
         logoLable = new JLabel();
-        logoLable.setIcon(new ImageIcon(SearchWindow.IMG_SRC));
+        logoLable.setIcon(new ImageIcon(IMG_SRC));
         logoLable.setText(Resources.language.getSEARCH_MENU_BAR());
         Font font = new Font("Verdana", Font.PLAIN, 22);
         logoLable.setFont(font);
@@ -111,7 +115,6 @@ public class AdditionalSearchWindow extends JFrame {
     }
 
     private Box initDateBox() {
-        final int PARAM_NUM = 1;
         initCalendar(model, datePanel, PARAM_NUM);
         Box result = Box.createHorizontalBox();
         result.add(calendar);
@@ -120,10 +123,9 @@ public class AdditionalSearchWindow extends JFrame {
     }
 
     private Box initLeftDateBox() {
-        fromLabel = new JLabel("From:");
+        fromLabel = new JLabel(Resources.language.getFROM_LABEL());
         Box result = Box.createVerticalBox();
 
-        final int FROM_PARAM_NUM = 2;
         initCalendar(modelFrom, datePanelFrom, FROM_PARAM_NUM);
         result.add(fromLabel);
         result.add(calendarFrom);
@@ -131,10 +133,9 @@ public class AdditionalSearchWindow extends JFrame {
     }
 
     private Box initRightDateBox() {
-        toLabel = new JLabel("To:");
+        toLabel = new JLabel(Resources.language.getTO_LABEL());
         Box result = Box.createVerticalBox();
 
-        final int TO_PARAM_NUM = 3;
         initCalendar(modelTo, datePanelTo, TO_PARAM_NUM);
         result.add(toLabel);
         result.add(calendarTo);
@@ -165,7 +166,7 @@ public class AdditionalSearchWindow extends JFrame {
         Box result = Box.createHorizontalBox();
         holidayTextField = new JTextField(1);
         result.add(holidayTextField);
-        result.setBorder(BorderFactory.createTitledBorder("Enter holiday:"));
+        result.setBorder(BorderFactory.createTitledBorder(Resources.language.getHOLIDAY_ITEM()));
         return result;
     }
 
@@ -173,7 +174,7 @@ public class AdditionalSearchWindow extends JFrame {
         Box result = Box.createHorizontalBox();
         countryTextField = new JTextField(15);
         result.add(countryTextField);
-        result.setBorder(BorderFactory.createTitledBorder("Enter country:"));
+        result.setBorder(BorderFactory.createTitledBorder(Resources.language.getCOUNTRY_ITEM()));
         return result;
     }
 
@@ -192,7 +193,7 @@ public class AdditionalSearchWindow extends JFrame {
     }
 
     private Box initRegularQueryBox() {
-        regTextField = new JTextField(15);
+        regTextField = new JTextField(20);
         Box result = Box.createVerticalBox();
         result.add(regTextField);
         result.setBorder(BorderFactory.createTitledBorder(Resources.language.getREGULAR()));
@@ -236,30 +237,6 @@ public class AdditionalSearchWindow extends JFrame {
                 frameBox.add(regularSearchBox);
                 break;
             }
-            case 4: {
-                frameBox.add(dateBox);
-                frameBox.add(Box.createVerticalStrut(7));
-                frameBox.add(maskSearchBox);
-                break;
-            }
-            case 5: {
-                frameBox.add(dateBox);
-                frameBox.add(Box.createVerticalStrut(7));
-                frameBox.add(regularSearchBox);
-                break;
-            }
-            case 6: {
-                frameBox.add(bigDateBox);
-                frameBox.add(Box.createVerticalStrut(7));
-                frameBox.add(maskSearchBox);
-                break;
-            }
-            case 7: {
-                frameBox.add(bigDateBox);
-                frameBox.add(Box.createVerticalStrut(7));
-                frameBox.add(regularSearchBox);
-                break;
-            }
             default:
                 break;
         }
@@ -270,7 +247,7 @@ public class AdditionalSearchWindow extends JFrame {
     }
 
     private Date initDate(int paramNum){
-        GregorianCalendar calendarValue = (GregorianCalendar) calendar.getJFormattedTextField().getValue();;
+        GregorianCalendar calendarValue = (GregorianCalendar) calendar.getJFormattedTextField().getValue();
         switch (paramNum) {
             case 1:
                 break;
@@ -292,7 +269,6 @@ public class AdditionalSearchWindow extends JFrame {
         } catch (ParseException e1) {
             e1.printStackTrace();
         }
-        //System.out.println(result);
         return result;
     }
 
@@ -302,7 +278,6 @@ public class AdditionalSearchWindow extends JFrame {
                 LinkedList<Holiday> holidays = Search.getDateHolidays(dateValue);
 
                 ArrayList<Tradition> traditions = Search.getTraditions(holidays.get(0));
-                System.out.println(traditions.get(0));
                 for (Holiday item : holidays) {
                     for (Tradition tradition : Search.getTraditions(item)) {
                         traditions.add(tradition);
@@ -319,12 +294,12 @@ public class AdditionalSearchWindow extends JFrame {
         }
     }
 
-    private ArrayList<Date> getDaysBetweenDates(Date startdate, Date enddate) {
+    private ArrayList<Date> getDaysBetweenDates(Date startDate, Date endDate) {
         ArrayList<Date> dates = new ArrayList<Date>();
         Calendar calendar = new GregorianCalendar();
-        calendar.setTime(startdate);
+        calendar.setTime(startDate);
 
-        while (calendar.getTime().before(enddate))
+        while (calendar.getTime().before(endDate))
         {
             Date result = calendar.getTime();
             dates.add(result);
@@ -343,14 +318,14 @@ public class AdditionalSearchWindow extends JFrame {
         okButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                final int PARAM_NUM = 1;
+                final int FROM_PARAM_NUM = 2;
                 switch (currentParamNum){
                     case 0:
-                        final int PARAM_NUM = 1;
                         Date dateValue = initDate(PARAM_NUM);
                         searchDate(dateValue);
                         break;
                     case 1:
-                        final int FROM_PARAM_NUM = 2;
                         Date dateFrom = initDate(FROM_PARAM_NUM);
                         final int TO_PARAM_NUM = 3;
                         Date dateTo = initDate(TO_PARAM_NUM);
@@ -358,13 +333,8 @@ public class AdditionalSearchWindow extends JFrame {
                         for (Date item : interval) {
                             searchDate(item);
                         }
-
-                        for (Tradition item : Resources.traditions) {
-                            System.out.println(item);
-                        }
                         break;
                     case 2:
-                        System.out.println(holidayTextField.getText() + " " + countryTextField.getText() + " " + descriptionTextField.getText());
                         Resources.traditions = Search.maskSearch(holidayTextField.getText(), countryTextField.getText(), descriptionTextField.getText(),
                                 Resources.traditions);
                         break;

@@ -98,11 +98,12 @@ public class Strings_EN implements Language {
     private final String ALL_EVENT = "all event";
     private final String ALL_HOLIDAY = "all holiday";
     private final String ALL_COUNTRY = "all country";
-    private final String SEARCH_BY_DATE = "Search by date";
-    private final String SEARCH_BY_DATE_INTERVAL = "Search by date interval";
+    private final String SEARCH_BY_DATE = "by date";
+    private final String SEARCH_BY_DATE_INTERVAL = "by date interval";
     private final String CHOOSE_SEARCH_PARAM = "Choose search params";
     private final String AND_LABEL = "And";
-
+    private final String FROM_LABEL = "From:";
+    private final String TO_LABEL = "To:";
 
     public String getALL_EVENT() {
         return ALL_EVENT;
@@ -512,6 +513,12 @@ public class Strings_EN implements Language {
         return AND_LABEL;
     }
 
+    public String getFROM_LABEL() {
+        return FROM_LABEL;
+    }
 
+    public String getTO_LABEL() {
+        return TO_LABEL;
+    }
 
 }

@@ -28,7 +28,10 @@ public class MainWindow extends JFrame {
     private JMenu helpMenu;
     private JMenu searchMenu;
     private JMenu restartMenu;
-    private JMenuItem searchItem;
+    private JMenuItem searchDate;
+    private JMenuItem searchDateInterval;
+    private JMenuItem searchSubstring;
+    private JMenuItem searchRegEx;
     private JMenuItem readHelpItem;
     private JTextField searchField;
 
@@ -84,9 +87,9 @@ public class MainWindow extends JFrame {
     private void initMenuBar() {
         mainMenu = new JMenuBar();
         initEditMenu();
+        initSearchMenu();
         initStyleMenu();
         initHelpMenu();
-        initSearchMenu();
         JButton update = new JButton(new ImageIcon("resources/img/update32x32.png"));
         update.setPreferredSize(new Dimension(32,32));
         mainMenu.add(update);
@@ -131,16 +134,40 @@ public class MainWindow extends JFrame {
 
     private void initSearchMenu() {
         searchMenu = new JMenu(Resources.language.getSEARCH_MENU_BAR());
-        searchItem = new JMenuItem(Resources.language.getSEARCH_MENU_BAR() + " window");
+        searchDate = new JMenuItem(Resources.language.getSEARCH_BY_DATE());
+        searchDateInterval = new JMenuItem(Resources.language.getSEARCH_BY_DATE_INTERVAL());
+        searchSubstring = new JMenuItem(Resources.language.getSUBSTRING());
+        searchRegEx = new JMenuItem(Resources.language.getREGULAR());
 
-        searchItem.addActionListener(new ActionListener() {
+        searchDate.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                SearchWindow.main();
+                AdditionalSearchWindow.main(0);
+            }
+        });
+        searchDateInterval.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                AdditionalSearchWindow.main(1);
+            }
+        });
+        searchSubstring.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                AdditionalSearchWindow.main(2);
+            }
+        });
+        searchRegEx.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                AdditionalSearchWindow.main(3);
             }
         });
 
-        searchMenu.add(searchItem);
+        searchMenu.add(searchDate);
+        searchMenu.add(searchDateInterval);
+        searchMenu.add(searchSubstring);
+        searchMenu.add(searchRegEx);
         mainMenu.add(searchMenu);
     }
 
@@ -402,5 +429,9 @@ public class MainWindow extends JFrame {
             tableRestart = new TraditionalTableModel(initData(columnNamesEN), columnNamesEN);
         }else tableRestart = new TraditionalTableModel(initData(columnNamesRU), columnNamesRU );
         traditionTable.setModel(tableRestart);
+    }
+
+    public static void frontWindow() {
+
     }
 }

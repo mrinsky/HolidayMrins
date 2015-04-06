@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
+@Deprecated
 public class SearchWindow extends JFrame {
     static final String IMG_SRC = "resources/img/lupa-32x32.png";
 //
@@ -71,8 +71,6 @@ public class SearchWindow extends JFrame {
         comboBox.add(searchParam);
         comboBox.add(searchComboBox);
 
-        //andButton = new JButton(Resources.language.getAND_LABEL());
-
         //okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
 
         Box frameBox = Box.createVerticalBox();
@@ -86,11 +84,6 @@ public class SearchWindow extends JFrame {
         searchComboBox.setSelectedIndex(prev_num);
         frameBox.add(Box.createVerticalStrut(7));
         //andButton.setEnabled(false);
-        Container containerAndButton = getContentPane();
-        containerAndButton.setLayout(new BorderLayout());
-        andButton = new JButton(Resources.language.getAND_LABEL());
-        containerAndButton.add(andButton, BorderLayout.CENTER);
-        frameBox.add(containerAndButton);
         frameBox.add(Box.createVerticalStrut(7));
         switch (flag_num){
             case 1: {
@@ -106,9 +99,12 @@ public class SearchWindow extends JFrame {
                 break;
             }
         }
+
         Container containerOkButton = getContentPane();
         containerOkButton.setLayout(new BorderLayout());
         okButton = new JButton(Resources.language.getSEARCH_MENU_BAR());
+        andButton = new JButton(Resources.language.getAND_LABEL());
+        containerOkButton.add(andButton, BorderLayout.WEST);
         containerOkButton.add(okButton, BorderLayout.EAST);
         frameBox.add(containerOkButton);
         return frameBox;

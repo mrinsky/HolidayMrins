@@ -92,12 +92,14 @@ public class Strings_RU implements Language {
     private final String ALL_EVENT = "события";
     private final String ALL_HOLIDAY = "праздники";
     private final String ALL_COUNTRY = "страны";
-    private final String SEARCH_BY_DATE = "Поиск по дате";
-    private final String SEARCH_BY_DATE_INTERVAL = "Поиск по интервалу дат";
+    private final String SEARCH_BY_DATE = "по дате";
+    private final String SEARCH_BY_DATE_INTERVAL = "по интервалу дат";
     private final String CHOOSE_SEARCH_PARAM = "Выбирите параметры поиска";
     private final String AND_LABEL = "А также";
     private final String SHOW_OR_EDIT = "Показать / Изменить описание";
     private final String NOT_FOUND_DESCRIPTION = "Описание отсутвует";
+    private final String FROM_LABEL = "От:";
+    private final String TO_LABEL = "До:";
 
     public String getNOT_FOUND_DESCRIPTION() {
         return NOT_FOUND_DESCRIPTION;
@@ -105,12 +107,12 @@ public class Strings_RU implements Language {
 
     @Override
     public String getSEARCH_BY_DATE() {
-        return null;
+        return SEARCH_BY_DATE;
     }
 
     @Override
     public String getSEARCH_BY_DATE_INTERVAL() {
-        return null;
+        return SEARCH_BY_DATE_INTERVAL;
     }
 
     @Override
@@ -525,5 +527,13 @@ public class Strings_RU implements Language {
 
     public String getGUEST_MAIN_MENU(){
         return GUEST_MAIN_MENU;
+    }
+
+    public String getFROM_LABEL() {
+        return FROM_LABEL;
+    }
+
+    public String getTO_LABEL() {
+        return TO_LABEL;
     }
 }
