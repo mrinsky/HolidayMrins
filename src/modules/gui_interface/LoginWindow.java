@@ -5,6 +5,7 @@ import languages.Strings_RU;
 import main.Resources;
 import model.User;
 import modules.functional.XmlFileWorking;
+import modules.functional.UserData;
 import modules.user_interface.UserHandler;
 import org.jdom2.JDOMException;
 import org.xml.sax.SAXException;
@@ -164,7 +165,7 @@ public class LoginWindow extends JFrame {
                     if (Resources.language instanceof Strings_RU) xml.loadAllRU();
                     else xml.loadAllEN();
 
-                    String message = UserHandler.loadData(getLogin(), getPassword());
+                    String message = UserData.loadData(getLogin(), getPassword());
 
                     if (!message.isEmpty()) wrongPassLabel.setText(Resources.language.getLOGIN_OR_PASS_EXCEPTION());
 
